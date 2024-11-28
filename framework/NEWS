@@ -1,0 +1,74 @@
+2011-05-13     RELEASE 1.2
+
+        New:
+
+        * Introduced a new concept called "facets" to subselect parts/concrete
+          types of an Artifact's output.
+
+        * New REST interfaces to set/get attributes of an ArtifactCollection.
+
+        * Improved the DatabaseCleaner to cleanup Artifacts, ArtifactCollections
+          and CollectionItems properly.
+
+        * Reduce I/O costs while database transactions by compressing XML
+          documents.
+
+
+2011-03-30     RELEASE 1.1
+
+2010-04-28     RELEASE 1.0
+
+        New:
+
+        * The path to database in the configuration can be relative to central
+          configuration document.
+
+        * The Restlet server logs its output to the same file as the rest of the
+          application does.
+
+        * Support for saving the current state of an artifact (e.g. save
+          artifact as project file).
+
+        * Support for loading an existing artifact (e.g. load an existing
+          project).
+
+
+        Added:
+
+        * JavaDoc documentation.
+
+
+
+2010-03-08     RELEASE 0.5
+
+
+2010-01-27     RELEASE 0.4
+
+        New:
+
+                * Added a new interface describing services 
+                via XML documents via /services
+        
+
+2009-12-17     RELEASE 0.3
+
+	New:
+
+	* Not really a feature release. Only handle internal stuff more general.
+
+2009-11-13     RELEASE 0.2
+
+        New:
+
+        * Make paths in configuration relative to the central
+        configuration document.
+
+        * Added a first HowTo to setup the environment and artifact
+        system encapsulating FIS and products
+
+2009-10-07     RELEASE 0.1
+
+	New:
+
+	* Initial implementation of the runtime system based on artifacts.
+

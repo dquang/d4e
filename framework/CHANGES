@@ -1,0 +1,261 @@
+2011-09-19     RELEASE 1.4
+
+    !! Release 1.4 is no longer API compatible with old versions of this module !!
+
+    NEW:
+
+        * Modified the signature of Artifact.setup() -> Artifact.setup(CallMeta).
+          The CallMeta is required for I18N support while setting up an
+          Artifact. !! THIS MODIFICATION BREAKS THE CURRENT API !!
+
+        * Modified the signature of Service.setup() -> Service.setup(GlobalContext).
+
+        * Introduced a LifetimeListener interface: applications can register
+          instances of this interface to execute tasks after the system goes and
+          and before the system goes down.
+
+        * Introduced a BackendListener interface: applications can register
+          instances of this interface to execute tasks after an event has been
+          fired. See the JavaDoc of BackendListener for detailed descriptions of
+          the events.
+
+        * Introduced "Hooks": Hooks can be used to execute tasks at a specific
+          point in time. In our cases, Hooks can be executed before/after feed()
+          and advance() operations.
+
+        * Introduced a GlobalContext interface for the global context object:
+          this interface describes two method to put new objects into this
+          context and a method to retrieve objects from this context.
+
+        * Introduced a CreationFilter: this filter might be used to create
+          Artifacts with restricted Outputs/Facets.
+
+        * Introduced a Message interface: Messages might be used by background
+          threads to provide information about the process (e.g. status reports).
+
+        * Improved ArtifactDatabaseImpl to support background messages.
+
+        * Improved the CallContext interface: added a method isInBackground()
+          that determines if the current Artifact has started a background
+          thread which is still processing.
+
+        * Improved the CallContext interface: added methods to add/retrieve
+          background messages.
+
+        * Improved the State interface: added a endOfLife() method that should
+          be called by owner Artifacts.
+
+        * Improved the interface of Facets: added a deepCopy() method to be able
+          to clone Facets.
+
+        * Improved the interface of Facets: added a toXML() method.
+
+        * Improved the ArtifactDatabase: added a method loadAllArtifacts(ArtifactLoadedCallback)
+          to load all Artifacts of an ArtifactCollection.
+
+        * Improved XMLUtils: added support for variables in XPath expression.
+
+        * Added a FileTools helper class that implements some convinience
+          functions to work with files.
+
+        * Some little improvements in ClientProtocolUtils.
+
+        * Bumped SLF4J up to 2.0.7.
+
+        * Bumped H2 up to 1.3.158.
+
+        * Bumped Apache DBCP up to 1.4.
+
+        * Bumped PostgreSQL driver up to 8.4-702.jdbc4.
+
+
+    FIXED:
+
+        * flys/issue20 (Versions-Clash bei slf4j verhindert Start des Artefakt-Servers.)
+
+
+
+2011-06-27     RELEASE 1.3
+
+    NEW:
+
+        * Bumped Restlet to version 2.0.7.
+
+        * Use a Jetty server by default to handle HTTP requests.
+
+        * Introduced a config option that allows to switch the HTTP server
+          manually.
+
+        * Introduced a config option that allows to limit the max number of
+          threads used by the Restlet server. Defaults to 1024.
+
+        * New REST interface to set the time-to-live of a Collection. This
+          operation takes a java native long value or one of the strings "INF" -
+          which means a Collection lives forever - or "DEFAULT" which means to
+          reset the time-to-live to the default value configured in the artifact
+          server.
+
+        * New REST interface to set the name of a Collection.
+
+        * Improved the ClientProtocolUtils to create documents for the operation
+          to set the Collection's time-to-live.
+
+        * The time-to-live of Collections is accessible in Collection objects.
+
+        * Introduced a "creation" timestamp for CollectionItems.
+
+        * Facets got a new property "index".
+
+
+    FIXED:
+
+        * A a new out() method is called that takes the "type" parameter specified in
+          the REST url to specify the concrete output type. This parameter has
+          not been used until now.
+
+        * flys/issue75 Fixed SQL syntax error in trigger creation.
+
+
+
+2011-05-13     RELEASE 1.2
+
+    NEW:
+
+        * Introduced "facets" as a new concept to select only parts/concrete
+          types of an Artifact's output. E.g. a computation might return data
+          that is used to draw two curves into a chart. With a "facet", just a
+          single curve might be selected to be drawn into the chart.
+
+        * New REST interfaces to set/get attributes of an ArtifactCollection.
+
+        * Artifacts that live in ArtifactCollections don't die (because of their
+          last_access time). A database trigger is used to update their
+          last_access time if their owner ArtifactCollection is updated.
+
+        * DatabaseCleaner removes outdated ArtifactCollections.
+
+        * XML documents stored aside users, collections and collection items are
+          compressed to reduce i/o costs.
+
+        * Introduced a listener mechanism that is called if a context is
+          created/closed. This listener might be implemented in concrete
+          artifact packages.
+
+        * Improvements in the ClientProtocolUtils: new functions to create
+          special xml documents
+
+
+    FIXED:
+
+        * flys/issue8 (Cleanup des DatabaseCleaner schlägt fehl)
+
+        * flys/issue9 (Fehler beim Laden von Artefakten - NO SUCH ARTIFACT obwohl Artefakt in DB vorhanden)
+
+
+2011-03-30     RELEASE 1.1
+
+2010-04-28     RELEASE 1.0
+
+    New:
+
+        * The path to database in the configuration can be relative to the
+          central configuration document using ${artifacts.config.dir} as
+          root.
+
+        * New interfaces to export and import artifacts:
+
+          HTTP GET  '/export/{uuid}'     returns an xml document representing
+                                         the state of an artifact
+          HTTP POST '/import'            takes an xml document that have
+                                         been created by /export before
+
+          The export mechanism uses a secret configured in the configuration
+          to sign export documents. An artifact import fails if the
+          signature of the xml document is not valid.
+
+        * The time to live of an artifact is queriable at the CallContext
+          object.
+
+
+    Added:
+
+        * JavaDoc documentation
+
+
+
+2010-03-08     RELEASE 0.5
+
+
+2010-01-27     RELEASE 0.4
+
+        New:
+
+		* Extended XML helper utilities a bit more
+                * Added a new interface describing services 
+                via XML documents via /services
+                
+
+2009-12-17      RELEASE 0.3
+
+	New:
+
+		* Extended XML helper utilities a bit
+		* Added a new general proxy artifact.
+		
+	FIXED:
+
+		* issue106: Konfiguration der GNV-Chart-Templates gehört nicht in das Artefakt-Framework
+
+2009-11-13      RELEASE 0.2
+
+	New:
+
+        * Configuration documents can be made relativ to
+        ${artifacts.config.dir}
+ 
+        * Splitting up configuration of artifacts in depence to the
+        product.
+
+        * Added a first HOWTO for setting up the environemt and the
+        artifact server
+
+2009-10-07     RELEASE 0.1
+
+	New:
+
+	* Two sub projects: 'artifacts' and 'artifact-database'
+	
+		- 'artifacts' is a set of generic interfaces modelling 
+		  the workflow to parameterize a process and producing
+		  outputs.
+
+		  An artifact is created via factories. It describes
+		  itself via 'describe', it is parameterized via
+		  'feed' and brought to new states with 'advance'.
+		  Once able to produce output 'out' returns the
+		  requested product.
+
+		- 'artifact-database' is the default implemention
+		  of the workflow described with 'artifact'.
+
+	* artifact-database persists artifacts with a H2-database
+	  [http://www.h2database.com] (default) or a
+	  PostgeSQL 8.3+ database [http://www.postgresql.org/] (optional)
+
+	* artifacts may spawn background threads to copy with long running
+	  processes. After finishing work they are able to re-synchronize
+	  themselves to the artifact database.
+
+	* artifact-database is accessible via an HTTP REST server
+	  implemented on top of the Restlet API http://www.restlet.org/
+	  It has to be started as a service. Default TCP port: 8181
+
+	  HTTP GET  '/factories'             returns list of available factories.
+	  HTTP GET  '/create'                creates new artifact.
+	  HTTP GET  '/artifact/{uuid}'       returns a description of an artifact.
+	  HTTP POST '/artifact/{uuid}'       modifies an artifact ('feed', 'advance')
+	  HTTP POST '/artifact/{uuid}/{out}' delivers output for an artifact.
+
+	* artifact-database is configured with as XML file named conf.xml
+	  (default placement in directory $HOME/.artitactdb, directory
+	  may be changed with system property "artifact.database.dir")

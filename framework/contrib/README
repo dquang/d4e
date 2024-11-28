@@ -1,0 +1,29 @@
+run.sh:
+
+From ChangeLog, 
+2009-09-09	Sascha L. Teichmann	<sascha.teichmann@intevation.de>
+
+	* artifact-database/doc/artifactdb-example-conf.xml: removed
+	* artifact-database/doc/example-conf/conf.xml: Re-added here.
+
+	The configuration is now found in a subdirectory set by the
+	system property 'artifact.database.dir'. If this property is
+	not set '~/.artitactdb' is used. This directory should contain
+	a file 'conf.xml' with the configuration details.
+	  If the artifact database is started as a standalone the config
+	directory is searched for 'log4j.properties' to configure the
+	logging.
+	  The H2 database is also search in this directory with the
+	name 'artifacts.db' if the connection url in config.xml is
+	not overwritten.
+
+        [...]
+
+	* contrib/run.sh: Little start script to launch artifact database for test
+	purpose from classes without the need to build packages. 
+	Background: The maven exec:exec goal does not work consistently for me (slt). 
+	At home it does, at work it doe not. Anyway. Usage:
+
+	$ ./contrib/run.sh \
+	      -Dartifact.database.dir=artifact-database/doc/example-conf/ \
+	      de.intevation.artifactdatabase.App

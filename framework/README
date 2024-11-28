@@ -1,0 +1,6 @@
+
+Create a new H2 database for usage in the artifact database:
+
+$ artifact-database/bin/createArtifacts.sh
+
+The new database is created in the directory ./artifactsdb.

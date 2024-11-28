@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<art:action
+     xmlns:art="http://www.intevation.de/2009/artifacts">
+     <art:type name="create"/>
+     <art:factory name="dummy-1"/>
+</art:action>

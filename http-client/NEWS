@@ -1,0 +1,10 @@
+2011-05-13      RELEASE 0.2
+
+    New:
+
+    * Enabled the Http-Client to support locales in requests.
+
+    * Grant access to the InputStream of a Collection's OUT operation.
+
+
+2011-03-30      RELEASE 0.1

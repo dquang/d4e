@@ -1,0 +1,277 @@
+-------------------------------------------------------------------------------
+Installation JDK
+
+Für den Betrieb des Generischen Viewers und der Artefakt-Datenbank wird Java
+benötigt. Um Sun Java über die Apt-Pakete zu installieren, ist es notwendig die
+'non-free' Quellen in die Apt-Quellen einzutragen. Folgender Eintrag ist in die
+Quellen einzutragen:
+    deb http://hetzner:download@download.hetzner.de/debian/mirror lenny main contrib non-free
+
+Anschließend müssen folgende Befehle abgesetzt werden, um die Pakete
+sun-java6-jdk zu installieren:
+    aptitude update
+    aptitude install sun-java6-jdk
+
+Der Befehl
+    java -version
+sollte anschließend etwas ergeben, was dem folgenden ähnelt. 
+
+    java version "1.6.0_12"
+    Java(TM) SE Runtime Environment (build 1.6.0_12-b04)
+    Java HotSpot(TM) Client VM (build 11.2-b01, mixed mode, sharing)
+
+Die Installation ist erfolgreich abgeschlossen.
+
+
+-------------------------------------------------------------------------------
+Installation/Konfiguration Apache HTTP
+
+Für eine Installation von Apache wir unter anderem das Paket libapache2-mod-jk2
+benötigt. Es stellt Connectoren bereit, um den Apache Webserver mit dem Tomcat
+Server zu verbinden.
+    aptitude install libapache2-mod-jk2
+Dieser Befehl ist für eine Installation des Apache Webservers ausreichend. Alle
+weiteren benötigten Pakete werden automatisch mit installiert.
+
+Nach der Installation der Pakete müssen ein paar kleine Einstellungen
+vorgenommen werden, die den Pfad des Tomcat und des JDKs festlegen. Dazu öffne
+man die Datei /etc/libapache2-mod-jk/workers.properties mit einem Editor seiner
+Wahl, und Ändere die folgenden Zeilen:
+
+    gvim /etc/libapache2-mod-jk/workers.properties
+
+    - workers.tomcat_home=/usr/share/tomcat5
+    + workers.tomcat_home=/usr/share/tomcat5.5
+
+    - workers.java_home=/usr/lib/jvm/java-gcj
+    + workers.java_home=/usr/lib/jvm/java-6-sun/jre
+
+Des Weiteren sind in der http.conf des Apache2 folgende Einträge hinzuzufügen:
+
+    gvim /etc/apache2/http.conf
+
+    + JkWorkersFile "/etc/libapache2-mod-jk/workers.properties"
+    + JkLogFile "/var/log/mod_jk.log"
+
+In der Datei /etc/sites-available/default wird anschließend folgender Eintrag
+benötigt, um das Forwarding vom Apachen zum Tomcat für den GenerischenViewer
+einzurichten:
+
++ JkMount /gnv   ajp13_worker
++ JkMount /gnv/* ajp13_worker
+
++ <Location /gnv>
++     AuthType Basic
++     AuthName "BSH GenViewer"
++     AuthBasicProvider file
++     AuthUserFile /etc/apache2/passwd/genviewer
++     Require valid-user
++
++     # Insert filter
++     SetOutputFilter DEFLATE
++
++     # Netscape 4.x has some problems...
++     BrowserMatch ^Mozilla/4 gzip-only-text/html
++
++     # Netscape 4.06-4.08 have some more problems
++     BrowserMatch ^Mozilla/4\.0[678] no-gzip
++
++     # MSIE masquerades as Netscape, but it is fine
++     BrowserMatch \bMSIE !no-gzip !gzip-only-text/html
++     # Don't compress images
++     SetEnvIfNoCase Request_URI \
++     \.(?:gif|jpe?g|png)$ no-gzip dont-vary
++
++     # Make sure proxies don't deliver the wrong content
++     Header append Vary User-Agent env=!dont-vary
++         </Location>
++
++     <Location /servlets-examples/>
+
+Diese Konfiguration bedarf noch der Aktivierung eines Apache Moduls, was mit
+folgendem Aufruf getan wird:
+
+    a2enmod headers
+
+Die Konfiguration des Apache ist beendet. Starten Sie den Webserver mit
+folgendem Aufruf:
+
+    /etc/init.d/apache2 start
+
+Bei erfolgreicher Installation sollten im Browser bei der Adresse
+http://localhost folgender Text ausgegeben werden:
+
+    It works!
+
+-------------------------------------------------------------------------------
+Installation/Konfiguration Tomcat
+
+Für den Betrieb des Tomcat Servers werden die Pakete tomcat5.5 und
+tomcat5.5-webapps benötigt. Installieren Sie diese über die Apt-Quellen mit
+folgendem Befehl:
+    
+    aptitude install tomcat5.5 tomcat5.5-webapps
+
+Anschließend deaktivieren wir den Standard-HTTP-Connector des Tomcat. Dieser
+soll nicht direkt angesprochen werden können, sondern nur über den Apache
+erreichbar sein. Dazu wird in der Datei /usr/share/tomcat5.5/conf/server.xml
+folgender Code auskommentiert:
+
+    <!--
+        <Connector port="8180" maxHttpHeaderSize="8192" address="127.0.0.1"
+               maxThreads="150" minSpareThreads="25" maxSpareThreads="75"
+               enableLookups="false" redirectPort="8443" acceptCount="100"
+               connectionTimeout="20000" disableUploadTimeout="true" />
+    -->
+
+Damit der AJP-Connector, der zur Verbindung des Apache und des Tomcat dient, nur
+auf die Adresse 127.0.0.1, also auf den localhost, lauscht, wird folgende Zeile
+in der Datei /etc/tomcat5.5/server.xml ausgetauscht:
+
+    - <Connector port="8009"
+    -  enableLookups="false" redirectPort="8443" protocol="AJP/1.3" />
+
+    + <Connector port="8009" address="127.0.0.1"
+    +  enableLookups="false" redirectPort="8443" protocol="AJP/1.3" />
+
+Die Konfiguration des Tomcat ist nun beendet. Dieser lässt sich mit folgendem
+Kommando starten:
+
+    /etc/init.d/tomcat5.5 start
+
+-------------------------------------------------------------------------------
+Download/Installation Geo-Backend
+
+Die Installation des Geo-Backends benötigt neben dem Repository des Geo-Backends
+selbst noch eine weitere, aus denen Jar-Files für benötigt werden. Laden Sie sich
+also folgende Quellen herunter (${GNV} steht hier für das Verzeichnis, in das
+Sie die Quellen laden):
+
+    svn co /path/to/conterra-repo ${GNV}/conterra-repo
+    svn co /path/to/geo-backend/trunk ${GNV}/geo-backend
+
+Zuerst müssen die Bibliotheken installiert werden, von denen das Geo-Backend
+abhängig ist. Dazu folgende Befehle, die die Jar-Files in das lokale Maven
+Repository kopiert (in der Regel nach ~/.m2). Diese können später von Maven
+automatisch dazugeladen werden, wenn Abhängigkeiten zu ihnen bestehen:
+
+    cd ${GNV}/conterra-repo
+    mvn install:install-file -DgroupId=com.esri.sde -DartifactId=jsde_sdk \
+       -Dversion=9.2.5 -Dpackaging=jar -Dfile=conterra-repo/com/esri/sde/jsde_sdk/9.2.5/jsde_sdk-9.2.5.jar
+
+    mvn install:install-file -DgroupId=com.esri.sde -DartifactId=jpe_sdk  \
+       -Dversion=9.2.5 -Dpackaging=jar -Dfile=conterra-repo/com/esri/sde/jpe_sdk/9.2.5/jpe_sdk-9.2.5.jar
+
+    mvn install:install-file -DgroupId=com.ibm -DartifactId=icu4j \
+       -Dversion=3.2 -Dpackaging=jar -Dfile=conterra-repo/com/ibm/icu4j/3.2/icu4j-3.2.jar
+
+Danach wechselt man in das Verzeichnis des Geo-Backends und setzt folgende
+Maven Befehle ab, die die Quellen compilieren und ebenfalls in das lokale Maven
+Repository installieren: 
+
+    cd ${GNV}/geo-backend
+    mvn -Dmaven.test.skip=true clean compile package
+    mvn install:install-file \
+        -DgroupId=de.intevation.bsh.geo-backend \
+        -DartifactId=geo-backend \
+        -Dversion=1.0-SNAPSHOT \
+        -Dpackaging=jar \
+        -Dfile=target/geo-backend-1.0-SNAPSHOT.jar
+
+-------------------------------------------------------------------------------
+Download/Installation Artifact-Server
+
+Laden Sie die Quellen des Artefakt-Servers mit folgendem svn Befehl herunter:
+    
+    svn co /path/to/artifacts/trunk ${GNV}/artifacts
+
+Compilieren Sie die Quellen und installieren sie das Jar-File mit folgendem
+Befehl in das lokale Maven Repository:
+
+    cd ${GNV}/artifacts
+    mvn -Dmaven.test.skip=true clean compile install
+
+Zur Installation des Artefakt-Servers werden die Verzeichnisse
+/opt/artifacts/bin und /opt/artifacts/conf benötigt, in die die Start-Scripte
+und Konfigurationen kopiert werden:
+
+    mkdir -p /opt/artifacts/bin             (Ort für Startscripte)
+    mkdir /opt/artifacts/bin/lib            (Ort für benötigte Bibliotheken)
+    mkdir /opt/artifacts/conf               (Ort für die Konfiguration der Artefakte)
+    mkdir /opt/artifacts/artifact-database  (Ort der Artefakt-Datenbank)
+
+Kopieren Sie anschließend das Start-Script ${GNV}/artifacts/bin/run.sh nach
+/opt/artifacts/bin und geben dem Script Ausführrechte:
+    
+    cp ${GNV}/artifacts/bin/run.sh /opt/artifacts/bin
+    chmod 750 /opt/artifacts/bin
+
+-------------------------------------------------------------------------------
+Download/Installation GNV-Artefakte
+
+Laden Sie die Quellen der GNV-Artefakte folgendermaßen herunter:
+
+    svn co /path/to/gnv-artifacts/trunk ${GNV}/gnv-artifacts
+
+Compilieren Sie die Quellen mit folgendem Befehl (Abhängigkeiten werden
+automatisch aus dem lokalen Maven Repo geladen):
+
+    cd ${GNV}/gnv-artifacts
+    mvn -Dmaven.test.skip=true \
+      clean compile \
+      dependency:copy-dependencies \
+      package
+
+Setzen abschließend folgenden Befehl ab, der die benötigten Bibliotheken zu
+einem Zip-Archiv packt. Diese werden später im Artefakt-Server benötigt:
+
+    find target -name \*.jar -print | zip ${GNV}/libs.zip  -j -@
+
+-------------------------------------------------------------------------------
+Abschließende Konfiguration der Komponenten
+
+Entpacken Sie nun das erstellte Zip-Archiv nach /opt/artifacts/bin/lib :
+
+    unzip ${GNV}/libs.zip -d /opt/artifacts/bin/lib/
+
+Kopieren Sie die Konfiguration der Artefakte nach /opt/artifacts/conf :
+
+    cp -R ${GNV}/gnv-artifacts/doc/* /opt/artifacts/conf/
+
+Am Ende der Konfigurationsdatei /opt/artifacts/conf/conf.xml können
+Einstellungen der Datenbank vorgenommen werden. Ändern Sie dort den User in
+einen beliebigen Nutzer $USER und das Passwort in ein beliebiges Passwort
+$PASSWORT. Setzen Sie den Pfad der der Datenbank außerdem auf
+/opt/artifacts/artifact-database: 
+
+    vim /opt/artifacts/conf/conf.xml
+    - <user>USER</user>
+    - <password>PASSWORD</password>
+    - <!-- url>jdbc:h2:/opt/artifacts/artifacts/artifacts.db</url>
+
+    + <user>$USER</user>
+    + <password>$PASSWORD</password>
+    + <!-- url>jdbc:h2:/opt/artifacts/artifact-database/artifacts.db</url>
+
+
+Diese Einstellungen werden nun beim Anlegen der Datenbank benötigt. Dazu setzen
+Sie folgende Befehle ab und setzen an Stelle von $USER und $PASSWORD den von 
+ihnen konfigurierte Nutzer und entsprechendes Passwort sowie den Pfad zur 
+Datenbank ein:
+
+    cd /opt/artifacts
+    java -cp bin/lib/h2-1.1.117.jar org.h2.tools.RunScript \
+      -user $USER \
+      -password $PASSWORD \
+      -url jdbc:h2:artifact-database/artifacts.db \
+      -script ${GNV}/artifacts/artifact-database/doc/schema-h2.sql
+
+-------------------------------------------------------------------------------
+Start des GNV
+
+Sollten Sie den Apache2 Webserver bzw den Tomcat Server noch nicht gestartet
+haben, tun Sie dies nun. Desweiteren starten Sie den Artefakt-Server mit
+folgendem Befehl:
+
+    cd /opt/artifacts/bin
+    ./run.sh

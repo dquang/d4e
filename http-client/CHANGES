@@ -1,0 +1,41 @@
+2011-09-19      RELEASE 0.5
+
+    NEW:
+
+        * Performance improvements in ArtifactProtocolUtils.
+
+        * Improved the HttpClient interface and its default implementation:
+          enabled calling a service with a ResponseHandler.
+
+
+2011-06-27      RELEASE 0.4
+
+    New:
+
+    * Use thread local instances of the HTTP clients to re-use them.
+
+    * Use the Apache HTTP client extension of Restlet to handle HTTP requests.
+
+
+2011-05-13      RELEASE 0.3
+
+    New:
+
+    * Bumped Restlet version to 2.0.7
+
+    * Improved stream handling.
+
+
+2011-05-13      RELEASE 0.2
+
+    New:
+
+    * Enabled the Http-Client to support locales in requests. A client's
+      constructor takes the string representation of a locale and sets the
+      request's preferred locale.
+
+    * Added a method that triggers the ArtifactCollection's OUT operation and
+      returns the raw InputStream.
+
+
+2011-03-30      RELEASE 0.1

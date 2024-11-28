@@ -1,0 +1,39 @@
+============================
+COMPILATION AND INSTALLATION
+============================
+
+This project is based on Maven. To compile/install this client, just do:
+
+    mvn compile package
+
+The result will be an jar-archive in the ``target`` directory.
+
+If you want to use the contrib script ``run.sh`` (see below), you will need
+the jars of the dependencies as well. Therefore, just do:
+
+    mvn compile package dependency:copy-dependencies
+
+This command will compile the sources, build a jar of those and download the
+depending jar archives to ``target/dependency``.
+
+
+=============
+CONFIGURATION
+=============
+
+Currently, this client reads two configuration files:
+
+    - the artifact configuration (conf/demo-config.conf)
+    - the logging configuration (conf/log4j.properties)
+
+
+==================
+RUNNING THE CLIENT
+==================
+
+There is a bash script that might be used to
+start the console based client. Note, that you need the jars of the depending
+libraries in the ``target`` directory.
+
+    sh bin/run.sh
+

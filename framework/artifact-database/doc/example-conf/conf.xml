@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<artifact-database>
+    <!-- Change this! It's a very important security meassure to identify imports. -->
+    <export-secret>dMFhRZP4CYePgb1BSuVAhTnnh4kGGeENfe2YFyaq</export-secret>
+    <factories>
+        <context-factory>de.intevation.artifactdatabase.DefaultArtifactContextFactory</context-factory>
+        <collection-factory
+            name="dummy-1" description="dummy description 1" ttl="60000"
+            artifact-collection="de.intevation.artifactdatabase.DefaultArtifactCollection">de.intevation.artifactdatabase.DefaultArtifactCollectionFactory</collection-factory>
+        <artifact-factories>
+            <artifact-factory
+             name="dummy-1" description="dummy description 1" ttl="60000"
+             artifact="de.intevation.artifactdatabase.DefaultArtifact">de.intevation.artifactdatabase.DefaultArtifactFactory</artifact-factory>
+            <artifact-factory
+             name="dummy-2" description="dummy description 2" ttl="1800000"
+             artifact="de.intevation.artifactdatabase.DefaultArtifact">de.intevation.artifactdatabase.DefaultArtifactFactory</artifact-factory>
+            <artifact-factory
+             name="dummy-3" description="dummy description 3"
+             artifact="de.intevation.artifactdatabase.DefaultArtifact">de.intevation.artifactdatabase.DefaultArtifactFactory</artifact-factory>
+        </artifact-factories>
+        <service-factories>
+            <service-factory
+                name="first service"
+                service="de.intevation.artifactdatabase.DefaultService"
+                description="This is the first service">de.intevation.artifactdatabase.DefaultServiceFactory</service-factory>
+            <service-factory
+                name="second service"
+                service="de.intevation.artifactdatabase.DefaultService"
+                description="This is the second service">de.intevation.artifactdatabase.DefaultServiceFactory</service-factory>
+        </service-factories>
+        <user-factory
+            name="default-user-factory"
+            description="Factory to create new users">de.intevation.artifactdatabase.DefaultUserFactory</user-factory>
+    </factories>
+    <!-- configuration of the rest server -->
+    <rest-server>
+        <port>8181</port>
+        <listen>localhost</listen>
+    </rest-server>
+    <!-- garbage collection of outdated artifacts -->
+    <cleaner>
+        <sleep-time>60000</sleep-time>
+    </cleaner>
+    <database>
+        <user>USER</user>
+        <password>PASSWORD</password>
+        <!-- <url>jdbc:h2:artifacts.db</url> -->
+        <!-- <driver>org.h2.Driver</driver> -->
+        <!-- <sql></sql> -->
+    </database>
+</artifact-database>

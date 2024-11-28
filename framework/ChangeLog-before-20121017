@@ -1,0 +1,4094 @@
+2012-10-17	Felix Wolfsteller	<felix.wolfsteller@intevation.de>
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/state/FacetActivity.java:
+	  More documentation and debugging output.
+
+2012-10-16	Felix Wolfsteller	<felix.wolfsteller@intevation.de>
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/state/FacetActivity.java:
+	  Documentation of a somewhat important part.
+
+2012-10-08	Felix Wolfsteller	<felix.wolfsteller@intevation.de>
+
+	* flys-artifacts/src/main/java/de/intevation/flys/artifacts/access/ExtremeAccess.java,
+	  flys-artifacts/src/main/java/de/intevation/flys/artifacts/charts/TimeseriesStepChart.java,
+	  flys-artifacts/src/main/java/de/intevation/flys/utils/DoubleUtil.java:
+	  Doc.
+
+2012-10-06	Sascha L. Teichmann	<sascha.teichmann@intevation.de>
+
+	* artifacts-common/src/main/java/de/intevation/artifacts/common/utils/FileTools.java:
+	  Made extracting of zip archives more robust, lose file handles in case
+	  of error and fix a bug when creating sub dirs.
+
+2012-09-30	Björn Ricks	<bjoern.ricks@intevation.de>
+
+	* pom.xml: Comment out build number plugin
+	* .hgignore: First hgignore.
+
+2012-09-29	Björn Ricks	<bjoern.ricks@intevation.de>
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/Backend.java:
+	  Check if roles from database is null. Fix for issue849.
+
+2012-09-26	Björn Ricks	<bjoern.ricks@intevation.de>
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/state/AbstractState.java:
+	  New method addOutput to allow subclasses to add Output object manually.
+
+2012-09-17  Ingo Weinzierl <ingo@intevation.de>
+
+	Tagged RELEASE 2.9.1
+
+2012-09-10	Sascha L. Teichmann	<sascha.teichmann@intevation.de>
+
+	* artifacts/pom.xml, pom.xml: source 1.5 -> 1.6
+	  (@Override annotations for interface implementations is 1.6).
+
+2012-09-07	Björn Ricks	<bjoern.ricks@intevation.de>
+
+	* artifact-database/src/main/resources/sql/org-h2-driver.properties,
+	  artifact-database/src/main/resources/sql/org-postgresql-driver.properties:
+	  Fix queries for finding a user.
+
+2012-09-07  Ingo Weinzierl <ingo@intevation.de>
+
+	Tagged RELEASE 2.9
+
+2012-08-30	Felix Wolfsteller	<felix.wolfsteller@intevation.de>
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/state/DefaultSection.java:
+	  Use LinkedHashMap to keep insertion order of attributes.
+
+2012-08-27	Christian Lins	<christian.lins@intevation.de>
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/ArtifactDatabaseImpl.java,
+	  artifacts/src/main/java/de/intevation/artifacts/CallContext.java:
+	  Fix for NPE on empty user database.
+
+2012-08-24	Björn Ricks	<bjoern.ricks@intevation.de>
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/rest/RestApp.java,
+	  artifact-database/src/main/java/de/intevation/artifactdatabase/rest/FindUserResource.java:
+	  Add REST service to be able to find a user by its account name.
+
+2012-08-24	Björn Ricks	<bjoern.ricks@intevation.de>
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/ArtifactDatabaseImpl.java,
+	  artifacts/src/main/java/de/intevation/artifacts/ArtifactDatabase.java:
+	  Implement findUser method. The findUser method in ArtifactDatabase
+	  converts a User object into its XML representation.
+
+2012-08-24	Björn Ricks	<bjoern.ricks@intevation.de>
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/Backend.java,
+	  artifact-database/src/main/resources/sql/org-h2-driver.properties,
+	  artifact-database/src/main/resources/sql/org-postgresql-driver.properties:
+	  Implement method to find/get a user by its account name.
+
+2012-08-23	Björn Ricks	<bjoern.ricks@intevation.de>
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/ArtifactDatabaseImpl.java:
+	  Also add the account information when listing users.
+
+2012-08-23	Björn Ricks	<bjoern.ricks@intevation.de>
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/ArtifactDatabaseImpl.java:
+	  Add account information to createUser
+
+2012-08-23	Björn Ricks	<bjoern.ricks@intevation.de>
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/Backend.java:
+	  Read the account information from the database.
+
+2012-08-23	Björn Ricks	<bjoern.ricks@intevation.de>
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/LazyBackendUser.java,
+	  artifact-database/src/main/java/de/intevation/artifactdatabase/DefaultUserFactory.java,
+	  artifact-database/src/main/java/de/intevation/artifactdatabase/DefaultUser.java:
+	  Extend user class implementations to handle account information.
+
+2012-08-23	Björn Ricks	<bjoern.ricks@intevation.de>
+
+	* artifacts/src/main/java/de/intevation/artifacts/UserFactory.java,
+	  artifacts/src/main/java/de/intevation/artifacts/User.java:
+	  Extend user interfaces to handle account information.
+
+2012-08-23	Björn Ricks	<bjoern.ricks@intevation.de>
+
+	* artifact-database/src/main/resources/sql/org-h2-driver.properties,
+	  artifact-database/src/main/resources/sql/org-postgresql-driver.properties:
+	  Update sql user queries to add the account column.
+
+2012-08-23	Björn Ricks	<bjoern.ricks@intevation.de>
+
+	* artifact-database/doc/schema-pg.sql,
+	  artifact-database/doc/schema-h2.sql:
+	  Add a account column to the users table.
+
+2012-07-29	Sascha L. Teichmann	<sascha.teichmann@intevation.de>
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/state/FacetActivity.java:
+	  Refactored registry to use a Chain-of-responsibility pattern. This allows
+	  de-centralized facet activity treatment like in the facet producing states.
+
+2012-07-29	Sascha L. Teichmann	<sascha.teichmann@intevation.de>
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/state/FacetActivity.java:
+	  Made Registry.getInstance() access static.
+
+2012-07-29	Sascha L. Teichmann	<sascha.teichmann@intevation.de>
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/state/FacetActivity.java:
+	  New. Implementors of this interface can decide if a facet should be initially
+	  active or not. Contains a registry singleton.
+
+2012-07-27  Ingo Weinzierl <ingo@intevation.de>
+
+	Tagged trunk as '2.8.1'
+
+2012-07-19	Sascha L. Teichmann	<sascha.teichmann@intevation.de>
+
+	* artifacts-common/src/main/java/de/intevation/artifacts/common/utils/StringUtils.java:
+	  Added concat() to join two String arrays.
+
+2012-07-17	Felix Wolfsteller	<felix.wolfsteller@intevation.de>
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/DefaultArtifactCollection.java,
+	  artifact-database/src/main/java/de/intevation/artifactdatabase/state/AbstractState.java,
+	  artifact-database/src/main/java/de/intevation/artifactdatabase/AbstractCallContext.java,
+	  artifact-database/src/main/java/de/intevation/artifactdatabase/DefaultArtifactCollectionFactory.java,
+	  artifact-database/src/main/java/de/intevation/artifactdatabase/transition/TransitionEngine.java,
+	  artifact-database/src/main/java/de/intevation/artifactdatabase/ProtocolUtils.java,
+	  artifact-database/src/main/java/de/intevation/artifactdatabase/DatabaseCleaner.java:
+	  Doc fixes.
+
+2012-07-16  Ingo Weinzierl <ingo@intevation.de>
+
+	Tagged trunk as '2.8'
+
+2012-07-19	Sascha L. Teichmann	<sascha.teichmann@intevation.de>
+
+	* artifacts-common/src/main/java/de/intevation/artifacts/common/utils/StringUtils.java:
+	  Added concat() to join two String arrays.
+
+2012-07-17	Felix Wolfsteller	<felix.wolfsteller@intevation.de>
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/DefaultArtifactCollection.java,
+	  artifact-database/src/main/java/de/intevation/artifactdatabase/state/AbstractState.java,
+	  artifact-database/src/main/java/de/intevation/artifactdatabase/AbstractCallContext.java,
+	  artifact-database/src/main/java/de/intevation/artifactdatabase/DefaultArtifactCollectionFactory.java,
+	  artifact-database/src/main/java/de/intevation/artifactdatabase/transition/TransitionEngine.java,
+	  artifact-database/src/main/java/de/intevation/artifactdatabase/ProtocolUtils.java,
+	  artifact-database/src/main/java/de/intevation/artifactdatabase/DatabaseCleaner.java:
+	  Doc fixes.
+
+2012-07-16  Ingo Weinzierl <ingo@intevation.de>
+
+	Tagged trunk as '2.8'
+
+2012-07-15	Sascha L. Teichmann	<sascha.teichmann@intevation.de>
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/state/DefaultSettings.java,
+	  artifact-database/src/main/java/de/intevation/artifactdatabase/state/DefaultSection.java,
+	  artifacts/src/main/java/de/intevation/artifacts/DataProvider.java,
+	  artifacts/src/main/java/de/intevation/artifacts/ArtifactFactory.java:
+	  Removed same package imports.
+
+2012-07-03	Sascha L. Teichmann	<sascha.teichmann@intevation.de>
+
+	* artifacts-common/src/main/java/de/intevation/artifacts/common/utils/StringUtils.java:
+	  Added contains(String needle, String [] haystack) method.
+
+2012-07-03  Ingo Weinzierl <ingo@intevation.de>
+
+	* artifact-database/.settings/org.eclipse.jdt.core.prefs: Removed from
+	  version control (Eclipse configurations should not be in SVN!).
+
+2012-02-26	Felix Wolfsteller	<felix.wolfsteller@intevation.de>
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/ArtifactDatabaseImpl.java,
+	  artifact-database/src/main/java/de/intevation/artifactdatabase/rest/UserResource.java,
+	  artifact-database/src/main/java/de/intevation/artifactdatabase/DefaultArtifactContext.java:
+	  Cosmetics, doc.
+
+2012-06-23	Sascha L. Teichmann	<sascha.teichmann@intevation.de>
+
+	* artifact-database/src/main/java/de/intevation/**/*.java:
+	  Removed trailing whitespace.
+
+2012-06-05  Ingo Weinzierl <ingo@intevation.de>
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/Backend.java,
+	  artifact-database/src/main/java/de/intevation/artifactdatabase/DatabaseCleaner.java:
+	  Added some more debug output during the process of removing Artifacts
+	  and Collections with the DatabaseCleaner.
+
+2012-06-01	Sascha L. Teichmann	<sascha.teichmann@intevation.de>
+
+	* artifacts-common/src/main/java/de/intevation/artifacts/common/utils/XMLUtils.java:
+	  Remove extra <map></map> from the XML generated by JSON lists containing only 
+	  objects.
+
+2012-05-27  Ingo Weinzierl <ingo@intevation.de>
+
+	Tagged trunk as '2.7'
+
+2012-05-18  Ingo Weinzierl <ingo@intevation.de>
+
+	* artifacts-common/src/main/java/de/intevation/artifacts/common/utils/DateUtils.java:
+	  New utility class that provides functions that helps working with dates.
+
+2012-05-15  Ingo Weinzierl <ingo@intevation.de>
+
+	* artifacts-common/src/main/java/de/intevation/artifacts/common/model/KVP.java:
+	  New class to store generic keys and values.
+
+2012-05-07  Raimund Renkert <raimund.renkert@intevation.de>
+
+	* artifacts-common/src/main/java/de/intevation/artifacts/common/utils/XMLUtils.java:
+	  Added method to create a document from string.
+
+2012-05-03  Ingo Weinzierl <ingo@intevation.de>
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/state/State.java,
+	  artifact-database/src/main/java/de/intevation/artifactdatabase/state/AbstractState.java:
+	  Defined and implemented a method getHelpText().
+
+2012-05-02	Sascha L. Teichmann	<sascha.teichmann@intevation.de>
+
+	* artifacts-common/src/main/java/de/intevation/artifacts/common/utils/XSLTransformer.java:
+	  Widen parameters to store more than strings.
+
+2012-04-27	Sascha L. Teichmann	<sascha.teichmann@intevation.de>
+
+	* artifacts-common/src/main/java/de/intevation/artifacts/common/utils/JSON.java:
+	  Added toJSONString() method.
+
+	* artifacts-common/src/main/java/de/intevation/artifacts/common/utils/XMLUtils.java:
+	  Fixed building XML documents from JSON strings.
+	
+2012-04-25  Raimund Renkert <raimund.renkert@intevation.de>
+
+	* artifacts-common/src/main/java/de/intevation/artifacts/common/utils/FileTools.java:
+	  Added method to extract zip archives to a specified directory.
+
+2012-04-19	Sascha L. Teichmann	<sascha.teichmann@intevation.de>
+
+	* artifacts-common/src/main/java/de/intevation/artifacts/common/utils/XSLTransformer.java:
+	  New. Added new XSLT processor similiar to old GNV one.
+
+2012-04-18	Sascha L. Teichmann	<sascha.teichmann@intevation.de>
+
+	* artifacts-common/src/main/java/de/intevation/artifacts/common/utils/JSON.java:
+	  New. JSON parser from Artefact Server NG (which relies on JSON more heavily).
+
+	* artifacts-common/src/main/java/de/intevation/artifacts/common/utils/XMLUtils.java:
+	  Added method to convert JSON to XML. This is needed by the client which
+	  internally uses JSON to talk to the server which services only understands
+	  XML atm.
+	
+2012-04-04	Sascha L. Teichmann	<sascha.teichmann@intevation.de>
+
+	Modified services so that they are now able to return more than just
+	XML documents. Needed if you want to return e.g. a PNG image from a service.
+
+	* artifacts/src/main/java/de/intevation/artifacts/Service.java:
+	  A service now returns a tuple (data, MIME type).
+
+	* artifacts/src/main/java/de/intevation/artifacts/ArtifactDatabase.java,
+	  artifact-database/src/main/java/de/intevation/artifactdatabase/ArtifactDatabaseImpl.java:
+	  Adjusted calls.
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/DefaultService.java:
+	  Returns a DefaultService.Output by default.
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/XMLService.java: New.
+	  Convenience sub class if DefaultService to produce XML documents. Old
+	  Services should derive from this class now to main compatibility.
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/rest/ServiceResource.java:
+	  Adjusted to handle the new Output tuples.
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/rest/ByteArrayRepresentation.java:
+	  New. Wraps a byte array as a Restlet representation.
+
+2012-03-30  Ingo Weinzierl <ingo@intevation.de>
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/state/DefaultOutput.java:
+	  Avoid adding duplicated facets into the output in addFacet().
+
+2012-02-10	Felix Wolfsteller	<felix.wolfsteller@intevation.de>
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/state/Facet.java,
+	  artifact-database/src/main/java/de/intevation/artifactdatabase/state/ArtifactAndFacet.java,
+	  artifact-database/src/main/java/de/intevation/artifactdatabase/state/DefaultFacet.java:
+	  Pass context when asking facet for keys to write on 'blackboard'.
+
+2012-02-09  Ingo Weinzierl <ingo@intevation.de>
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/state/ArtifactAndFacet.java:
+	  Added a method setFacetDescription() which sets an alternative
+	  description for the facet. getFacetDescription() will now return the
+	  Facet's descritpion itself if no alternative description has been set;
+	  otherwise the alternative description.
+
+012-02-09	Sascha L. Teichmann	<sascha.teichmann@intevation.de>
+
+	* artifacts-common/src/main/java/de/intevation/artifacts/common/utils/StringUtils.java(join):
+	  Added static method to join strings with a separator.
+
+012-01-30	Sascha L. Teichmann	<sascha.teichmann@intevation.de>
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/state/ArtifactAndFacet.java:
+	  Added Override annotations.
+
+2012-01-30  Ingo Weinzierl <ingo@intevation.de>
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/state/StateEngine.java:
+	  Added a method that returns a StateData objects of a specific Artifact
+	  based on the Artifact's StateData's name.
+
+2012-01-30  Ingo Weinzierl <ingo@intevation.de>
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/state/AbstractState.java:
+	  Bugfix: search for StateData objects by name only the State has
+	  StateData objects set.
+
+2012-01-30  Ingo Weinzierl <ingo@intevation.de>
+
+	* artifacts-common/src/main/java/de/intevation/artifacts/common/utils/ClientProtocolUtils.java:
+	  Added methods to extract the default value for a min and max item.
+
+2012-01-18  Ingo Weinzierl <ingo@intevation.de>
+
+	* artifacts-common/src/main/java/de/intevation/artifacts/common/utils/ClientProtocolUtils.java:
+	  Added methods to retrieve the min and max values of a data item.
+
+2012-01-16	Sascha L. Teichmann	<sascha.teichmann@intevation.de>
+
+	* artifacts-common/src/main/java/de/intevation/artifacts/common/utils/FileTools.java:
+	  Replaced legacy java.util.Stack with java.util.Deque.
+
+2012-01-16	Felix Wolfsteller	<felix.wolfsteller@intevation.de>
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/state/AbstractState.java,
+	  artifact-database/src/main/java/de/intevation/artifactdatabase/state/DefaultFacet.java,
+	  artifact-database/src/main/java/de/intevation/artifactdatabase/DefaultArtifact.java,
+	  artifact-database/src/main/java/de/intevation/artifactdatabase/DefaultArtifactCollectionFactory.java,
+	  artifacts-common/src/main/java/de/intevation/artifacts/common/utils/ClientProtocolUtils.java,
+	  artifacts-common/src/main/java/de/intevation/artifacts/common/utils/XMLUtils.java:
+	  Cosmetics.
+
+2012-01-11	Sascha L. Teichmann	<sascha.teichmann@intevation.de>
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/AbstractCallContext.java:
+	  Instance vars customValues and dataProviders are now of type Map 
+	  and not HashMap.
+
+2012-01-09  Ingo Weinzierl <ingo@intevation.de>
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/state/State.java,
+	  artifact-database/src/main/java/de/intevation/artifactdatabase/state/AbstractState.java:
+	  Added the owner Artifact as further parameter to initialize().
+
+2012-01-09  Ingo Weinzierl <ingo@intevation.de>
+
+	* artifacts-common/src/main/java/de/intevation/artifacts/common/utils/FileTools.java:
+	  Added new functions to copy files (copyFile()) and to copy directories
+	  (copyDirectory()).
+
+2012-01-09  Ingo Weinzierl <ingo@intevation.de>
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/state/State.java,
+	  artifact-database/src/main/java/de/intevation/artifactdatabase/state/AbstractState.java:
+	  Added an initialize() method which might be used to initialize the State
+	  based on model Artifact.
+
+2011-12-16	Felix Wolfsteller	<felix.wolfsteller@intevation.de>
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/AbstractCallContext.java:
+	  (getDataProvider): Never return null.
+
+2011-12-16  Ingo Weinzierl <ingo@intevation.de>
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/state/Output.java,
+	  artifact-database/src/main/java/de/intevation/artifactdatabase/state/DefaultOutput.java:
+	  Added a new method setFacets(List<Facet>) to replace an existing list of
+	  Facets.
+
+2011-12-14  Ingo Weinzierl <ingo@intevation.de>
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/state/Attribute.java:
+	  Added a setValue(Object) method and modified the signature of toXML()
+	  which now returns a Node.
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/state/DefaultAttribute.java:
+	  New. A default implementation of Attribute.
+
+2011-12-14  Ingo Weinzierl <ingo@intevation.de>
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/state/Settings.java:
+	  Added a removeSection(Section) method.
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/state/Section.java:
+	  Improved the interface to allow section having subsections. Therefore,
+	  addSubsection(Section), getSubsectionCount() and getSubsection(int) have
+	  been added. In addition, a getId() method has been added which is used
+	  in toXML() to create a new DOM Node. The Node name is the result of
+	  getId().
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/state/DefaultSettings.java,
+	  artifact-database/src/main/java/de/intevation/artifactdatabase/state/DefaultSection.java:
+	  Default implementations for Settings and Section.
+
+2011-12-14  Ingo Weinzierl <ingo@intevation.de>
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/state/Settings.java:
+	  An interface that describes a flat API for specifying settings for
+	  something. A Settings object can store one or more Section instances and
+	  defines a toXML() operation that should append a XML representation of
+	  itself to a given parent Node.
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/state/Section.java:
+	  This interface is used to describe an API for storing and retrieving
+	  Attribute objects. Just as the Settings interface, it defines a toXML()
+	  operation that should append a XML representation of itself to a given
+	  parent Node.
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/state/Attribute.java:
+	  The interface for concrete attributes in a Section instance. An Attribute
+	  is the placed on the lowest level of the Settings hierachy and should be
+	  used to save concrete key value pairs. Even the Attribute defines the
+	  toXML() operation described above.
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/state/Output.java:
+	  Added a getSettings() and setSettings(Settings) operation.
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/state/DefaultOutput.java:
+	  A DefaultOutput is now able to store a Settings instance. It implements
+	  getSettings() and setSettings(Settings) defined in the Output interface.
+
+2011-12-09	Felix Wolfsteller	<felix.wolfsteller@intevation.de>
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/state/Facet.java,
+	  artifact-database/src/main/java/de/intevation/artifactdatabase/state/DefaultFacet.java:
+	  (getDataProviderKeys): Added parameter artifact.
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/state/ArtifactAndFacet.java:
+	  Pass artifact to changed getDataProviderKeys of Facet.
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/AbstractCallContext.java:
+	  (getDataProvider): Never return null, empty list instead.
+
+2011-11-30	Felix Wolfsteller	<felix.wolfsteller@intevation.de>
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/state/ArtifactAndFacet.java
+	  (getFacetDescription): New, access facets description.
+
+2011-11-30	Felix Wolfsteller	<felix.wolfsteller@intevation.de>
+
+	Added convenienve bundle of artifact and facet that implements
+	DataProvider. This will help keeping things together in the upcoming
+	inter-facet pre-rendering communication ('blackboard') phase.
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/state/ArtifactAndFacet.java:
+	  New class, keeping together an artifact and a facet (thus, should
+	  only have a short live span). Only implementation of the new
+	  DataProvider interface.
+
+2011-11-30	Felix Wolfsteller	<felix.wolfsteller@intevation.de>
+
+	Extended CallContext to also act as a blackboard/service broker.
+
+	* artifacts/src/main/java/de/intevation/artifacts/CallContext.java
+	  (getDataProvider,registerDataProvider): New functions to register/
+	  consume data providers.
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/AbstractCallContext.java
+	  (getDataProvider,registerDataProvider): Implemented.
+
+2011-11-30	Felix Wolfsteller	<felix.wolfsteller@intevation.de>
+
+	Added DataProvider interface that defines api for inter-facet
+	communication.
+
+	* artifacts/src/main/java/de/intevation/artifacts/DataProvider.java:
+	  New interface to prepare inter-facet pre-rendering communication
+	  phase ('blackboard').
+
+2011-11-30	Felix Wolfsteller	<felix.wolfsteller@intevation.de>
+
+	Prepare inter-facet pre-rendering communication ('blackboard') phase.
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/state/Facet.java
+	  (getDataProviderKeys,provideBlackboardData): Extended interface to
+	  allow easy integration of blackboard mechanism (inter-facet
+	  pre-rendering communication).
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/state/DefaultFacet.java
+	  (getDataProviderKeys,provideBlackboardData): Trivial implementation.
+	  The DefaultFacet will not talk to other facets during inter-facet
+	  pre-rendering ("blackboard") phase. Cosmetics, docs.
+
+2011-11-21  Ingo Weinzierl <ingo@intevation.de>
+
+	* artifacts-common/src/main/java/de/intevation/artifacts/common/utils/XMLUtils.java:
+	  Changed Ingo's last commit to a more conservative notation (no auto-boxing).
+	  Strangely the flys-client does not compile for me with the auto-boxed
+	  syntax with OpenJDK!
+
+2011-11-21  Ingo Weinzierl <ingo@intevation.de>
+
+	* artifacts-common/src/main/java/de/intevation/artifacts/common/utils/XMLUtils.java:
+	  Added a method that allows to specify if the document needs to be
+	  namespace aware or not while parsing from InputStream.
+
+2011-11-07  Ingo Weinzierl <ingo@intevation.de>
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/ArtifactDatabaseImpl.java,
+	  artifact-database/src/main/java/de/intevation/artifactdatabase/FactoryBootstrap.java:
+	  Enabled "post-describe" hooks for the Artifact's describe operation.
+
+2011-10-28	Felix Wolfsteller	<felix.wolfsteller@intevation.de>
+
+	Let StateEngine compute a compatibiliy matrix based on given State
+	IDs.
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/state/StateEngine.java
+	  (getCompatibleFacets): New. Compute output/facet compatibility
+	  matrix based on given states.
+
+2011-10-21  Ingo Weinzierl <ingo@intevation.de>
+
+	* artifact-database/src/main/resources/sql/org-h2-driver.properties:
+	  Bugfix: added missing bracket to an sql statement.
+
+2011-10-20	Sascha L. Teichmann	<sascha.teichmann@intevation.de>
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/Backend.java(getMasterArtifact):
+	  Limit result set to one row.
+
+2011-10-19	Felix Wolfsteller	<felix.wolfsteller@intevation.de>
+
+	Fix accidentally corruptd key to sql statement.
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/Backend.java:
+	  Fix key.
+
+2011-10-19	Felix Wolfsteller	<felix.wolfsteller@intevation.de>
+
+	Add backend and db functionality query artifact which is belongs to
+	a collection the longest (not neccessary the longest artifact itself).
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/ArtifactDatabaseImpl.java
+	  (getCollectionsMasterArtifact): New. Access master artifact for
+	   given collection (masterartifact defined as artifact which belongs
+	   to the collection the longest).
+
+	* artifacts/src/main/java/de/intevation/artifacts/ArtifactDatabase.java
+	  (getCollectionsMasterArtifact): New (extended interface).
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/Backend.java
+	 (getMasterArtifact): New, get UUID of oldest artifact which belongs to
+	 collection the longest.
+
+	* artifact-database/src/main/resources/sql/org-h2-driver.properties,
+	  artifact-database/src/main/resources/sql/org-postgresql-driver.properties:
+	  Added SQL query to get list of artifacts in collection sorted by the
+	  entry date.
+
+2011-10-17	Sascha L. Teichmann	<sascha.teichmann@intevation.de>
+
+	* artifacts-common/src/main/java/de/intevation/artifacts/common/utils/StringUtils.java(toUpperCase):
+	  Added static method to convert an array of string to their uppercase counterparts.
+	  
+2011-10-13	Felix Wolfsteller	<felix.wolfsteller@intevation.de>
+
+	* artifacts-common/src/main/java/de/intevation/artifacts/common/utils/ClientProtocolUtils.java:
+	(newRemoveArtifactDocument): New, create a "remove artifact" document.
+	Cosmetics, docs.
+
+2011-10-13	Felix Wolfsteller	<felix.wolfsteller@intevation.de>
+
+	* artifact-database/src/main/resources/sql/org-h2-driver.properties,
+	  artifact-database/src/main/resources/sql/org-postgresql-driver.properties:
+	  Fix SQL typo.
+
+2011-10-10	Felix Wolfsteller	<felix.wolfsteller@intevation.de>
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/DefaultArtifactCollection.java:
+	  Cosmetics, (shortened jdoc comments).
+
+	* artifacts-common/src/main/java/de/intevation/artifacts/common/utils/XMLUtils.java:
+	  Cosmetics, (shortened jdoc comments). Also, removed
+	  toString(Element), instead fixed toString(Node) - Node is
+	  superinterface of Element.
+
+2011-10-07	Sascha L. Teichmann	<sascha.teichmann@intevation.de>
+
+	Fixed flys/issue255
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/db/DBConnection.java(getDataSource()):
+	  Serialized the loading of database drivers.
+
+2011-09-23	Felix Wolfsteller	<felix.wolfsteller@intevation.de>
+
+	Fix debug helper toString(Node).
+
+	* artifacts-common/src/main/java/de/intevation/artifacts/common/utils/XMLUtils.java:
+	  (toString(Node)): Fix issue with node from "wrong" document.
+
+2011-09-23	Felix Wolfsteller	<felix.wolfsteller@intevation.de>
+
+	Added XMLUtils functions helping to debug parts of xml documents.
+
+	* artifacts-common/src/main/java/de/intevation/artifacts/common/utils/XMLUtils.java:
+	  (toString(Node), toString(Element): New functions returning
+	  xml/string representations of parts of documents.
+
+2011-09-22  Ingo Weinzierl <ingo@intevation.de>
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/ArtifactDatabaseImpl.java:
+	  Removed useless CollectionCallContext creation (was never used).
+
+2011-09-19  Ingo Weinzierl <ingo@intevation.de>
+
+	Tagged RELEASE 1.4
+
+	* Changes: Prepared changes for the release.
+
+2011-09-09  Ingo Weinzierl <ingo@intevation.de>
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/ArtifactDatabaseImpl.java:
+	  Artifacts and Collections that started a background process might add
+	  Messages to a message board now. They (currently just implemented for
+	  the Artifact) can add new messages and receive a list of messages via
+	  the CallContext objects. If an Artifact or Collection instance is
+	  removed from background, all its messages are removed as well.
+
+	* artifacts/src/main/java/de/intevation/artifacts/Message.java: New. The
+	  message interface. Currently, there is just a single getText() method
+	  defined.
+
+	* artifacts/src/main/java/de/intevation/artifacts/CallContext.java: Got
+	  two new methods to add new messages and retrieve a list of messages to
+	  the background messages.
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/CollectionCallContext.java,
+	  artifact-database/src/main/java/de/intevation/artifactdatabase/ArtifactCallContext.java:
+	  Implement the new methods to add/get messages defined in CallContext.
+	  The CollectionCallContext just defines the two methods without real
+	  implementation (stub).
+
+2011-09-07  Ingo Weinzierl <ingo@intevation.de>
+
+	* artifacts/src/main/java/de/intevation/artifacts/CallContext.java,
+	  artifact-database/src/main/java/de/intevation/artifactdatabase/CollectionCallContext.java,
+	  artifact-database/src/main/java/de/intevation/artifactdatabase/ArtifactCallContext.java:
+	  The CallContext got a new method isInBackground() that determines, if
+	  the Artifact or Collection (currently not implemented) has started a
+	  background thread and is locked.
+
+2011-08-25  Ingo Weinzierl <ingo@intevation.de>
+
+	* artifacts-common/src/main/java/de/intevation/artifacts/common/utils/FileTools.java:
+	  New. A utility class for working with Files.
+
+2011-08-25	Sascha L. Teichmann	<teichmann@intevation.de>
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/ArtifactDatabaseImpl.java
+	  (outCollection): Called context listener too early before deferred out. This
+	  led to broken DB sessions.
+
+2011-08-25  Ingo Weinzierl <ingo@intevation.de>
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/state/State.java,
+	  artifact-database/src/main/java/de/intevation/artifactdatabase/state/AbstractState.java:
+	  Enhanced the State interface with a endOfLife() method; the default
+	  implementation in AbstractState is empty.
+
+2011-08-25	Felix Wolfsteller	<felix.wolfsteller@intevation.de>
+
+	Minor cosmetics.
+
+	* artifacts/src/main/java/de/intevation/artifacts/Artifact.java:
+	  Corrected signature in link in comment, whitespace.
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/rest/ArtifactResource.java:
+	  Punctuation, whitespace in comment.
+
+2011-08-24	Sascha L. Teichmann	<teichmann@intevation.de>
+
+	* artifacts-common/src/main/java/de/intevation/artifacts/common/utils/ClientProtocolUtils.java:
+	  Write filters to create document if they are given.
+
+	* artifacts-common/src/main/java/de/intevation/artifacts/common/utils/CreationFilter.java:
+	  New. Model for the creation filter.
+
+2011-08-24  Ingo Weinzierl <ingo@intevation.de>
+
+	* artifacts-common/src/main/java/de/intevation/artifacts/common/utils/ClientProtocolUtils.java:
+	  Renamed an attribute in the document to create new Artifacts.
+
+2011-08-24  Ingo Weinzierl <ingo@intevation.de>
+
+	* artifacts-common/src/main/java/de/intevation/artifacts/common/utils/MapXPathVariableResolver.java:
+	  New. An XPathVariableResolver instance that stores its variables in a
+	  Map.
+
+	* artifacts-common/src/main/java/de/intevation/artifacts/common/utils/XMLUtils.java:
+	  Added support for variables in xpath expressions. There is a new xpath()
+	  method that takes a Map<String,String> that stores the required
+	  variables.
+
+2011-08-22	Sascha L. Teichmann	<teichmann@intevation.de>
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/state/Facet.java,
+	  artifact-database/src/main/java/de/intevation/artifactdatabase/state/DefaultFacet.java:
+	  Added a deepCopy() method to make them cloneable (Not using java.lang.Cloneable for this).
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/data/DefaultStateData.java,
+	  artifact-database/src/main/java/de/intevation/artifactdatabase/data/StateData.java:
+	  Implement the changed interfaces.
+
+2011-08-22	Sascha L. Teichmann	<teichmann@intevation.de>
+
+	* artifact-database/pom.xml: Bumped PostgreSQL driver from 
+	  8.3-603.jdbc4 up to 8.4-702.jdbc4 (same as flys-backend).
+
+2011-08-10	Sascha L. Teichmann	<teichmann@intevation.de>
+
+	* artifacts/src/main/java/de/intevation/artifacts/ArtifactDatabase.java,
+	  artifact-database/src/main/java/de/intevation/artifactdatabase/Backend.java:
+	  Extract the collection and artifact creation times when doing the initial
+	  scan, too.
+
+	* artifact-database/src/main/resources/sql/org-h2-driver.properties,
+	  artifact-database/src/main/resources/sql/org-postgresql-driver.properties:
+	  Adjusted the SQL statements.
+
+2011-08-08	Sascha L. Teichmann	<teichmann@intevation.de>
+
+	* artifact-database/src/main/resources/sql/org-h2-driver.properties:
+	  Fixed H2 SQL to set TTL of collection.
+
+2011-08-02	Sascha L. Teichmann	<teichmann@intevation.de>
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/Backend.java:
+	  Swapped SQL parameter indices when fetching collection name.
+
+2011-08-02	Sascha L. Teichmann	<teichmann@intevation.de>
+
+	* artifacts/src/main/java/de/intevation/artifacts/ArtifactDatabase.java:
+	  Change the ArtifactLoadedCallback interface to take the name of the
+	  collection, too.
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/Backend.java:
+	  Fetches the collection name, too.
+
+	* artifact-database/src/main/resources/sql/org-h2-driver.properties,
+	  artifact-database/src/main/resources/sql/org-postgresql-driver.properties:
+	  Adjusted SQL statements.
+
+2011-08-02	Sascha L. Teichmann	<teichmann@intevation.de>
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/DefaultUser.java:
+	  Added constructor only with the identifier of the owner.
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/Backend.java:
+	  Added dummy user to fresh created collection to have it accessible in the
+	  listeners.
+	
+2011-08-02	Sascha L. Teichmann	<teichmann@intevation.de>
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/DatabaseCleaner.java:
+	  Generate kill events if and only if there were killed collections or artifacts.
+
+2011-08-02	Sascha L. Teichmann	<teichmann@intevation.de>
+
+	* artifact-database/src/main/resources/sql/org-h2-driver.properties,
+	  artifact-database/src/main/resources/sql/org-postgresql-driver.properties:
+	  Return uuid in statements used by database cleaner, too.
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/BackendListener.java,
+	  artifact-database/src/main/java/de/intevation/artifactdatabase/DefaultBackendListener.java:
+	  Two new methods to reports a list of external killed collections and artifacts.
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/Backend.java:
+	  Broadcast the lists of externally killed collections and artifacts to the listeners.
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/DatabaseCleaner.java:
+	  Fire lists of deleted collections and artifacts to backend.
+
+2011-08-01	Sascha L. Teichmann	<teichmann@intevation.de>
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/ArtifactDatabaseImpl.java:
+	  Reorganized code a bit.
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/Backend.java: Added some
+	  debug output. Handle forgotten store/create event source.
+
+2011-08-01	Sascha L. Teichmann	<teichmann@intevation.de>
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/Backend.java:
+	  Fixed NPE.
+
+2011-08-01	Sascha L. Teichmann	<teichmann@intevation.de>
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/FactoryBootstrap.java:
+	  Made BackListeners loadable at boot time. To be configured with XPATH
+	  '/artifact-database/backend-listeners/listener'.
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/ArtifactDatabaseImpl.java,
+	  artifact-database/src/main/java/de/intevation/artifactdatabase/BackendListener.java,
+	  artifact-database/src/main/java/de/intevation/artifactdatabase/DefaultBackendListener.java,
+	  artifact-database/src/main/java/de/intevation/artifactdatabase/Backend.java:
+	  Wired listeners to backend.
+
+2011-08-01	Sascha L. Teichmann	<teichmann@intevation.de>
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/BackendListener.java,
+	  artifact-database/src/main/java/de/intevation/artifactdatabase/DefaultBackendListener.java:
+	  Completed interface and the trival implementation.
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/Backend.java:
+	  Call the listeners for the new defined events.
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/BackendListener.java:
+	  New. Interface to listener for backend events. TODO: Implement more
+	  events.
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/DefaultBackendListener.java:
+	  New. Trivial implementation of BackendListener.
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/Backend.java:
+	  Added list of backend listeners. TODO: Add them at boot time.
+
+2011-07-31	Sascha L. Teichmann	<teichmann@intevation.de>
+
+	* artifact-database/pom.xml: Bumped Apache DBCP up to 1.4
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/db/DBConnection.java:
+	  Use real pooling to void races. Maybe it needs more configuration options!?
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/Backend.java: Removed
+	  superfluous imports.
+
+2011-07-31	Sascha L. Teichmann	<teichmann@intevation.de>
+
+	* artifact-database/src/main/resources/sql/org-h2-driver.properties,
+	  artifact-database/src/main/resources/sql/org-postgresql-driver.properties:
+	  Fixed broken SQL statement.
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/ArtifactDatabaseImpl.java,
+	  artifact-database/src/main/java/de/intevation/artifactdatabase/db/DBConnection.java,
+	  artifact-database/src/main/java/de/intevation/artifactdatabase/Backend.java: Added
+	  debug output.
+
+2011-07-31	Sascha L. Teichmann	<teichmann@intevation.de>
+
+	Make artifact server bootable again.
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/FactoryBootstrap.java:
+	  Fixed NPE.
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/db/SQL.java: Fixed NPE.
+	  Added some debug output.
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/Backend.java: Fixed
+	  SQL key name. That was broken for long but not recognized.
+	
+2011-07-28	Sascha L. Teichmann	<teichmann@intevation.de>
+
+	* artifacts-common/src/main/java/de/intevation/artifacts/common/utils/LRUCache.java:
+	  New. Simple LRU cache based on java.util.LinkedHashMap.
+
+2011-07-28	Sascha L. Teichmann	<teichmann@intevation.de>
+
+	Refactorized the usage of dialect independent SQL to be reusable.
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/db/SQL.java,
+	  artifact-database/src/main/java/de/intevation/artifactdatabase/db/DBConnection.java,
+	  artifact-database/src/main/java/de/intevation/artifactdatabase/db/SQLExecutor.java:
+	  New. Generalized versions to make code reusable for datacage.
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/DBConnection.java,
+	  artifact-database/src/main/java/de/intevation/artifactdatabase/SQL.java,
+	  artifact-database/src/main/java/de/intevation/artifactdatabase/SQLExecutor.java:
+	  Deleted.
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/DBConfig.java:
+	  New. Centralizes the SQL database configuration of the backend.
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/App.java,
+	  artifact-database/src/main/java/de/intevation/artifactdatabase/h2/CollectionAccessUpdateTrigger.java,
+	  artifact-database/src/main/java/de/intevation/artifactdatabase/Backend.java,
+	  artifact-database/src/main/java/de/intevation/artifactdatabase/DatabaseCleaner.java:
+	  A lot of adjustment to make the new infrastructure work. Needs heavy testing!
+
+2011-07-27	Sascha L. Teichmann	<teichmann@intevation.de>
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/LifetimeListener.java:
+	  New. Interface instances of are called when system is up and is going down.
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/FactoryBootstrap.java:
+	  Load lifetime listeners from configuration. XPATH
+	  /artifact-database/lifetime-listeners/listeners/text()
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/ArtifactDatabaseImpl.java:
+	  Call the listeners after start up and before shutdown.
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/App.java:
+	  Trigger the start of the artifact database explicitly when the boot process
+	  is finished.
+
+2011-07-27	Sascha L. Teichmann	<teichmann@intevation.de>
+
+	* artifacts/src/main/java/de/intevation/artifacts/ArtifactDatabase.java:
+	  Added a method loadAllArtifacts() to load all artifacts which are in
+	  a collection and have an owner. The loaded artifacts are passed one by
+	  one to an instance of the interface ArtifactLoadedCallback.
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/ArtifactDatabaseImpl.java:
+	  Adjusted to implement the interface.
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/Backend.java:
+	  Load the artifacts from the SQL backend.
+
+	* artifact-database/src/main/resources/sql/org-h2-driver.properties,
+	  artifact-database/src/main/resources/sql/org-postgresql-driver.properties:
+	  Added statements to load all the artifacts.
+
+2011-07-26	Sascha L. Teichmann	<teichmann@intevation.de>
+
+	* artifact-database/pom.xml: Bumped H2 version up to latest stable 1.3.158
+
+2011-07-22	Sascha L. Teichmann	<teichmann@intevation.de>
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/StringUtils.java,
+	  artifacts-common/src/main/java/de/intevation/artifacts/common/utils/StringUtils.java:
+	  Moved StringUtils to common package.
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/ArtifactDatabaseImpl.java,
+	  artifact-database/src/main/java/de/intevation/artifactdatabase/FactoryBootstrap.java,
+	  artifact-database/src/main/java/de/intevation/artifactdatabase/Backend.java,
+	  artifact-database/src/main/java/de/intevation/artifactdatabase/DatabaseCleaner.java:
+	  Adjusted imports.
+
+	* artifacts-common/pom.xml, artifact-database/pom.xml: Moved dependency to Apache codec
+	  to other package.
+
+	* artifacts/src/main/java/de/intevation/artifacts/ArtifactNamespaceContext.java:
+	  Added Override annotations (forgot to commit last time).
+
+2011-07-21  Ingo Weinzierl <ingo@intevation.de>
+
+	* artifacts-common/src/main/java/de/intevation/artifacts/common/utils/ClientProtocolUtils.java:
+	  New CREATE documents for Artifact creation might contain db-ids now.
+
+2011-07-21	Sascha L. Teichmann	<teichmann@intevation.de>
+
+	* artifacts/src/main/java/de/intevation/artifacts/Service.java,
+	  artifacts/src/main/java/de/intevation/artifacts/ServiceFactory.java:
+	  Services now take GlobalContext on setup and process.
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/DefaultService.java,
+	  artifact-database/src/main/java/de/intevation/artifactdatabase/DefaultServiceFactory.java:
+	  Adusted and added Override annotations.
+
+2011-07-21	Sascha L. Teichmann	<teichmann@intevation.de>
+
+	* artifacts/src/main/java/de/intevation/artifacts/ArtifactNamespaceContext.java:
+	  Made it more compatible with mixed namespaces and mixtures of namespaces
+	  and no namespaces.
+
+	* artifacts/pom.xml: Set Java compatibility to 1.5. Why isn't this inherited
+	  from main pom.xml? The artifact-database module uses 1.5 features but does
+	  not need any extra configuration.
+
+2011-07-20  Ingo Weinzierl <ingo@intevation.de>
+
+	* artifacts/src/main/java/de/intevation/artifacts/Artifact.java,
+	  artifact-database/src/main/java/de/intevation/artifactdatabase/DefaultArtifact.java:
+	  Added a parameter of type CallMeta to the signature of setup(). The
+	  CallMeta object is required for i18n initial things.
+
+	  !! NOTE: This modification breaks the current API !!
+
+	* artifacts/src/main/java/de/intevation/artifacts/ArtifactFactory.java,
+	  artifact-database/src/main/java/de/intevation/artifactdatabase/DefaultArtifactFactory.java:
+	  Call Artifact.setup() with an instance of CallMeta.
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/ArtifactDatabaseImpl.java:
+	  The createArtifact() method got a CallMeta instance which is necessary
+	  to call Artifact.setup().
+
+2011-07-19  Ingo Weinzierl <ingo@intevation.de>
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/state/Output.java,
+	  artifact-database/src/main/java/de/intevation/artifactdatabase/state/DefaultOutput.java:
+	  Added a method to add a list of Facets.
+
+2011-07-18  Ingo Weinzierl <ingo@intevation.de>
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/state/Facet.java,
+	  artifact-database/src/main/java/de/intevation/artifactdatabase/state/DefaultFacet.java:
+	  A facet can write its internal representation to XML using a public
+	  method toXML(Document).
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/ProtocolUtils.java:
+	  Facets are appended using its toXML() method. Concrete facets can now
+	  change its xml representation.
+
+2011-07-14  Ingo Weinzierl <ingo@intevation.de>
+
+	* artifacts/src/main/java/de/intevation/artifacts/Hook.java: The Hook's
+	  execute() method is called with a Document now.
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/ArtifactDatabaseImpl.java:
+	  The hooks that are called after feed() and advance() are called with the
+	  documents which are returned by those operations.
+
+2011-07-14  Ingo Weinzierl <ingo@intevation.de>
+
+	* artifacts/src/main/java/de/intevation/artifacts/GlobalContext.java: New.
+	  An interface for global context objects. It defines two basic operations
+	  to put objects into the context and to retrieve objects from context.
+
+	* artifacts/src/main/java/de/intevation/artifacts/ArtifactDatabase.java:
+	  Added a method that returns an instance of an Artifact with one
+	  limitation: the internal state of this artifact is not persisted to
+	  database!
+
+	* artifacts-common/src/main/java/de/intevation/artifacts/common/utils/ClientProtocolUtils.java:
+	  Added a method that creates a document used to create new Artifacts with
+	  the UUID of another one.
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/ArtifactDatabaseImpl.java,
+	  artifact-database/src/main/java/de/intevation/artifactdatabase/FactoryBootstrap.java,
+	  artifact-database/src/main/java/de/intevation/artifactdatabase/DefaultArtifactContextFactory.java,
+	  artifact-database/src/main/java/de/intevation/artifactdatabase/DefaultArtifactContext.java,
+	  artifact-database/src/main/java/de/intevation/artifactdatabase/DefaultArtifactFactory.java,
+	  artifacts/src/main/java/de/intevation/artifacts/ArtifactFactory.java,
+	  artifacts/src/main/java/de/intevation/artifacts/ArtifactContextFactory.java:
+	  Adapted method signatures to apply the new interface for global context
+	  objects.
+
+2011-07-13  Ingo Weinzierl <ingo@intevation.de>
+
+	* artifacts/src/main/java/de/intevation/artifacts/Hook.java: New. A hook
+	  can be used to execute at a specific point in time. E.g. after an
+	  Artifact was fed or after an Artifact has advanced.
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/ArtifactDatabaseImpl.java:
+	  Call hooks after Artifact's feed() and advance() operations.
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/FactoryBootstrap.java:
+	  Load hooks from configuration that match the XPath "/artifact-database/hooks/hook".
+
+2011-07-13	Sascha L. Teichmann	<sascha.teichmann@intevation.de>
+
+	Fix for flys/issue20
+
+	* artifact-database/pom.xml: Bumped version of SLF4J up to 1.6.1
+
+2011-07-08  Ingo Weinzierl <ingo@intevation.de>
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/state/Output.java,
+	  artifact-database/src/main/java/de/intevation/artifactdatabase/state/DefaultOutput.java:
+	  An Output can have a type (string) declaration now that should make it
+	  easier to distinguish different Output types.
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/state/AbstractState.java:
+	  Read the attribute "type" from OutputMode's configuration section.
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/ProtocolUtils.java:
+	  Write the member variable "type" to an OutputMode.
+
+2011-06-28  Ingo Weinzierl <ingo@intevation.de>
+
+	Tagged RELEASE 1.3
+
+2011-06-27  Ingo Weinzierl <ingo@intevation.de>
+
+	* Changes: Prepared changes for the upcoming release.
+
+2011-06-27  Ingo Weinzierl <ingo@intevation.de>
+
+	* artifacts-common/src/main/java/de/intevation/artifacts/common/utils/XMLUtils.java:
+	  Declared toString(Document) method static.
+
+2011-06-22  Ingo Weinzierl <ingo@intevation.de>
+
+	* artifacts-common/src/main/java/de/intevation/artifacts/common/utils/ClientProtocolUtils.java:
+	  Added functions that generate documents to set the name and ttl of a
+	  collection and to delete an existing collection.
+
+2011-06-21  Ingo Weinzierl <ingo@intevation.de>
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/ArtifactDatabaseImpl.java:
+	  Add the time-to-live of a collection to the document that is returned
+	  after the collection has been created.
+
+2011-06-21	Sascha L. Teichmann	<sascha.teichmann@intevation.de>
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/state/DefaultFacet.java:
+	  Added toString() method to help debugging.
+
+2011-06-21  Ingo Weinzierl <ingo@intevation.de>
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/ArtifactDatabaseImpl.java:
+	  Put the time-to-live of a collection into the document with the list of
+	  user collections.
+
+2011-06-21  Ingo Weinzierl <ingo@intevation.de>
+
+	* artifacts/src/main/java/de/intevation/artifacts/ArtifactCollection.java,
+	  artifact-database/src/main/java/de/intevation/artifactdatabase/DefaultArtifactCollection.java:
+	  The ArtifactCollection now knows its time-to-live. This values is
+	  retrievable via getTTL().
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/DefaultArtifactCollectionFactory.java,
+	  artifacts/src/main/java/de/intevation/artifacts/ArtifactCollectionFactory.java:
+	  Creating an ArtifactCollection requires the time-to-live of it.
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/Backend.java:
+	  Create new ArtifactCollections with their time-to-live.
+
+	* artifact-database/src/main/resources/sql/org-h2-driver.properties,
+	  artifact-database/src/main/resources/sql/org-postgresql-driver.properties:
+	  Adapted SQL statements that retrieve collections. The TTL of the
+	  collection is fetched from database as well.
+
+2011-06-17  Ingo Weinzierl <ingo@intevation.de>
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/state/Facet.java,
+	  artifact-database/src/main/java/de/intevation/artifactdatabase/state/DefaultFacet.java:
+	  Facets are able to fetch their necessary data from artifact now using a
+	  getData(Artifact, CallContext) method.
+
+2011-06-16  Ingo Weinzierl <ingo@intevation.de>
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/ProtocolUtils.java:
+	  Write index of a facet into the document.
+
+2011-06-16  Ingo Weinzierl <ingo@intevation.de>
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/state/Facet.java:
+	  Extends Serializable.
+
+2011-06-15  Ingo Weinzierl <ingo@intevation.de>
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/state/Facet.java,
+	  artifact-database/src/main/java/de/intevation/artifactdatabase/state/DefaultFacet.java:
+	  Added an index to a facet.
+
+2011-06-08	Sascha L. Teichmann	<sascha.teichmann@intevation.de>
+
+	* artifacts-common/src/main/java/de/intevation/artifacts/common/utils/XMLUtils.java:
+	  Added static toString(Document) method which transform XML documents to Strings.
+	  Useful for debugging.
+
+2011-06-07  Ingo Weinzierl <ingo@intevation.de>
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/ArtifactDatabaseImpl.java,
+	  artifacts/src/main/java/de/intevation/artifacts/ArtifactDatabase.java,
+	  artifact-database/src/main/java/de/intevation/artifactdatabase/Backend.java:
+	  New methods to set the name of a collection.
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/rest/CollectionResource.java:
+	  Dispatch the "setname" action.
+
+	* artifact-database/src/main/resources/sql/org-h2-driver.properties,
+	  artifact-database/src/main/resources/sql/org-postgresql-driver.properties:
+	  Added sql statements to update the name of a collection specified by its
+	  gid.
+
+2011-06-07  Ingo Weinzierl <ingo@intevation.de>
+
+	  flys/issue50 (Markierung von "Master-Artefakten" ermöglichen)
+
+	* artifact-database/doc/schema-pg.sql,
+	  artifact-database/doc/schema-h2.sql: Added a column 'creation' to the
+	  collection_items table. This column is set to the current timestamp when a
+	  new row is inserted in this table. The master artifact of a collection
+	  is the artifact which collection item is the oldest collection item in
+	  the collection.
+	  Note: there might be older artifacts in the collection than the master
+	  artifact, but there will never be an older collection item than the first
+	  item when the collection was created.
+
+	  To update the db, use the following statements:
+
+	    ALTER TABLE collection_items ADD COLUMN creation TIMESTAMP;
+	    UPDATE collection_items SET creation = CURRENT_TIMESTAMP;
+	    ALTER TABLE collection_items ALTER COLUMN creation SET NOT NULL;
+
+	* artifact-database/src/main/resources/sql/org-h2-driver.properties,
+	  artifact-database/src/main/resources/sql/org-postgresql-driver.properties:
+	  Order the list of collection items based on their creation time.
+
+2011-06-07  Ingo Weinzierl <ingo@intevation.de>
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/ArtifactDatabaseImpl.java,
+	  artifacts/src/main/java/de/intevation/artifacts/ArtifactDatabase.java:
+	  Added a setCollectionTTL() method that might be used to update the TTL
+	  of a collection. The new value needs to be from type long. There are two
+	  exceptions for the new values:
+	    1. the new value is "INF": this lets collections live forever.
+	    2. the new value is "DEFAULT": this sets the TTL of the collection to
+	       the configured default value.
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/Backend.java:
+	  Added a method to update the TTL attribute of a collection.
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/rest/CollectionResource.java:
+	  Dispatch the "settimetolive" action.
+	  
+	* artifact-database/src/main/resources/sql/org-postgresql-driver.properties,
+	  artifact-database/src/main/resources/sql/org-h2-driver.properties: Added
+	  sql statements to update the TTL of a specific collection based on the
+	  UUID of the collection.
+
+2011-06-07	Sascha L. Teichmann	<sascha.teichmann@intevation.de>
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/state/StateEngine.java:
+	  Use generics more precisely
+
+2011-06-06	Sascha L. Teichmann	<sascha.teichmann@intevation.de>
+
+	flys/issue75
+
+	* artifact-database/doc/schema-h2.sql: Fixed SQL syntax error in trigger creation.
+
+	* README: Adjusted to use new lib versions.
+
+2011-06-03  Ingo Weinzierl <ingo@intevation.de>
+
+	* artifacts-common/src/main/java/de/intevation/artifacts/common/utils/ClientProtocolUtils.java:
+	  The incoming attribute document of the method to create the document to
+	  trigger the out() of a collection needs to have the root node
+	  art:attribute now.
+
+2011-05-31  Ingo Weinzierl <ingo@intevation.de>
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/rest/BaseOutResource.java,
+	  artifact-database/src/main/java/de/intevation/artifactdatabase/rest/CollectionOutResource.java,
+	  artifact-database/src/main/java/de/intevation/artifactdatabase/rest/ArtifactOutResource.java:
+	  The 'type' part of the url is extracted and used while dispatching the
+	  call to the artifact database.
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/ArtifactDatabaseImpl.java,
+	  artifacts/src/main/java/de/intevation/artifacts/ArtifactDatabase.java:
+	  The deferred output got a new out() method that takes the 'type'
+	  parameter specified in the url part.
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/DefaultArtifactCollection.java,
+	  artifact-database/src/main/java/de/intevation/artifactdatabase/DefaultArtifact.java,
+	  artifacts/src/main/java/de/intevation/artifacts/ArtifactCollection.java,
+	  artifacts/src/main/java/de/intevation/artifacts/Artifact.java:
+	  Artifacts and ArtifactCollections have two out() operations to support
+	  the output type parameter now. I did not remove the out() without the
+	  'type' parameter to keep compatible with older versions.
+
+2011-05-27  Ingo Weinzierl <ingo@intevation.de>
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/ArtifactDatabaseImpl.java:
+	  The setCollectionAttribute() method will now set the incoming document
+	  as new attribute for the collection. Before, we looked for a xpath
+	  expression that contained the attribute. In the current implementation,
+	  the incoming document IS the attribute.
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/rest/CollectionResource.java:
+	  Extract the new attribute for a collection and call the
+	  setCollectionAttribute() method of ArtifactDatabase with this document
+	  instead of calling it with the incoming request document.
+
+2011-05-27  Ingo Weinzierl <ingo@intevation.de>
+
+	* artifacts-common/src/main/java/de/intevation/artifacts/common/utils/ClientProtocolUtils.java:
+	  New method that creates the document that is used to set an attribute of
+	  a collection.
+
+2011-04-23	Sascha L. Teichmann	<sascha.teichmann@intevation.de>
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/rest/JettyServer.java:
+	  Do not bind context to restlet app for security reasons.
+
+2011-04-23	Sascha L. Teichmann	<sascha.teichmann@intevation.de>
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/rest/Standalone.java:
+	  XMLUtils.xpathString() returns empty string not null.
+
+2011-04-22	Sascha L. Teichmann	<sascha.teichmann@intevation.de>
+
+	flys/issue65: Added Jetty HTTP server as a replacement option to foster
+	better scalability. Needs testing.
+
+	* pom.xml: Added repository for Jetty.
+
+	* artifact-database/pom.xml:
+	  Added dependencies to Jetty (Licenses: Apache 2.0 or Eclipse).
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/rest/RestApp.java:
+	  Pass restlet context to super constructor.
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/rest/JettyServer.java:
+	  New. Use embedded Jetty server to serve rest API.
+	  To enable it set "/artifact-database/rest-server/http-server/text()"
+	  in global config to "de.intevation.artifactdatabase.rest.JettyServer".
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/rest/Standalone.java:
+	  Refactored a bit to be useful as a base class.
+	
+2011-04-22	Sascha L. Teichmann	<sascha.teichmann@intevation.de>
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/rest/HTTPServer.java:
+	  New. Interface to run an HTTP server. Enables the system to run on different
+	  HTTP servers.
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/rest/Standalone.java:
+	  Implements the new interface.
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/FactoryBootstrap.java:
+	  Load and setup the HTTP server configured by the XPath 
+	  "/artifact-database/rest-server/http-server/text()" in the global config file.
+	  Defaults to "de.intevation.artifactdatabase.rest.Standalone" if not given.
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/App.java: 
+	  Boot with the HTTP server configured by FactoryBootstrap.
+
+2011-04-18	Sascha L. Teichmann	<sascha.teichmann@intevation.de>
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/rest/Standalone.java:
+	  With '/artifact-database/rest-server/max-threads/text()' in conf.xml
+	  you can set the number of threads used by the restlet server.
+	  Defaults to 1024 now. Another attempt/workaround to cope with flys/issue65.
+
+2011-05-17  Ingo Weinzierl <ingo@intevation.de>
+
+	* artifacts-common/src/main/java/de/intevation/artifacts/common/utils/ClientProtocolUtils.java:
+	  Bugfix: The output name and its concrete type are both written into the
+	  document that is used to trigger the OUT operation of a collection.
+
+2011-04-17	Sascha L. Teichmann	<sascha.teichmann@intevation.de>
+
+	* artifact-database/pom.xml: Bumped restlet to version 2.0.7 in hope
+	  to mitigate flys/issue65.
+
+2011-05-13  Ingo Weinzierl <ingo@intevation.de>
+
+	Tagged as RELEASE 1.2
+
+	* Changes, NEWS: Changes and news for release 1.2
+
+2011-05-12  Ingo Weinzierl <ingo@intevation.de>
+
+	* artifacts-common/src/main/java/de/intevation/artifacts/common/utils/ClientProtocolUtils.java:
+	  The method that is used to create the request document for querying
+	  charts will now take a document which might contain parameters to adjust
+	  chart settings (e.g. chart height/width).
+
+2011-04-28  Ingo Weinzierl <ingo@intevation.de>
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/transition/Transition.java:
+	  Modified the isValid() method. The transition needs to know about the
+	  current artifact where its data is stored, the current state and maybe
+	  the target state to determine if it is allowed to step from the current
+	  state to a target state!
+	  NOTE: This breaks the current API!
+
+artifact-database/src/main/java/de/intevation/artifactdatabase/transition/TransitionEngine.java
+
+2011-04-28  Ingo Weinzierl <ingo@intevation.de>
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/state/State.java,
+	  artifact-database/src/main/java/de/intevation/artifactdatabase/state/AbstractState.java:
+	  States have now a method getData(String) to retrieve just a single StateData object.
+
+2011-04-28  Ingo Weinzierl <ingo@intevation.de>
+
+	* artifacts-common/src/main/java/de/intevation/artifacts/common/utils/ClientProtocolUtils.java:
+	  Added a function that creates the document that is used to set the
+	  attribute of a CollectionItem (setCollectionItemAttribute() operation).
+
+2011-04-27  Ingo Weinzierl <ingo@intevation.de>
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/ArtifactDatabaseImpl.java:
+	  Bugfix: Do not create empty XML documents and save those into database -
+	  exceptions while serialization/deserialization have been the result of
+	  this.
+
+2011-04-26  Ingo Weinzierl <ingo@intevation.de>
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/ArtifactDatabaseImpl.java,
+	  artifacts/src/main/java/de/intevation/artifacts/ArtifactDatabase.java,
+	  artifact-database/src/main/java/de/intevation/artifactdatabase/Backend.java:
+	  New methods for querying and updating attributes of collections.
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/rest/CollectionResource.java:
+	  Enabled the request dispatcher to handle requests specific to collection
+	  attributes and collection item attributes.
+
+	* artifact-database/src/main/resources/sql/org-h2-driver.properties,
+	  artifact-database/src/main/resources/sql/org-postgresql-driver.properties:
+	  New statements for querying and inserting attributes of collections.
+
+2011-04-26  Ingo Weinzierl <ingo@intevation.de>
+
+	* artifacts/src/main/java/de/intevation/artifacts/ArtifactDatabase.java,
+	  artifact-database/src/main/java/de/intevation/artifactdatabase/ArtifactDatabaseImpl.java,
+	  artifact-database/src/main/java/de/intevation/artifactdatabase/Backend.java:
+	  Changed the names of the method names that set and retrieve the
+	  attributes of collection items (e.g. getCollectionAttribute() ->
+	  getCollectionItemAttribute()).
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/rest/CollectionResource.java:
+	  Modified method calls based on the changes above.
+
+2011-04-21  Ingo Weinzierl <ingo@intevation.de>
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/state/Output.java,
+	  artifact-database/src/main/java/de/intevation/artifactdatabase/state/DefaultOutput.java:
+	  Added a method to add further facets.
+
+2011-04-14  Ingo Weinzierl <ingo@intevation.de>
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/ArtifactDatabaseImpl.java:
+	  Bugfix: removed method CallContext specific method calls.
+
+2011-04-14  Ingo Weinzierl <ingo@intevation.de>
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/ArtifactDatabaseImpl.java,
+	  artifact-database/src/main/java/de/intevation/artifactdatabase/FactoryBootstrap.java:
+	  Enhanced the bootstrap - the CallContext.Listener is initialized (if
+	  configured).
+
+2011-04-14  Ingo Weinzierl <ingo@intevation.de>
+
+	* artifacts/src/main/java/de/intevation/artifacts/CallContext.java:
+	  Added a setup() method as in the other factories.
+
+2011-04-14	Sascha L. Teichmann	<sascha.teichmann@intevation.de>	
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/ArtifactDatabaseImpl.java:
+	  Added instance variable to hold a call context listener.
+
+2011-04-14	Sascha L. Teichmann	<sascha.teichmann@intevation.de>	
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/ArtifactDatabaseImpl.java:
+	  Call the postCall() methods of all CallContextes. Removed superfluous context
+	  paramter to AbstractCallContext constructors.
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/AbstractCallContext.java:
+	  call ArtifactDatabaseImpl.initCallContext() in constructor and 
+	  ArtifactDatabaseImpl.closeCallContext() in postCall().
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/CollectionCallContext.java,
+	  artifact-database/src/main/java/de/intevation/artifactdatabase/ArtifactCallContext.java:
+	  adjusted to guarantee that super.postCall() is called.
+
+2011-04-14	Sascha L. Teichmann	<sascha.teichmann@intevation.de>	
+
+	* artifacts/src/main/java/de/intevation/artifacts/CallContext.java:
+	  Added a listener to be called if a call context was created and closed.
+	
+2011-04-14  Ingo Weinzierl <ingo@intevation.de>
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/state/State.java,
+	  artifact-database/src/main/java/de/intevation/artifactdatabase/state/AbstractState.java:
+	  Added a reference to an artifact to the parameterlist of describe().
+	  This is needed to retrieve other necessary information of an artifact.
+
+2011-04-13	Sascha L. Teichmann	<sascha.teichmann@intevation.de>
+
+	* artifact-database/src/main/resources/sql/org-postgresql-driver.properties:
+	  Internal granularity should be milliseconds and not microseconds.
+
+	* artifact-database/src/main/resources/sql/org-h2-driver.properties:
+	  Forget last commit.
+
+2011-04-13	Sascha L. Teichmann	<sascha.teichmann@intevation.de>
+
+	Fix for flys/issue9
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/Backend.java:
+	  Removed code that checks for outdated artifact in user land.
+	   
+	* artifact-database/src/main/resources/sql/org-h2-driver.properties,
+	  artifact-database/src/main/resources/sql/org-postgresql-driver.properties:
+	  Do the check in the database and take into account if artifact
+	  is in a collection. XXX: Maybe this needs some speedup!
+
+2011-04-13	Sascha L. Teichmann	<sascha.teichmann@intevation.de>
+
+	Fix for flys/issue8 (part 3)
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/DatabaseCleaner.java:
+	  'NOT IN (NULL)' does not work. Used 'NOT IN (-666)' instead.
+
+2011-04-12  Ingo Weinzierl <ingo@intevation.de>
+
+	* artifacts-common/src/main/java/de/intevation/artifacts/common/utils/ClientProtocolUtils.java:
+	  Added a method that returns a document that is used to trigger the
+	  artifact's DESCRIBE operation.
+
+2011-04-07  Ingo Weinzierl <ingo@intevation.de>
+
+	* artifacts-common/src/main/java/de/intevation/artifacts/common/utils/ClientProtocolUtils.java:
+	  Added a method that creates documents used as input document for the
+	  Collection's out() operation.
+
+2011-04-06	Sascha L. Teichmann	<sascha.teichmann@intevation.de>
+
+	Fix for flys/issue8 (part 2)
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/DatabaseCleaner.java:
+	  PostgreSQL does not like clauses like 'NOT IN ()' so write 
+	  'NOT IN (NULL)' in these cases.
+
+2011-04-06	Sascha L. Teichmann	<sascha.teichmann@intevation.de>
+
+	Possible fix for flys/issue8
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/StringUtils.java:
+	  (repeat) The term was repeated one time too often leading to invalid
+	  SQL statements in database cleaner. I really should start writing 
+	  unit tests.
+
+2011-04-06  Ingo Weinzierl <ingo@intevation.de>
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/DefaultCollectionItem.java:
+	  Bugfix: Items are compressed in the Backend while adding an Artifact to
+	  a Collection. So this item needs to be decompressed when it is fetched
+	  from Backend again. This is done now!
+
+2011-04-04	Sascha L. Teichmann	<sascha.teichmann@intevation.de>
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/Backend.java:
+	  The XML documents stored aside users, collections and collection items
+	  are now compressed/decompressed transparently, to reduce i/o costs
+	  as its already done with artifacts.
+	  
+	  !!! This breaks database content of release FLYS 2.2 but this is okay,
+	  !!! because 2.2 is not productive..
+
+2011-04-03	Sascha L. Teichmann	<sascha.teichmann@intevation.de>
+
+	* artifacts-common/src/main/java/de/intevation/artifacts/common/utils/XMLUtils.java:
+	  Added a boolean flag to XML byte serialisation to compress/decompress, too.
+	  Defaults to false to keep compatibilty.
+
+2011-04-03	Sascha L. Teichmann	<sascha.teichmann@intevation.de>
+
+	* src/**/*.java: Removed trailing whitespace.
+
+2011-03-31	Sascha L. Teichmann	<sascha.teichmann@intevation.de>
+
+	* src/main/java/de/intevation/artifactdatabase/DatabaseCleaner.java:
+	  Removes outdated collections, too.
+
+	* src/main/resources/sql/org-h2-driver.properties,
+	  src/main/resources/sql/org-postgresql-driver.properties:
+	  Added SQL statements to figure out outdated collections.
+
+2011-03-31	Sascha L. Teichmann	<sascha.teichmann@intevation.de>
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/StringUtils.java:
+	  Added methods to repeat chars or strings.
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/DatabaseCleaner.java:
+	  Filtering out locked artifact ids is now done on database level.
+
+	* artifact-database/src/main/resources/sql/org-h2-driver.properties,
+	  artifact-database/src/main/resources/sql/org-postgresql-driver.properties:
+	  Added $LOCKED_ID$ template for the prepared statements to figure
+	  out the locked ids.
+
+2011-03-31	Sascha L. Teichmann	<sascha.teichmann@intevation.de>
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/DatabaseCleaner.java:
+	  The cleaner now fetches the explicit set of locked artifact ids from
+	  the artifact database. This is needed for the next step todo: Prevent
+	  locked artifact from beeing considered as outdated on database level.
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/Id.java:
+	  Removed. Not needed any more.
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/ArtifactDatabaseImpl.java:
+	  Now provides a copy of the locked artifact ids.
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/App.java,
+	  artifact-database/src/main/java/de/intevation/artifactdatabase/Backend.java:
+	  Adjusted code to follow the new id locking semantics.
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/state/DefaultOutput.java:
+	  Removed needless import.
+
+2011-03-31	Sascha L. Teichmann	<sascha.teichmann@intevation.de>
+
+	* artifact-database/doc/schema-h2.sql, artifact-database/doc/schema-pg.sql:
+	  Added a trigger on artifacts. If an artifact is changed the last_access
+	  timestamp of the collections in which the artifact is in are updated, too.
+	  Needs testing!
+
+	  - In PostgreSQL it is done by a trigger written in plpgsql. So don't
+	    forget to add the language to the database!
+
+	  - In H2 it is done by a trigger written in Java, because H2 does not
+	    offer a script level trigger support.
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/h2/CollectionAccessUpdateTrigger.java:
+	  The H2 trigger.
+
+	* artifact-database/src/main/resources/sql/org-h2-driver.properties:
+	  Added the statement which is executed if the trigger fires.
+
+2011-03-31  Ingo Weinzierl <ingo@intevation.de>
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/ArtifactDatabaseImpl.java:
+	  Added an implementation of DeferredOutput for ArtifactCollections and
+	  implemented the out() operation of an ArtifactCollection.
+
+2011-03-30  Ingo Weinzierl <ingo@intevation.de>
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/ProtocolUtils.java:
+	  The output nodes written to DESCRIBE document have facet nodes now.
+
+2011-03-30  Ingo Weinzierl <ingo@intevation.de>
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/state/DefaultFacet.java,
+	  artifact-database/src/main/java/de/intevation/artifactdatabase/state/Facet.java:
+	  New. A facet and its default implementation. A facet represents one
+	  piece of an concrete output. E.g. an output can be a chart, a facet can
+	  be a single curve in this chart.
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/state/DefaultOutput.java,
+	  artifact-database/src/main/java/de/intevation/artifactdatabase/state/Output.java:
+	  Added methods to retrieve and set facets.
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/state/AbstractState.java:
+	  Added code to parse facets in the inner of an output node of the
+	  transition configuration. The xpath to a facet relative to a state
+	  should look like this: state/outputmodes/outputmode/facets/facet.
+
+2011-03-30  Ingo Weinzierl <ingo@intevation.de>
+
+	Tagged as RELEASE 1.1
+
+2011-03-30  Ingo Weinzierl <ingo@intevation.de>
+
+	* artifacts-common/src/main/java/de/intevation/artifacts/common/utils/ClientProtocolUtils.java:
+	  There is a new method that creates the document that is used to trigger
+	  the DESCRIBE operation of a collection.
+
+2011-03-25  Ingo Weinzierl <ingo@intevation.de>
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/ArtifactDatabaseImpl.java:
+	  The operation that adds an artifact to an artifact collection will
+	  return the DESCRIBE document of the artifact collection now.
+
+2011-03-24  Ingo Weinzierl <ingo@intevation.de>
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/DefaultArtifactCollection.java,
+	  artifacts/src/main/java/de/intevation/artifacts/ArtifactCollection.java:
+	  Made the document 'attribute' of the ArtifactCollection accessible via
+	  getter and setter methods.
+
+2011-03-24  Ingo Weinzierl <ingo@intevation.de>
+
+	* artifacts-common/src/main/java/de/intevation/artifacts/common/utils/ClientProtocolUtils.java:
+	  The CREATE document for used for creating new ArtifactCollections will
+	  build an ArtifactCollection with an empty attribute - but it is no
+	  longer null (which broke the XML parser while fetching the
+	  ArtifactCollection from backend).
+
+2011-03-24  Ingo Weinzierl <ingo@intevation.de>
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/ArtifactDatabaseImpl.java:
+	  Removed the inner CallContextImpl class. This class is split up into an
+	  abstract class AbstractCallContext and concrete classes for artifacts
+	  and collections. We need to do so, because the describe() of an
+	  ArtifactCollection needs the CallContext - but the former
+	  CallContextImpl was specific for artifacts.
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/AbstractCallContext.java,
+	  artifact-database/src/main/java/de/intevation/artifactdatabase/CollectionCallContext.java,
+	  artifact-database/src/main/java/de/intevation/artifactdatabase/ArtifactCallContext.java:
+	  An abstract CallContext and two concrete implementations for Artifacts
+	  and ArtifactCollections.
+
+2011-03-24  Ingo Weinzierl <ingo@intevation.de>
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/DefaultArtifactCollection.java,
+	  artifacts/src/main/java/de/intevation/artifacts/ArtifactCollection.java:
+	  There is a describe() method for ArtifactCollections, now.
+
+2011-03-24  Ingo Weinzierl <ingo@intevation.de>
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/Backend.java:
+	  Added a method that retrieves an ArtifactCollection based on its GID.
+
+2011-03-24	Sascha L. Teichmann	<sascha.teichmann@intevation.de>
+
+	* artifact-database/src/main/resources/sql/org-postgresql-driver.properties:
+	  Added a cast to uuid in collections.select.by.gid
+
+2011-03-24  Ingo Weinzierl <ingo@intevation.de>
+
+	* artifact-database/src/main/resources/sql/org-h2-driver.properties,
+	  artifact-database/src/main/resources/sql/org-postgresql-driver.properties:
+	  Added new statement to retrieve a single collection by GID and repaired
+	  a statement in the postgres properties.
+
+2011-03-23  Ingo Weinzierl <ingo@intevation.de>
+
+	* artifacts-common/src/main/java/de/intevation/artifacts/common/utils/ClientProtocolUtils.java:
+	  Added a method that creates a document that is used to add an artifact
+	  to a collection.
+
+2011-03-23  Ingo Weinzierl <ingo@intevation.de>
+
+	* artifact-database/src/main/resources/sql/org-h2-driver.properties,
+	  artifact-database/src/main/resources/sql/org-postgresql-driver.properties:
+	  Bugfix: Repaired broken SQL statement.
+
+2011-03-23  Ingo Weinzierl <ingo@intevation.de>
+
+	* artifacts-common/src/main/java/de/intevation/artifacts/common/utils/ClientProtocolUtils.java:
+	  Bugfix: Repaired a broken XPath.
+
+2011-03-23  Ingo Weinzierl <ingo@intevation.de>
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/ProtocolUtils.java:
+	  Added a method to append an <outputmodes> section to a document that
+	  describes the output modes of a state.
+
+	* artifacts-common/src/main/java/de/intevation/artifacts/common/utils/ClientProtocolUtils.java:
+	  Added a method to retrieve a list of output modes from DESCRIBE
+	  document.
+
+2011-03-23  Ingo Weinzierl <ingo@intevation.de>
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/state/State.java:
+	  The State interface defines a method to retrieve the state's output
+	  modes now.
+
+2011-03-22  Ingo Weinzierl <ingo@intevation.de>
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/state/DefaultOutput.java,
+	  artifact-database/src/main/java/de/intevation/artifactdatabase/state/Output.java:
+	  New. An interface and its default implementation to describe an output
+	  mode of a state. Currently, the information 'name', 'description' and
+	  'mime-type' are provided.
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/state/AbstractState.java:
+	  The abstract state reads the output modes available for the state now.
+
+2011-03-21  Ingo Weinzierl <ingo@intevation.de>
+
+	* artifacts-common/src/main/java/de/intevation/artifacts/common/utils/ClientProtocolUtils.java:
+	  Changed the return type of a method, so that more nodes will be
+	  retrieved.
+
+2011-03-15	Sascha L. Teichmann	<sascha.teichmann@intevation.de>
+
+	!!! THIS BREAKS THE GNV ARTIFACTS. !!! TODO: Adjust the imports there.
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/XMLUtils.java,
+	  artifact-database/src/main/java/de/intevation/artifactdatabase/Config.java:
+	  Deleted. The copies from the commons package are use now.
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/**/*.java:
+	  Adjusted imports.
+
+2011-03-15	Sascha L. Teichmann	<sascha.teichmann@intevation.de>
+
+	* artifacts-common/src/main/java/de/intevation/artifacts/common/utils/Config.java:
+	  New. Copy of Config in artifacts-database. Part of moving configuration to 
+	  the commons package. TODO: Remove XMLUtils and Config from artifact-database.
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/Backend.java:
+	  Trivial fix. Forgot to commit some time ago.
+
+2011-03-14  Ingo Weinzierl <ingo@intevation.de>
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/state/State.java,
+	  artifact-database/src/main/java/de/intevation/artifactdatabase/state/AbstractState.java:
+	  The describe() method of a state will now return an Element.
+
+2011-03-10  Ingo Weinzierl <ingo@intevation.de>
+
+	* artifacts-common/src/main/java/de/intevation/artifacts/common/utils/ClientProtocolUtils.java:
+	  New method that creates the document for a ADVANCE operation.
+
+2011-03-10  Ingo Weinzierl <ingo@intevation.de>
+
+	* artifacts-common/src/main/java/de/intevation/artifacts/common/utils/ClientProtocolUtils.java:
+	  New method that creates the document for a FEED operation.
+
+2011-03-10  Ingo Weinzierl <ingo@intevation.de>
+
+	* artifacts-common/src/main/java/de/intevation/artifacts/common/utils/XMLUtils.java:
+	  Bugfix: The ElementCreator's method addAttr() will no longer add the
+	  namespace to an attribute although the 'addPrefix' parameter was set to
+	  false.
+
+2011-03-09  Ingo Weinzierl <ingo@intevation.de>
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/transition/TransitionEngine.java:
+	  New method to determine if a state B is reachable from a state A.
+
+2011-03-09  Ingo Weinzierl <ingo@intevation.de>
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/data/DefaultStateData.java:
+	  Added a further constructor that takes even the value.
+
+2011-03-08	Sascha L. Teichmann	<sascha.teichmann@intevation.de>
+
+	* artifact-database/doc/schema-pg.sql, artifact-database/doc/schema-h2.sql: 
+	  Fixed broken schemas.
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/Backend.java:
+	  Insert collection attribute into database, too.
+
+	* artifact-database/src/main/resources/sql/org-h2-driver.properties,
+	  artifact-database/src/main/resources/sql/org-postgresql-driver.properties:
+	  Adjusted SQL statements to insert attribute into collection table.
+
+2011-03-09  Ingo Weinzierl <ingo@intevation.de>
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/ArtifactDatabaseImpl.java:
+	  Parse the collection attribute that is contained in the incoming
+	  document while creating a new collection and use this document as parameter
+	  for calling createCollection() of the Backend.
+
+2011-03-09  Ingo Weinzierl <ingo@intevation.de>
+
+	* artifact-database/src/main/resources/sql/org-h2-driver.properties,
+	  artifact-database/src/main/resources/sql/org-postgresql-driver.properties:
+	  Fixed a typo.
+
+2011-03-08  Ingo Weinzierl <ingo@intevation.de>
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/ArtifactDatabaseImpl.java,
+	  artifacts/src/main/java/de/intevation/artifacts/ArtifactDatabase.java:
+	  New method describeCollection() that might be used to retrieve a list of
+	  items in the collection and the facets supported by those items.
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/rest/CollectionResource.java:
+	  Enabled the describeCollection() method with an action 'describe' equal
+	  to the implementation of describe of an artifact.
+
+2011-03-08	Sascha L. Teichmann	<sascha.teichmann@intevation.de>
+
+	* artifact-database/src/main/resources/sql/org-h2-driver.properties
+	  artifact-database/src/main/resources/sql/org-postgresql-driver.properties:
+	  The cleaner job is scanning the artifact database for outdated artifacts.
+	  artifacts are aging independent from the collections they are in.
+	  So the cleaner wants to delete artifacts that are still in
+	  collections which violates a foreign key constraint and renders
+	  the cleaner inop because this condition remains.
+
+	  The fix prevents this behavior by only deleting artifacts that
+	  are not in a collection.
+
+2011-03-08	Sascha L. Teichmann	<sascha.teichmann@intevation.de>
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/Backend.java:
+	  Fixed issue with outdating artifact if it is removed from a collection.
+
+	* artifact-database/src/main/resources/sql/org-h2-driver.properties,
+	  artifact-database/src/main/resources/sql/org-postgresql-driver.properties:
+	  Fixed statements.
+
+2011-03-08  Ingo Weinzierl <ingo@intevation.de>
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/ArtifactDatabaseImpl.java:
+	  Implemented the setCollectionAttribute() and getCollectionAttribute()
+	  methods.
+
+2011-03-08  Ingo Weinzierl <ingo@intevation.de>
+
+	* artifact-database/src/main/resources/sql/org-h2-driver.properties,
+	  artifact-database/src/main/resources/sql/org-postgresql-driver.properties:
+	  Fixed some SQL statements that contained typos.
+
+2011-03-08  Ingo Weinzierl <ingo@intevation.de>
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/ArtifactDatabaseImpl.java:
+	  Implemented removeCollectionArtifact() method.
+
+2011-03-07  Ingo Weinzierl <ingo@intevation.de>
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/ArtifactDatabaseImpl.java,
+	  artifacts/src/main/java/de/intevation/artifacts/ArtifactDatabase.java:
+	  Modified the method signature of addCollectionArtifact(). This method
+	  got the incoming document as further parameter.
+	  Furthermore, listCollectionArtifacts() and addCollectionArtifact() are
+	  implemented now.
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/rest/CollectionResource.java:
+	  Adapted the method call of addCollectionArtifact().
+
+2011-03-07  Ingo Weinzierl <ingo@intevation.de>
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/DefaultCollectionItem.java:
+	  Fixed broken constructor.
+
+2011-03-07  Ingo Weinzierl <ingo@intevation.de>
+
+	* artifact-database/doc/schema-pg.sql,
+	  artifact-database/doc/schema-h2.sql: Renamed a SEQUENCE - schema
+	  definition and sql statements did not fit to each other.
+
+	* artifact-database/src/main/resources/sql/org-h2-driver.properties,
+	  artifact-database/src/main/resources/sql/org-postgresql-driver.properties:
+	  Fixed wrong table names in sql statements.
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/Backend.java:
+	  Fixed SQL constants.
+
+2011-03-07  Ingo Weinzierl <ingo@intevation.de>
+
+	* artifacts/src/main/java/de/intevation/artifacts/CollectionItem.java:
+	  New. An interface that wraps artifacts and its attributes in collections.
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/DefaultCollectionItem.java,
+	  artifact-database/src/main/java/de/intevation/artifactdatabase/CollectionItem.java:
+	  Moved. The CollectionItem has been moved to DefaultCollectionItem and
+	  implements the new interface CollectionItem.
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/Backend.java:
+	  The listCollectionArtifacts() method instantiates DefaultCollectionItem
+	  objects now.
+
+2011-03-07	Sascha L. Teichmann	<sascha.teichmann@intevation.de>
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/CollectionItem.java:
+	  Add missing class.
+
+2011-03-07	Sascha L. Teichmann	<sascha.teichmann@intevation.de>
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/Backend.java:
+	  Added code to list the collection items in a collection.
+
+	* artifact-database/src/main/resources/sql/org-h2-driver.properties,
+	  artifact-database/src/main/resources/sql/org-postgresql-driver.properties:
+	  Added SQL statements to list the collection item 
+	  via a given collection uuid.
+
+2011-03-07  Ingo Weinzierl <ingo@intevation.de>
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/ArtifactDatabaseImpl.java:
+	  Repaired the namespaces of attributes in the xml documents created in
+	  the collection context.
+
+2011-03-07	Sascha L. Teichmann	<sascha.teichmann@intevation.de>
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/CollectionItem.java:
+	  New. Helper to be returned in Backend.listCollectionArtifacts()
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/Backend.java:
+	  Copyright adjusted to 2010, 2011
+
+2011-03-07  Ingo Weinzierl <ingo@intevation.de>
+
+	* artifact-database/src/main/resources/sql/org-h2-driver.properties:
+	  Adapted the sql statement to fetch all collections and all user
+	  collections from database (see rev1399 for more details).
+	  s/OUTER LEFT/LEFT OUTER/ solves the collection listing problem.
+
+2011-03-06	Sascha L. Teichmann	<sascha.teichmann@intevation.de>
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/Backend.java:
+	  Added code to delete a collection item. Fixed typo in SQL lookup.
+
+	* artifact-database/src/main/resources/sql/org-h2-driver.properties,
+	  artifact-database/src/main/resources/sql/org-postgresql-driver.properties:
+	  Added SQL statements to removed an artifact from a collection given
+	  a collection id and an artifact id.
+
+2011-03-06	Sascha L. Teichmann	<sascha.teichmann@intevation.de>
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/Backend.java:
+	  Added code to set the attribute of a collection item.
+
+	* artifact-database/src/main/resources/sql/org-h2-driver.properties,
+	  artifact-database/src/main/resources/sql/org-postgresql-driver.properties:
+	  Added SQL statements to set the attribute column of a collection item
+	  given a collection id and an artifact id.
+
+2011-03-06	Sascha L. Teichmann	<sascha.teichmann@intevation.de>
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/Backend.java:
+	  Added code to get the attribute of a collection item.
+
+	* artifact-database/src/main/resources/sql/org-h2-driver.properties,
+	  artifact-database/src/main/resources/sql/org-postgresql-driver.properties:
+	  Added SQL statements to get the attribute column of a collection item
+	  given the collection and the artifact uuid.
+
+2011-03-06	Sascha L. Teichmann	<sascha.teichmann@intevation.de>
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/Backend.java:
+	  Added new method isValidIdentifier() to check if identifier
+	  is valid. Its a wrapper around StringUtils.checkUUID() to
+	  make it more symmetric to newIdentifier() which wraps
+	  StringUtils.newUUID().
+
+2011-03-04	Sascha L. Teichmann	<sascha.teichmann@intevation.de>
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/ArtifactDatabaseImpl.java:
+	  TODO: Parse incoming document for an initial attribute of a
+	  collection item.
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/Backend.java:
+	  Added code to add a collection item to a collection.
+
+	* artifact-database/src/main/resources/sql/org-h2-driver.properties,
+	  artifact-database/src/main/resources/sql/org-postgresql-driver.properties:
+	  Added SQL statements to handle creation of collection items.
+
+2011-03-04	Sascha L. Teichmann	<sascha.teichmann@intevation.de>
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/Backend.java:
+	  Added code to delete a collection.
+
+	* artifact-database/src/main/resources/sql/org-h2-driver.properties,
+	  artifact-database/src/main/resources/sql/org-postgresql-driver.properties:
+	  Added SQL statements to delete collections.
+
+2011-03-04	Sascha L. Teichmann	<sascha.teichmann@intevation.de>
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/SQLExecutor.java:
+	  New. Helper class to simplify the database connection stuff like
+	  get a connection, prepare statements, commit, rollback in
+	  error cases and so on. This reduces the code repetition
+	  and complexity in the backend significantly.
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/Backend.java:
+	  Use the new helper. (Should really have done this before!)
+
+	* artifacts/src/main/java/de/intevation/artifacts/ArtifactCollectionFactory.java:
+	  Removed empty line at end of file.
+
+2011-03-04	Sascha L. Teichmann	<sascha.teichmann@intevation.de>
+
+	* artifact-database/src/main/resources/sql/org-h2-driver.properties,
+	  artifact-database/src/main/resources/sql/org-postgresql-driver.properties:
+	  Argh! s/OUTER LEFT/LEFT OUTER/ solves the collection listing problem.
+
+2011-03-04  Ingo Weinzierl <ingo@intevation.de>
+
+	* artifacts-common/src/main/java/de/intevation/artifacts/common/utils/ClientProtocolUtils.java:
+	  Added a method that creates the CREATE document for creating new
+	  artifact collections.
+
+2011-03-04	Sascha L. Teichmann	<sascha.teichmann@intevation.de>
+
+	* artifact-database/pom.xml: Lifted H2 to version 1.3.152.
+	  This hopefully eliminates the problem with the left outer join
+	  in listing of the user collections.
+
+2011-03-04	Sascha L. Teichmann	<sascha.teichmann@intevation.de>
+
+	* artifact-database/src/main/resources/sql/org-h2-driver.properties,
+	  artifact-database/src/main/resources/sql/org-postgresql-driver.properties:
+	  Added new statement to extract the creation time for a given collection.
+	  XXX: listing of collection does not. Need to look at that.
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/DefaultArtifactCollection.java,
+	  artifact-database/src/main/java/de/intevation/artifactdatabase/DefaultArtifactCollectionFactory.java,
+	  artifacts/src/main/java/de/intevation/artifacts/ArtifactCollectionFactory.java
+	  artifacts/src/main/java/de/intevation/artifacts/ArtifactCollection.java:
+	  Repaired parameter propagation of creation times and collection names.
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/Backend.java:
+	  Adjusted the backend to propagate the creation time and the collection names.
+
+2011-03-04  Ingo Weinzierl <ingo@intevation.de>
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/ArtifactDatabaseImpl.java:
+	  The createCollection() method returns a document that will now contain
+	  the uuid of the created artifact collection.
+
+2011-03-04  Ingo Weinzierl <ingo@intevation.de>
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/ArtifactDatabaseImpl.java:
+	  If there is no creation time of a collection, we just add an empty
+	  string to the collection node in listCollections(). A
+	  NullPointerException is avoided!
+
+2011-03-03	Sascha L. Teichmann	<sascha.teichmann@intevation.de>
+
+	* artifact-database/src/main/resources/sql/org-h2-driver.properties,
+	  artifact-database/src/main/resources/sql/org-postgresql-driver.properties:
+	  Added SQL statements to list collections.
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/Backend.java:
+	  Added code to make collections accessible.
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/ArtifactDatabaseImpl.java:
+	  Bind backend functionality to REST.
+
+2011-03-03  Ingo Weinzierl <ingo@intevation.de>
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/ArtifactDatabaseImpl.java:
+	  Implemented the interface method addCollectionArtifact().
+
+2011-03-03	Sascha L. Teichmann	<sascha.teichmann@intevation.de>
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/LazyBackendUser.java:
+	  New: Helper for lazy loading users.
+
+2011-03-03  Ingo Weinzierl <ingo@intevation.de>
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/Backend.java:
+	  Introduced the ArtifactCollectionFactory as parameter of
+	  listCollections().
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/ArtifactDatabaseImpl.java:
+	  Implemented the interface method listCollections().
+
+2011-03-03  Ingo Weinzierl <ingo@intevation.de>
+
+	* artifact-database/doc/example-conf/conf.xml: Corrected the attribute
+	  name of the artifact collection in the example node for the artifact
+	  collection factory.
+
+2011-03-03  Ingo Weinzierl <ingo@intevation.de>
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/ArtifactDatabaseImpl.java:
+	  Two things: the collection get names specified in the incoming document
+	  of the POST request, and the deleteCollection() interface method is now
+	  implemented.
+
+2011-03-03  Ingo Weinzierl <ingo@intevation.de>
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/Backend.java:
+	  Bugfixes while collection creation: Create a Connection object before
+	  setting its attributes and corrected the order of the values inserted
+	  into the SQL statement.
+
+2011-03-03  Ingo Weinzierl <ingo@intevation.de>
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/ArtifactDatabaseImpl.java:
+	  The roles of users are stored into and loaded from database now.
+
+2011-03-03	Sascha L. Teichmann	<sascha.teichmann@intevation.de>
+
+	* artifact-database/src/main/resources/sql/org-h2-driver.properties,
+	  artifact-database/src/main/resources/sql/org-postgresql-driver.properties:
+	  Added SQL statements to create collections.
+
+	* artifacts/src/main/java/de/intevation/artifacts/ArtifactCollectionFactory.java,
+	  artifacts/src/main/java/de/intevation/artifacts/ArtifactCollection.java:
+	  Added name to collection.
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/DefaultArtifactCollection.java,
+	  artifact-database/src/main/java/de/intevation/artifactdatabase/DefaultArtifactCollectionFactory.java:
+	  Adjusted factory api to cope with names.
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/Backend.java:
+	  Implemented create collection.
+
+	* database/src/main/java/de/intevation/artifactdatabase/ArtifactDatabaseImpl.java:
+	  Adjusted the backend call.
+
+2011-03-03  Ingo Weinzierl <ingo@intevation.de>
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/Backend.java:
+	  Changed the method signature of createCollection(). The Backend needs
+	  the ArtifactCollectionFactory to create new instances of artifact
+	  collections.
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/ArtifactDatabaseImpl.java:
+	  Implemented the interface method createCollection().
+
+2011-03-03	Sascha L. Teichmann	<sascha.teichmann@intevation.de>
+
+	* artifacts/src/main/java/de/intevation/artifacts/UserFactory.java:
+	  Throw out useless stuff from interface.
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/DefaultUserFactory.java:
+	  Adjusted default implementation.
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/Backend.java:
+	  Use user factory to create new users.
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/ArtifactDatabaseImpl.java:
+	  Call the backend with the new semantic.
+
+2011-03-03	Sascha L. Teichmann	<sascha.teichmann@intevation.de>
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/Backend.java:
+	  Added stubs for the collection handling.
+
+	* artifact-database/doc/schema-pg.sql, artifact-database/doc/schema-h2.sql:
+	  Added missing attribute column to the collection item table.
+
+2011-03-03  Ingo Weinzierl <ingo@intevation.de>
+
+	* artifact-database/doc/example-conf/conf.xml: Added a node that
+	  configures a default artifact collection factory.
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/FactoryBootstrap.java:
+	  The artifact collection factory (currently just a single one) is read
+	  from configuration and setup with its parameters.
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/ArtifactDatabaseImpl.java:
+	  Fetch the configured artifact collection factory from bootstrap.
+
+2011-03-03	Sascha L. Teichmann	<sascha.teichmann@intevation.de>
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/ArtifactDatabaseImpl.java,
+	  artifact-database/src/main/java/de/intevation/artifactdatabase/DefaultUserFactory.java,
+	  artifact-database/src/main/java/de/intevation/artifactdatabase/Backend.java,
+	  artifacts/src/main/java/de/intevation/artifacts/UserFactory.java:
+	  Propagate delete user errors correctly.
+
+2011-03-03  Ingo Weinzierl <ingo@intevation.de>
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/DefaultUserFactory.java,
+	  artifacts/src/main/java/de/intevation/artifacts/UserFactory.java,
+	  artifact-database/src/main/java/de/intevation/artifactdatabase/Backend.java:
+	  Adapted the signature of deleteUser(). These methods don't await a User
+	  object any longer but just its identifier.
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/ArtifactDatabaseImpl.java:
+	  Performance improvement: there is no need to fetch the user that we want
+	  to delete from database before deleting it. Now, we just call the
+	  deleteUser() method of the UserFactory with the identifier of the user.
+
+2011-03-03  Ingo Weinzierl <ingo@intevation.de>
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/ArtifactDatabaseImpl.java:
+	  Implemented the deleteUser() interface method. This operation will now
+	  remove the specified user, its collections and the artifacts stored in
+	  these collections.
+
+2011-03-03  Ingo Weinzierl <ingo@intevation.de>
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/Backend.java:
+	  Bugfix: Replaced wrong SQL statements with the correct ones.
+
+2011-03-03  Ingo Weinzierl <ingo@intevation.de>
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/ArtifactDatabaseImpl.java:
+	  Implemented the listUsers() interface method. This operation will now
+	  return a list of users as document.
+
+2011-03-03  Ingo Weinzierl <ingo@intevation.de>
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/ArtifactDatabaseImpl.java:
+	  Implemented the createUser() interface method. Calling this method will
+	  trigger the backend to create a new user described in the document given
+	  in the POST request.
+
+2011-03-02	Sascha L. Teichmann	<sascha.teichmann@intevation.de>
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/Backend.java:
+	  Added code to load all users from database.
+
+2011-03-02	Sascha L. Teichmann	<sascha.teichmann@intevation.de>
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/Backend.java:
+	  Added code to load user from database.
+
+	* artifacts-common/src/main/java/de/intevation/artifacts/common/utils/XMLUtils.java:
+	  Added method to reconstruct XML documents from byte arrays and input streams
+
+2011-03-02	Sascha L. Teichmann	<sascha.teichmann@intevation.de>
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/Backend.java:
+	  Added code to delete a user, his/her collections and quarantee that
+	  the artifacts exclusivly owner by the user are going to be deleted
+	  from the artifact database.
+
+	* artifact-database/src/main/resources/sql/org-h2-driver.properties,
+	  artifact-database/src/main/resources/sql/org-postgresql-driver.properties:
+	  Various SQL statements to cope with outdating artifacts and deleting
+	  users and collections.
+
+2011-03-02  Ingo Weinzierl <ingo@intevation.de>
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/rest/BaseOutResource.java:
+	  New. Abstract class that should be used as the base class for the
+	  artifact and collection out resource. The most stuff to handle the
+	  output is done in this class. Concrete subclasses are needed to call the
+	  correct methods in the artifact database.
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/rest/CollectionOutResource.java:
+	  New. The OUT Resource for collections. It implements the two abstract
+	  methods of BaseOutResource.
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/rest/ArtifactOutResource.java:
+	  This class inherits from BaseOutResource now. The most code has been
+	  removed. Just the two abstract methods of BaseOutResource are
+	  implemented here.
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/rest/RestApp.java:
+	  Added the CollectionOutResource.
+
+2011-03-02  Ingo Weinzierl <ingo@intevation.de>
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/rest/CollectionResource.java:
+	  New. A Rest resource that handles operations for a specific collection.
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/rest/RestApp.java:
+	  Added the CollectionResource.
+
+2011-03-02  Ingo Weinzierl <ingo@intevation.de>
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/rest/ListCollectionsResource.java:
+	  New. A Rest resource that lists all collections of a specific user.
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/rest/RestApp.java:
+	  Added the ListCollectionsResource.
+
+2011-03-02  Ingo Weinzierl <ingo@intevation.de>
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/rest/CreateCollectionResource.java:
+	  New. A Rest resource that might be used to create new collection that
+	  are owned by a specific user.
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/rest/RestApp.java:
+	  Added the CreateCollectionResource.
+
+2011-03-02	Sascha L. Teichmann	<sascha.teichmann@intevation.de>
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/rest/BaseResource.java,
+	  artifacts/src/main/java/de/intevation/artifacts/UserFactory.java:
+	  Removed needless imports.
+
+2011-03-02	Sascha L. Teichmann	<sascha.teichmann@intevation.de>
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/Backend.java:
+	  Call database to create a new user.
+
+2011-03-02  Ingo Weinzierl <ingo@intevation.de>
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/rest/UserResource.java:
+	  New. A Rest resource that handles actions for a specific user.
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/rest/RestApp.java:
+	  Added the UserResource.
+
+2011-03-02  Ingo Weinzierl <ingo@intevation.de>
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/rest/ListUsersResource.java:
+	  New. A Rest resource that lists all users provided by the artifact
+	  database.
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/rest/RestApp.java:
+	  Added the ListUsersResource.
+
+2011-03-02	Sascha L. Teichmann	<sascha.teichmann@intevation.de>
+
+	* artifacts-common/src/main/java/de/intevation/artifacts/common/utils/XMLUtils.java:
+	  Added a convinience method to transform an document
+	  into a byte array. Useful for storing documents as blob database columns.
+
+2011-03-02	Sascha L. Teichmann	<sascha.teichmann@intevation.de>
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/DefaultUserFactory.java:
+	  Wired Backend with DefaultUserFactory via the singleton.
+
+2011-03-02	Sascha L. Teichmann	<sascha.teichmann@intevation.de>
+
+	* artifact-database/src/main/resources/sql/org-h2-driver.properties,
+	  artifact-database/src/main/resources/sql/org-postgresql-driver.properties:
+	  Fixed typo in keys.
+
+	* artifacts/src/main/java/de/intevation/artifacts/UserFactory.java,
+	  artifact-database/src/main/java/de/intevation/artifactdatabase/DefaultUserFactory.java:
+	  Removed superfluous identifier in createUser().
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/Backend.java:
+	  Added stubs for handling of users.
+
+2011-03-02  Ingo Weinzierl <ingo@intevation.de>
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/ArtifactDatabaseImpl.java,
+	  artifacts/src/main/java/de/intevation/artifacts/ArtifactDatabase.java:
+	  Removed duplicated method to list users.
+
+2011-03-02  Ingo Weinzierl <ingo@intevation.de>
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/rest/BaseResource.java:
+	  Added a new method getArtifactDatabase() that retrieves the artifact
+	  database which is used in all subclasses of this resource.
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/rest/CreateUserResource.java:
+	  Use getArtifactDatabase() to retrieve the artifact database.
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/rest/CreateResource.java:
+	  New. A resource that is used to create new users. The information about
+	  the user need to be included in the POST data of the request.
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/rest/RestApp.java:
+	  Added the CreateUserResource.
+
+2011-03-02  Ingo Weinzierl <ingo@intevation.de>
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/DefaultUserFactory.java,
+	  artifacts/src/main/java/de/intevation/artifacts/UserFactory.java: Added
+	  a setup method like the artifact factories have.
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/ArtifactDatabaseImpl.java:
+	  Added an import statement for the UserFactory that was missing here.
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/FactoryBootstrap.java:
+	  The setup() method of the UserFactory is called after the concrete
+	  factory class has been instantiated.
+
+2011-03-02  Ingo Weinzierl <ingo@intevation.de>
+
+	* artifacts/pom.xml: Bugfix: We are able to compile the artifacts package
+	  with local modifications again.
+
+2011-03-01  Ingo Weinzierl <ingo@intevation.de>
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/Backend.java:
+	  Made it a singleton.
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/App.java:
+	  Use the singleton Backend.
+
+2011-03-01  Ingo Weinzierl <ingo@intevation.de>
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/ArtifactDatabaseImpl.java:
+	  Setup the user factory.
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/FactoryBootstrap.java:
+	  New method to retrieve the user factory.
+
+2011-03-01  Ingo Weinzierl <ingo@intevation.de>
+
+	* artifact-database/doc/example-conf/conf.xml: Added a user-factory
+	  configuration.
+
+2011-03-01  Ingo Weinzierl <ingo@intevation.de>
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/FactoryBootstrap.java:
+	  Added the registration of the UserFactory to the bootstrap process.
+
+2011-03-01	Sascha L. Teichmann <sascha.teichmann@intevation.de>
+
+	* artifact-database/src/main/resources/sql/org-h2-driver.properties,
+	  artifact-database/src/main/resources/sql/org-postgresql-driver.properties:
+	  Added SQL statements to handle users in database.
+
+	* artifact-database/doc/schema-pg.sql,
+	  artifact-database/doc/schema-h2.sql: Added missing UNIQUE constraints.
+
+2011-03-01  Ingo Weinzierl <ingo@intevation.de>
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/DefaultUser.java:
+	  Added a new constructor to create new DefaultUsers with an identifier, a
+	  name and a role.
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/DefaultUserFactory.java:
+	  New. A default implementation of a UserFactory that creates
+	  DefaultUsers.
+
+2011-03-01  Ingo Weinzierl <ingo@intevation.de>
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/DefaultArtifactCollectionFactory.java:
+	  A default implementation of an ArtifactCollectionFactory.
+
+2011-03-01	Sascha L. Teichmann <sascha.teichmann@intevation.de>
+
+	* artifact-database/doc/schema-pg.sql,
+	  artifact-database/doc/schema-h2.sql: Extended db scheme to
+	  cope with collections, collection items and users.
+
+2011-03-01	Sascha L. Teichmann <sascha.teichmann@intevation.de>
+
+	* artifacts/src/main/java/de/intevation/artifacts/ArtifactFactory.java:
+	  Typo fix.
+
+	* artifacts/src/main/java/de/intevation/artifacts/ArtifactCollectionFactory.java:
+	  Added method to figure out TTL of a collection.
+
+2011-03-01  Ingo Weinzierl <ingo@intevation.de>
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/DefaultArtifactCollection.java:
+	  A default implementation of a ArtifactCollection.
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/DefaultUser.java:
+	  A default implementation of a User.
+
+2011-03-01	Sascha L. Teichmann <sascha.teichmann@intevation.de>
+
+	* artifacts/src/main/java/de/intevation/artifacts/ArtifactCollection.java:
+	  Added creation time.
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/ArtifactDatabaseImpl.java:
+	  Typo fixes.
+
+2011-03-01	Sascha L. Teichmann <sascha.teichmann@intevation.de>
+
+	* artifacts/src/main/java/de/intevation/artifacts/ArtifactDatabase.java:
+	  Added external API for users and collections.
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/ArtifactDatabaseImpl.java:
+	  Trivial implementation.
+
+2011-03-01	Sascha L. Teichmann <sascha.teichmann@intevation.de>
+
+	* src/main/java/de/intevation/artifacts/UserFactory.java,
+	  src/main/java/de/intevation/artifacts/ArtifactCollection.java: Added
+	  missing call contexts to API.
+
+2011-03-01	Sascha L. Teichmann <sascha.teichmann@intevation.de>
+
+	* artifacts/src/main/java/de/intevation/artifacts/ArtifactCollectionFactory.java:
+	  New: factory to create new collections.
+
+	* artifacts/src/main/java/de/intevation/artifacts/ArtifactCollection.java:
+	  New: Bundles artifacts to be owned by a user.
+
+	* artifacts/src/main/java/de/intevation/artifacts/UserFactory.java:
+	  New: Creates a new user.
+
+	* artifacts/src/main/java/de/intevation/artifacts/User.java:
+	  New: Model of a user.
+
+	* artifacts/src/main/java/de/intevation/artifacts/Artifact.java: Typo fix.
+
+2011-02-18  Ingo Weinzierl <ingo@intevation.de>
+
+	* artifacts-common/src/main/java/de/intevation/artifacts/common/utils/ClientProtocolUtils.java:
+	  Added XPath constants and some method that retrieve important nodes of the
+	  DESCRIBE document.
+
+2011-02-16  Ingo Weinzierl <ingo@intevation.de>
+
+	* artifacts-common/src/main/java/de/intevation/artifacts/common/ArtifactNamespaceContext.java:
+	  New. Added the namespace context here to make it available in clients as
+	  well.
+	
+	* artifacts-common/src/main/java/de/intevation/artifacts/common/utils/ClientProtocolUtils.java:
+	  New. This class provides functions that help working with the artifact
+	  protocol. Currently, there is just a single function to create a new
+	  CREATE document.
+
+2011-02-10  Ingo Weinzierl <ingo@intevation.de>
+
+	* artifacts-common/src/main/resources/de/intevation/artifacts/common/Common.gwt.xml:
+	  A module description that is used by GWT.
+
+	* artifacts-common/pom.xml: The resulting jar archive of the 'package'
+	  target will now contain the compiled classes as well as the source files.
+	  Furthermore, the sources are compiled with Java-1.6. These two things are
+	  required for the jar to be included by GWT as module.
+
+2011-02-10  Ingo Weinzierl <ingo@intevation.de>
+
+	* artifacts-common/src/main/java/de/intevation/artifacts/common/model/User.java,
+	  artifacts-common/src/main/java/de/intevation/artifacts/common/model/DefaultUser.java:
+	  The interface description and a default implementation of a user.
+
+2011-02-07  Ingo Weinzierl <ingo@intevation.de>
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/state/State.java:
+	  Added a method to add new StateData objects to the State.
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/data/StateData.java:
+	  Added a new method to the StateData interface to set the value of the
+	  object.
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/data/DefaultStateData.java:
+	  New. A default implementation of the StateData.
+
+2011-02-07  Ingo Weinzierl <ingo@intevation.de>
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/ProtocolUtils.java:
+	  Added new methods to append the current state and the reachable states to
+	  a root node.
+
+2011-02-07  Ingo Weinzierl <ingo@intevation.de>
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/state/StateEngine.java:
+	  There is a new method that returns a state based on its ID.
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/transition/TransitionEngine.java:
+	  There is a new method that retrieves the reachable states of a specific
+	  state.
+
+2011-02-04  Ingo Weinzierl <ingo@intevation.de>
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/ProtocolUtils.java:
+	  New. This class provides functions that should help creating the artifact
+	  protocol documents of the services describe, feed, advance and out.
+
+2011-02-04  Ingo Weinzierl <ingo@intevation.de>
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/state/AbstractState.java:
+	  Implements the method setup() - the ID and the description of the state
+	  are extracted at this place.
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/state/StateEngine.java:
+	  Added a method to retrieve the states of a specified artifact.
+
+	* artifact-database/pom.xml: Added a dependency to the artifacts-common
+	  package.
+
+2011-02-04  Ingo Weinzierl <ingo@intevation.de>
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/state/AbstractState.java:
+	  New. An abstract implementation of a State. Some basic getter and setter
+	  methods are implemented - setup() and describe() need to be implemented by
+	  concrete subclasses.
+
+2011-02-03  Ingo Weinzierl <ingo@intevation.de>
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/state/StateEngine.java,
+	  artifact-database/src/main/java/de/intevation/artifactdatabase/transition/TransitionEngine.java:
+	  Implementations to store the provided states and transitions of the
+	  artifact server. These engines should be filled at bootstrap.
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/state/State.java,
+	  artifact-database/src/main/java/de/intevation/artifactdatabase/transition/Transition.java,
+	  artifact-database/src/main/java/de/intevation/artifactdatabase/data/StateData.java:
+	  Interface descriptions for states, transitions and user inserted data.
+
+2011-02-02  Ingo Weinzierl <ingo@intevation.de>
+
+	* artifacts-common/src/main/java/de/intevation/artifacts/common/utils/XMLUtils.java:
+	  Corrected the package definition.
+
+2011-02-02  Ingo Weinzierl <ingo@intevation.de>
+
+	* artifacts-common/src/main/java/de/intevation/artifacts/common/utils/XMLUtils.java,
+	  artifacts-common/pom.xml: New package. It will serve some classes and
+	  utilities that are used in the artifact-database package as well as in
+	  concrete artifact packages.
+
+	* pom.xml: Added the artifacts-common package to be able to build all
+	  packages using just the upper level pom file.
+
+2011-02-01  Ingo Weinzierl <ingo@intevation.de>
+
+	* artifact-database/pom.xml: Upgraded Restlet from version 2.0-SNAPSHOT
+	  to the current stable version 2.0.4.
+
+	* pom.xml: The SCM plugin will not check for local changes any longer.
+	  Otherwise, we aren't able to build the project with outstanding
+	  modifications.
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/rest/Standalone.java:
+	  Set the max number of threads available for the REST server to 512. This
+	  is a _WORKAROUND_ for Restlet-2.0.4 which seems to have a bug while
+	  handling threads.
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/rest/ImportResource.java,
+	  artifact-database/src/main/java/de/intevation/artifactdatabase/rest/ArtifactResource.java,
+	  artifact-database/src/main/java/de/intevation/artifactdatabase/rest/ServiceResource.java,
+	  artifact-database/src/main/java/de/intevation/artifactdatabase/rest/ExportResource.java,
+	  artifact-database/src/main/java/de/intevation/artifactdatabase/rest/CreateResource.java,
+	  artifact-database/src/main/java/de/intevation/artifactdatabase/rest/ArtifactOutResource.java:
+	  Renamed the packages of the Request and Response class that have been
+	  changed from Restlet 2.0-SNAPSHOT to 2.0.4.
+
+2010-11-02  Ingo Weinzierl <ingo@intevation.de>
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/DefaultArtifactContextFactory.java,
+	  artifact-database/src/main/java/de/intevation/artifactdatabase/ProxyArtifact.java,
+	  artifact-database/src/main/java/de/intevation/artifactdatabase/SQL.java,
+	  artifact-database/src/main/java/de/intevation/artifactdatabase/DefaultArtifact.java,
+	  artifact-database/src/main/java/de/intevation/artifactdatabase/DefaultPreferredLocale.java,
+	  artifact-database/src/main/java/de/intevation/artifactdatabase/ArtifactDatabaseImpl.java,
+	  artifact-database/src/main/java/de/intevation/artifactdatabase/FactoryBootstrap.java,
+	  artifact-database/src/main/java/de/intevation/artifactdatabase/DefaultService.java,
+	  artifact-database/src/main/java/de/intevation/artifactdatabase/DBConnection.java,
+	  artifact-database/src/main/java/de/intevation/artifactdatabase/Config.java,
+	  artifact-database/src/main/java/de/intevation/artifactdatabase/DefaultArtifactContext.java,
+	  artifact-database/src/main/java/de/intevation/artifactdatabase/App.java,
+	  artifact-database/src/main/java/de/intevation/artifactdatabase/XMLUtils.java,
+	  artifact-database/src/main/java/de/intevation/artifactdatabase/Backend.java,
+	  artifact-database/src/main/java/de/intevation/artifactdatabase/DefaultCallMeta.java,
+	  artifact-database/src/main/java/de/intevation/artifactdatabase/StringUtils.java,
+	  artifact-database/src/main/java/de/intevation/artifactdatabase/DefaultArtifactFactory.java,
+	  artifact-database/src/main/java/de/intevation/artifactdatabase/DefaultArtifactSerializer.java,
+	  artifact-database/src/main/java/de/intevation/artifactdatabase/Id.java,
+	  artifact-database/src/main/java/de/intevation/artifactdatabase/rest/BaseResource.java,
+	  artifact-database/src/main/java/de/intevation/artifactdatabase/rest/ImportResource.java,
+	  artifact-database/src/main/java/de/intevation/artifactdatabase/rest/ArtifactResource.java,
+	  artifact-database/src/main/java/de/intevation/artifactdatabase/rest/FactoriesResource.java,
+	  artifact-database/src/main/java/de/intevation/artifactdatabase/rest/ServiceResource.java,
+	  artifact-database/src/main/java/de/intevation/artifactdatabase/rest/Standalone.java,
+	  artifact-database/src/main/java/de/intevation/artifactdatabase/rest/ExportResource.java,
+	  artifact-database/src/main/java/de/intevation/artifactdatabase/rest/OutRepresentation.java,
+	  artifact-database/src/main/java/de/intevation/artifactdatabase/rest/CreateResource.java,
+	  artifact-database/src/main/java/de/intevation/artifactdatabase/rest/ServicesResource.java,
+	  artifact-database/src/main/java/de/intevation/artifactdatabase/rest/ArtifactOutResource.java,
+	  artifact-database/src/main/java/de/intevation/artifactdatabase/rest/RestApp.java,
+	  artifact-database/src/main/java/de/intevation/artifactdatabase/DefaultServiceFactory.java,
+	  artifact-database/src/main/java/de/intevation/artifactdatabase/DatabaseCleaner.java,
+	  artifacts/src/main/java/de/intevation/artifacts/ArtifactNamespaceContext.java,
+	  artifacts/src/main/java/de/intevation/artifacts/CallContext.java,
+	  artifacts/src/main/java/de/intevation/artifacts/Service.java,
+	  artifacts/src/main/java/de/intevation/artifacts/ArtifactDatabaseException.java,
+	  artifacts/src/main/java/de/intevation/artifacts/ArtifactDatabase.java,
+	  artifacts/src/main/java/de/intevation/artifacts/CallMeta.java,
+	  artifacts/src/main/java/de/intevation/artifacts/ArtifactFactory.java,
+	  artifacts/src/main/java/de/intevation/artifacts/ArtifactSerializer.java,
+	  artifacts/src/main/java/de/intevation/artifacts/ServiceFactory.java,
+	  artifacts/src/main/java/de/intevation/artifacts/ArtifactContextFactory.java,
+	  artifacts/src/main/java/de/intevation/artifacts/Artifact.java,
+	  artifacts/src/main/java/de/intevation/artifacts/PreferredLocale.java,
+	  contrib/run.sh: Added a license header to each of these files.
+
+	* LGPL.txt: License file for the GNU LGPL v2.1
+
+2010-06-14  Ingo Weinzierl <ingo_weinzierl@web.de>
+
+	* artifacts/pom.xml,
+	  pom.xml: Write svn revision to MANIFEST files while creating jar archives.
+
+2010-04-28  Hans Plum <hans@intevation.de>
+
+	* Tagging Version 1.0:
+	Because of finishing all functional requirements, rename to 1.0
+	instead of 0.6
+
+2010-04-28  Ingo Weinzierl <ingo.weinzierl@intevation.de>
+
+	* Changes, NEWS, ChangeLog: Summarized activities.
+
+2010-04-27  Ingo Weinzierl <ingo.weinzierl@intevation.de>
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/DBConnection.java:
+	  The path to database can be configured with a relative path now.
+
+2010-04-17	Sascha L. Teichmann	<sascha.teichmann@intevation.de>
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/SQL.java,
+	  artifact-database/src/main/java/de/intevation/artifactdatabase/ArtifactDatabaseImpl.java,
+	  artifact-database/src/main/java/de/intevation/artifactdatabase/FactoryBootstrap.java,
+	  artifact-database/src/main/java/de/intevation/artifactdatabase/XMLUtils.java,
+	  artifact-database/src/main/java/de/intevation/artifactdatabase/rest/BaseResource.java,
+	  artifact-database/src/main/java/de/intevation/artifactdatabase/rest/ArtifactOutResource.java,
+	  artifacts/src/main/java/de/intevation/artifacts/ArtifactNamespaceContext.java:
+	  Brought all line lengths of non Javadoc lines below 80.
+
+2010-03-28	Sascha L. Teichmann	<sascha.teichmann@intevation.de>
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/ProxyArtifact.java,
+	  artifact-database/src/main/java/de/intevation/artifactdatabase/SQL.java,
+	  artifact-database/src/main/java/de/intevation/artifactdatabase/DefaultArtifactContextFactory.java,
+	  artifact-database/src/main/java/de/intevation/artifactdatabase/DBConnection.java,
+	  artifact-database/src/main/java/de/intevation/artifactdatabase/Config.java,
+	  artifact-database/src/main/java/de/intevation/artifactdatabase/App.java,
+	  artifact-database/src/main/java/de/intevation/artifactdatabase/DefaultCallMeta.java,
+	  artifact-database/src/main/java/de/intevation/artifactdatabase/Backend.java,
+	  artifact-database/src/main/java/de/intevation/artifactdatabase/DefaultArtifactFactory.java,
+	  artifact-database/src/main/java/de/intevation/artifactdatabase/DefaultArtifactSerializer.java,
+	  artifact-database/src/main/java/de/intevation/artifactdatabase/rest/BaseResource.java,
+	  artifact-database/src/main/java/de/intevation/artifactdatabase/rest/ArtifactResource.java,
+	  artifact-database/src/main/java/de/intevation/artifactdatabase/rest/FactoriesResource.java,
+	  artifact-database/src/main/java/de/intevation/artifactdatabase/rest/Standalone.java,
+	  artifact-database/src/main/java/de/intevation/artifactdatabase/rest/ServiceResource.java,
+	  artifact-database/src/main/java/de/intevation/artifactdatabase/rest/OutRepresentation.java,
+	  artifact-database/src/main/java/de/intevation/artifactdatabase/rest/CreateResource.java,
+	  artifact-database/src/main/java/de/intevation/artifactdatabase/rest/ArtifactOutResource.java,
+	  artifact-database/src/main/java/de/intevation/artifactdatabase/DefaultServiceFactory.java,
+	  artifact-database/src/main/java/de/intevation/artifactdatabase/DatabaseCleaner.java,
+	  artifacts/src/main/java/de/intevation/artifacts/ArtifactNamespaceContext.java:
+	  Sorted imports.
+
+2010-03-28	Sascha L. Teichmann	<sascha.teichmann@intevation.de>
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/ArtifactDatabaseImpl.java,
+	  artifact-database/src/main/java/de/intevation/artifactdatabase/XMLUtils.java,
+	  TODO:
+	  Last bunch of javadoc. Possible TODO: check for typos and cross reference problems
+	  but the main work should be done with this commit.
+
+2010-03-28	Sascha L. Teichmann	<sascha.teichmann@intevation.de>
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/DefaultArtifactContextFactory.java,
+	  artifact-database/src/main/java/de/intevation/artifactdatabase/DefaultArtifact.java,
+	  artifact-database/src/main/java/de/intevation/artifactdatabase/DBConnection.java,
+	  artifact-database/src/main/java/de/intevation/artifactdatabase/Config.java,
+	  artifact-database/src/main/java/de/intevation/artifactdatabase/XMLUtils.java,
+	  artifact-database/src/main/java/de/intevation/artifactdatabase/DefaultCallMeta.java,
+	  artifact-database/src/main/java/de/intevation/artifactdatabase/DefaultArtifactFactory.java,
+	  artifact-database/src/main/java/de/intevation/artifactdatabase/rest/FactoriesResource.java,
+	  artifact-database/src/main/java/de/intevation/artifactdatabase/rest/CreateResource.java,
+	  artifact-database/src/main/java/de/intevation/artifactdatabase/DatabaseCleaner.java:
+	  More javadoc, some code formatting.
+
+2010-03-26	Sascha L. Teichmann	<sascha.teichmann@intevation.de>
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/ProxyArtifact.java,
+	  artifact-database/src/main/java/de/intevation/artifactdatabase/DefaultPreferredLocale.java,
+	  artifact-database/src/main/java/de/intevation/artifactdatabase/DefaultService.java,
+	  artifact-database/src/main/java/de/intevation/artifactdatabase/DefaultArtifactContext.java,
+	  artifact-database/src/main/java/de/intevation/artifactdatabase/Backend.java,
+	  artifact-database/src/main/java/de/intevation/artifactdatabase/DefaultArtifactFactory.java,
+	  artifact-database/src/main/java/de/intevation/artifactdatabase/DefaultServiceFactory.java,
+	  artifact-database/src/main/java/de/intevation/artifactdatabase/DatabaseCleaner.java:
+	  Even more javadoc.
+
+2010-03-26	Sascha L. Teichmann	<sascha.teichmann@intevation.de>
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/ProxyArtifact.java,
+	  artifact-database/src/main/java/de/intevation/artifactdatabase/DefaultPreferredLocale.java,
+	  artifact-database/src/main/java/de/intevation/artifactdatabase/DBConnection.java,
+	  artifact-database/src/main/java/de/intevation/artifactdatabase/DefaultService.java,
+	  artifact-database/src/main/java/de/intevation/artifactdatabase/FactoryBootstrap.java,
+	  artifact-database/src/main/java/de/intevation/artifactdatabase/Id.java,
+	  artifact-database/src/main/java/de/intevation/artifactdatabase/rest/ImportResource.java,
+	  artifact-database/src/main/java/de/intevation/artifactdatabase/rest/ArtifactResource.java,
+	  artifact-database/src/main/java/de/intevation/artifactdatabase/rest/FactoriesResource.java,
+	  artifact-database/src/main/java/de/intevation/artifactdatabase/rest/ServiceResource.java,
+	  artifact-database/src/main/java/de/intevation/artifactdatabase/rest/ExportResource.java,
+	  artifact-database/src/main/java/de/intevation/artifactdatabase/rest/CreateResource.java,
+	  artifact-database/src/main/java/de/intevation/artifactdatabase/rest/ServicesResource.java,
+	  artifact-database/src/main/java/de/intevation/artifactdatabase/DefaultServiceFactory.java:
+	  More javadoc (fixes small glitches, too).
+
+2010-03-26	Sascha L. Teichmann	<sascha.teichmann@intevation.de>
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/rest/BaseResource.java,
+	  artifact-database/src/main/java/de/intevation/artifactdatabase/rest/ImportResource.java,
+	  artifact-database/src/main/java/de/intevation/artifactdatabase/rest/ArtifactResource.java,
+	  artifact-database/src/main/java/de/intevation/artifactdatabase/rest/FactoriesResource.java,
+	  artifact-database/src/main/java/de/intevation/artifactdatabase/rest/ServiceResource.java,
+	  artifact-database/src/main/java/de/intevation/artifactdatabase/rest/Standalone.java,
+	  artifact-database/src/main/java/de/intevation/artifactdatabase/rest/ExportResource.java,
+	  artifact-database/src/main/java/de/intevation/artifactdatabase/rest/OutRepresentation.java,
+	  artifact-database/src/main/java/de/intevation/artifactdatabase/rest/CreateResource.java,
+	  artifact-database/src/main/java/de/intevation/artifactdatabase/rest/ServicesResource.java,
+	  artifact-database/src/main/java/de/intevation/artifactdatabase/rest/ArtifactOutResource.java,
+	  artifact-database/src/main/java/de/intevation/artifactdatabase/rest/RestApp.java:
+	  Added javadoc to the REST package (complete). TODO: Add javadoc to the remaining classes
+	  of the 'artifactdatabase'.
+
+2010-03-26	Sascha L. Teichmann	<sascha.teichmann@intevation.de>
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/SQL.java,
+	  artifact-database/src/main/java/de/intevation/artifactdatabase/DefaultArtifactContextFactory.java,
+	  artifact-database/src/main/java/de/intevation/artifactdatabase/DefaultArtifact.java,
+	  artifact-database/src/main/java/de/intevation/artifactdatabase/DBConnection.java,
+	  artifact-database/src/main/java/de/intevation/artifactdatabase/App.java,
+	  artifact-database/src/main/java/de/intevation/artifactdatabase/StringUtils.java,
+	  artifact-database/src/main/java/de/intevation/artifactdatabase/DefaultCallMeta.java,
+	  artifact-database/src/main/java/de/intevation/artifactdatabase/DefaultArtifactSerializer.java:
+	  Added javadoc.
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/package.html,
+	  artifact-database/src/main/java/de/intevation/artifactdatabase/rest/package.html: New.
+	  Package descriptions.
+
+2010-03-26	Sascha L. Teichmann	<sascha.teichmann@intevation.de>
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/ProxyArtifact.java,
+	  artifact-database/src/main/java/de/intevation/artifactdatabase/DefaultArtifact.java,
+	  artifact-database/src/main/java/de/intevation/artifactdatabase/ArtifactDatabaseImpl.java,
+	  artifact-database/src/main/java/de/intevation/artifactdatabase/Backend.java,
+	  artifact-database/src/main/java/de/intevation/artifactdatabase/DefaultArtifactFactory.java,
+	  artifact-database/src/main/java/de/intevation/artifactdatabase/rest/BaseResource.java,
+	  artifact-database/src/main/java/de/intevation/artifactdatabase/rest/CreateResource.java,
+	  artifacts/src/main/java/de/intevation/artifacts/CallContext.java,
+	  artifacts/src/main/java/de/intevation/artifacts/Artifact.java:
+	  Removed trailing whitespace:
+	  find -name \*.java | xargs sed -i 's/[ \t]\+$//'
+
+2010-03-26	Sascha L. Teichmann	<sascha.teichmann@intevation.de>
+
+	* artifacts/src/main/java/de/intevation/artifacts/ArtifactDatabase.java,
+	  artifacts/src/main/java/de/intevation/artifacts/Artifact.java:
+	  Completed Javadoc of sub module 'artifacts'. TODO: add Javadoc to
+	  module 'artifact-database'
+
+	* artifacts/src/main/java/de/intevation/artifacts/CallContext.java,
+	  artifacts/src/main/java/de/intevation/artifacts/ArtifactDatabaseException.java,
+	  artifacts/src/main/java/de/intevation/artifacts/ArtifactFactory.java,
+	  artifacts/src/main/java/de/intevation/artifacts/ArtifactSerializer.java,
+	  artifacts/src/main/java/de/intevation/artifacts/ArtifactContextFactory.java,
+	  artifacts/src/main/java/de/intevation/artifacts/PreferredLocale.java:
+	  Fixed vim modeline.
+
+2010-03-25  Ingo Weinzierl <ingo.weinzierl@intevation.de>
+
+	* artifacts/src/main/java/de/intevation/artifacts/CallContext.java: Added a
+	  method 'getTimeToLive()' which retrieves the current artifact's time to 
+	  live. The ttl of an artifact is available where ever a CallContext object
+	  is existing.
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/Backend.java:
+	  Added new field ttl of an artifact to an PersistentArtifact.
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/ArtifactDatabaseImpl.java:
+	  Implemented 'getTimeToLive()' in CallContextImpl.
+
+2010-03-22  Ingo Weinzierl <ingo.weinzierl@intevation.de>
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/App.java:
+	  Install a SLF4JBridgeHandler after logging is configured. This handler is
+	  used to route incoming java.util.logging logs to SLF4J. In our case, we
+	  route this incoming log to our log4j logger.
+
+	* artifact-database/pom.xml: Added dependencies for SLF4J 1.5.11.
+
+2010-03-22  Ingo Weinzierl <ingo.weinzierl@intevation.de>
+
+	  Issue208 (Remove special data of an 'out'-target before exporting
+	  artifacts)
+
+	* artifacts/src/main/java/de/intevation/artifacts/Artifact.java: Added a
+	  'cleanup(Object context)' method to the interface definition of artifacts.
+	  This method should be called before exporting an artifact and should
+	  remove data stored on an artifact (or its current state) which have been
+	  written by an 'out'.
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/DefaultArtifact.java:
+	  Default implementation of cleanup method - nothing is done here yet.
+	  Override this method if an artifact needs to be cleaned before an export.
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/ProxyArtifact.java:
+	  Call cleanup method on the proxied artifact if proxied is existing.
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/ArtifactDatabaseImpl.java:
+	  Call cleanup method before exporting an artifact as xml.
+
+2010-03-19  Ingo Weinzierl <ingo.weinzierl@intevation.de>
+
+	  Issue208 (Artifact gets a new identifier after being imported)
+
+	* artifacts/src/main/java/de/intevation/artifacts/Artifact.java: Added a new
+	  method setIdentifier(String identifier).
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/DefaultArtifact.java:
+	  Default implementation of setIdentifier(String identifier) to give an 
+	  artifact a new identifier.
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/ArtifactDatabaseImpl.java:
+	  Set a new identifier on an artifact after deserializing it.
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/ProxyArtifact.java:
+	  Set the identifier of the proxied artifact right after setting its own
+	  identifier.
+
+2010-03-19  Ingo Weinzierl <ingo.weinzierl@intevation.de>
+
+	  Issue208 (Artifact import)
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/rest/ImportResource.java:
+	  New server resource to import an artifact from an incoming xml document.
+	  The resource is available as /import and accepts xml documents send via
+	  HTTP POST.
+
+	* artifact-database/src/main/resources/sql/org-postgresql-driver.properties,
+	  artifact-database/src/main/resources/sql/org-h2-driver.properties: New sql
+	  statements to update an existing artifact.
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/ArtifactDatabaseImpl.java:
+	  New method to import an artifact from an incoming xml document. The data
+	  contained in this document is decoded using the secret.
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/Backend.java:
+	  New method to store an artifact into database or replace it if an artifact
+	  with the given id is already existing.
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/StringUtils.java:
+	  Removed method to convert a byte array into a string (this is done by
+	  Apache's Hex class in commons codec) and added a new method to convert a
+	  string into a byte array using Apache commons codec as well.
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/rest/RestApp.java:
+	  Register ImportResource to webserver.
+
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/DatabaseCleaner.java,
+	  artifact-database/src/main/java/de/intevation/artifactdatabase/SQL.java,
+	  artifact-database/src/main/java/de/intevation/artifactdatabase/Config.java,
+	  artifact-database/src/main/java/de/intevation/artifactdatabase/Id.java:
+	  Converted the author javadocs.
+
+2010-03-16  Ingo Weinzierl <ingo.weinzierl@intevation.de>
+
+	  Issue208 (Artifact export)
+
+	* artifact-database/doc/example-conf/conf.xml: Added a section to configure
+	  a secret string used to identify artifact imports for security reason.
+	  Incoming artifact imports need to be identified with this secret, otherwise
+	  the import should be blocked.
+	  Xpath for this secret: '/artifact-database/export-secret/text()'
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/FactoryBootstrap.java:
+	  New attribute 'exportSecret' and some code to read the secret from
+	  configuration while application startup.
+
+	* artifact-database/pom.xml: Added Apache Commons Codec library used to
+	  encode/decode artifact data.
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/StringUtils.java:
+	  New utilities class for frequently used string operations.
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/ArtifactDatabaseImpl.java:
+	  Added some methods for exporting artifacts as xml documents. The data part
+	  is base64 encoded. A secret key is used while encoding this data to verify
+	  artifact imports, later.
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/Backend.java:
+	  Added an artifact loader interface used to deserialize artifacts. 
+	  getArtifact() implements such an ArtifactLoader to return
+	  PersistentArtifacts.
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/rest/ExportResource.java:
+	  New. ServerResource to export artifacts (innerGet). This resource is
+	  available under "/export/{uuid}" via HTTP-GET request and returns an
+	  artifact specified by uuid as xml document.
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/rest/RestApp.java:
+	  Register ExportResource to webserver.
+
+	* artifacts/src/main/java/de/intevation/artifacts/ArtifactDatabase.java:
+	  Added method to export artifacts.
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/App.java:
+	  Reset bootstrap after application startup.
+
+2010-03-11	Sascha L. Teichmann	<sascha.teichmann@intevation.de>
+
+	* artifacts/src/main/java/de/intevation/artifacts/ArtifactNamespaceContext.java,
+	  artifacts/src/main/java/de/intevation/artifacts/CallContext.java,
+	  artifacts/src/main/java/de/intevation/artifacts/Service.java,
+	  artifacts/src/main/java/de/intevation/artifacts/ArtifactDatabaseException.java,
+	  artifacts/src/main/java/de/intevation/artifacts/CallMeta.java,
+	  artifacts/src/main/java/de/intevation/artifacts/ArtifactFactory.java,
+	  artifacts/src/main/java/de/intevation/artifacts/ArtifactSerializer.java,
+	  artifacts/src/main/java/de/intevation/artifacts/ServiceFactory.java,
+	  artifacts/src/main/java/de/intevation/artifacts/ArtifactContextFactory.java,
+	  artifacts/src/main/java/de/intevation/artifacts/Artifact.java,
+	  artifacts/src/main/java/de/intevation/artifacts/PreferredLocale.java:
+	  Repaired the javadoc stuff.
+
+2010-02-21	Sascha L. Teichmann	<sascha.teichmann@intevation.de>
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/ProxyArtifact.java,
+	  artifact-database/src/main/java/de/intevation/artifactdatabase/DefaultArtifactContextFactory.java,
+	  artifact-database/src/main/java/de/intevation/artifactdatabase/DefaultArtifact.java,
+	  artifact-database/src/main/java/de/intevation/artifactdatabase/DefaultPreferredLocale.java,
+	  artifact-database/src/main/java/de/intevation/artifactdatabase/FactoryBootstrap.java,
+	  artifact-database/src/main/java/de/intevation/artifactdatabase/DefaultArtifactContext.java,
+	  artifact-database/src/main/java/de/intevation/artifactdatabase/App.java,
+	  artifact-database/src/main/java/de/intevation/artifactdatabase/XMLUtils.java,
+	  artifact-database/src/main/java/de/intevation/artifactdatabase/DefaultCallMeta.java,
+	  artifact-database/src/main/java/de/intevation/artifactdatabase/DefaultArtifactFactory.java,
+	  artifact-database/src/main/java/de/intevation/artifactdatabase/DefaultArtifactSerializer.java,
+	  artifact-database/src/main/java/de/intevation/artifactdatabase/rest/BaseResource.java,
+	  artifact-database/src/main/java/de/intevation/artifactdatabase/rest/ArtifactResource.java,
+	  artifact-database/src/main/java/de/intevation/artifactdatabase/rest/FactoriesResource.java,
+	  artifact-database/src/main/java/de/intevation/artifactdatabase/rest/Standalone.java,
+	  artifact-database/src/main/java/de/intevation/artifactdatabase/rest/ServiceResource.java,
+	  artifact-database/src/main/java/de/intevation/artifactdatabase/rest/OutRepresentation.java,
+	  artifact-database/src/main/java/de/intevation/artifactdatabase/rest/CreateResource.java,
+	  artifact-database/src/main/java/de/intevation/artifactdatabase/rest/ServicesResource.java,
+	  artifact-database/src/main/java/de/intevation/artifactdatabase/rest/ArtifactOutResource.java,
+	  artifact-database/src/main/java/de/intevation/artifactdatabase/rest/RestApp.java,
+	  artifact-database/src/main/java/de/intevation/artifactdatabase/DefaultServiceFactory.java,
+	  artifacts/src/main/java/de/intevation/artifacts/ArtifactNamespaceContext.java,
+	  artifacts/src/main/java/de/intevation/artifacts/Service.java,
+	  artifacts/src/main/java/de/intevation/artifacts/ArtifactDatabaseException.java,
+	  artifacts/src/main/java/de/intevation/artifacts/ArtifactDatabase.java,
+	  artifacts/src/main/java/de/intevation/artifacts/CallMeta.java,
+	  artifacts/src/main/java/de/intevation/artifacts/ArtifactFactory.java,
+	  artifacts/src/main/java/de/intevation/artifacts/ArtifactSerializer.java,
+	  artifacts/src/main/java/de/intevation/artifacts/ServiceFactory.java,
+	  artifacts/src/main/java/de/intevation/artifacts/ArtifactContextFactory.java,
+	  artifacts/src/main/java/de/intevation/artifacts/Artifact.java,
+	  artifacts/src/main/java/de/intevation/artifacts/PreferredLocale.java:
+	  find -name \*.java | \
+	  xargs sed -i \
+	  -e 's/@author[ ]\+\([^(<]\+\)[<(]\([^>)]\+\)[>)]/@author <a href="mailto:\2">\1<\/a>/g' \
+	  -e 's@[ ]\+</a>@</a>@g'
+
+	  Bring @author javadoc tags in form '@author <a href="john.doe@example.com">John Doe</a>'
+	  to make the sources to be able to be formatted with jalopy (http://jalopy.sourceforge.net).
+
+2010-02-05  Ingo Weinzierl <ingo.weinzierl@intevation.de>
+
+	  Issue170
+	
+	* artifact-database/pom.xml: Changed log4j version to 1.2.14 (later version
+	  causes errors and breaks while maven build process).
+
+2010-02-01  Tim Englich  <tim.englich@intevation.de>
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/rest/CreateResource.java (innerPost): 
+	  Put the XML-Document which was send by the client to the 
+	  ArtifactDatabase.createArtifactWithFactory-Method.
+	  
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/DefaultArtifactFactory.java (createArtifact),
+	  artifact-database/src/main/java/de/intevation/artifactdatabase/ArtifactDatabaseImpl.java (createArtifactWithFactory),
+	  artifact-database/src/main/java/de/intevation/artifactdatabase/DefaultArtifact.java (setup),
+	  artifacts/src/main/java/de/intevation/artifacts/ArtifactFactory.java (setup),
+	  artifacts/src/main/java/de/intevation/artifacts/ArtifactDatabase.java (createArtifactWithFactory),
+	  artifacts/src/main/java/de/intevation/artifacts/Artifact.java (setup): 
+	  Changed Method signatures so that it is possible to put the Document
+	  which will be send during the create Step of an Artifact to the Setup-Routine
+	  of an Artifact.
+	  Now it is possible to send further Informations to the Artifact using the 
+	  XML-Document.
+	  This is nessesary for manipoulating the Artifact e.g. setting Parameters 
+	  which should only be displaied or e.g. put an Geometry-Object into the 
+	  Artifact which should limit the displayed results.
+
+2010-01-27  Hans Plum <hans@intevation.de>
+
+	RELEASE 0.4
+
+	* Changes, NEWS, ChangeLog: summarized activities.
+
+2010-01-22	Sascha L. Teichmann	<sascha.teichmann@intevation.de>
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/rest/ServiceResource.java:
+	  New REST wrapper to call the service. Bound under '/service/{service}' 
+	  where '{service}' is the name of the service as announced by '/services'.
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/rest/RestApp.java:
+	  Register new resource to web server.
+
+2010-01-22	Sascha L. Teichmann	<sascha.teichmann@intevation.de>
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/rest/ServicesResource.java:
+	  New. Serves a list of available services under '/services' as XML. Structure
+	  is much like '/factories' with 's/artifact/service/'.
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/rest/RestApp.java:
+	  Register new resource to web server.
+
+2010-01-22	Sascha L. Teichmann	<sascha.teichmann@intevation.de>
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/FactoryBootstrap.java:
+	  Load service factories while bootstrapping the server.
+
+	* artifact-database/doc/example-conf/conf.xml: Added examples for trivial services.
+
+2010-01-22	Sascha L. Teichmann	<sascha.teichmann@intevation.de>
+
+	* artifacts/src/main/java/de/intevation/artifacts/ArtifactDatabase.java:
+	  Forgot to throw exception if service is not available.
+
+	* artifacts/src/main/java/de/intevation/artifacts/ServiceFactory.java:
+	  Fixed indention.
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/FactoryBootstrap.java:
+	  Implemented service factory loading trivial. TODO: Load
+	  them from the configuration.
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/ArtifactDatabaseImpl.java:
+	  Serve the services.
+
+2010-01-22	Sascha L. Teichmann	<sascha.teichmann@intevation.de>
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/DefaultService.java:
+	  Default implementation of a service. Useful as a base class.
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/DefaultServiceFactory.java:
+	  Default implementation of a service factory. Modelled right after
+	  DefaultArtifactFactory. Useful as a base class.
+
+2010-01-22	Sascha L. Teichmann	<sascha.teichmann@intevation.de>
+
+	* artifacts/src/main/java/de/intevation/artifacts/Service.java: New.
+	  Interface to describe a service. It takes XML documents and produces
+	  XML documents.
+
+	* artifacts/src/main/java/de/intevation/artifacts/ServiceFactory.java:
+	  Factory to create services. Setup at startup.
+
+	* artifacts/src/main/java/de/intevation/artifacts/ArtifactDatabase.java:
+	  Added methods to describe the available services and call them.
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/ArtifactDatabaseImpl.java:
+	  Implemented new ArtifactDatabase interface trivial. TODO:
+	  Setting it up from configuration, do the processing, register
+	  urls in REST server and so on.
+
+2010-01-22	Sascha L. Teichmann	<sascha.teichmann@intevation.de>
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/XMLUtils.java:
+	  Added method 'toStream()' to copy a document into an output stream.
+
+2010-01-15  Ingo Weinzierl <ingo.weinzierl@intevation.de>
+
+	* artifacts/src/main/java/de/intevation/artifacts/ArtifactDatabase.java,
+	  artifact-database/src/main/java/de/intevation/artifactdatabase/ArtifactDatabaseImpl.java:
+	  Added a method 'getInternalArtifactFactory' to get an ArtifactFactory by
+	  its name.
+
+	* artifacts/src/main/java/de/intevation/artifacts/CallContext.java: Added
+	  'getDatabase' method to get access to the ArtifactDatabase from context.
+
+2010-01-12  Ingo Weinzierl <ingo.weinzierl@intevation.de>
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/rest/ArtifactOutResource.java,
+	  artifact-database/src/main/java/de/intevation/artifactdatabase/rest/CreateResource.java:
+	  Create document namespace aware and adapted XPath expressions for this.
+
+2010-01-09  Ingo Weinzierl <ingo.weinzierl@intevation.de>
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/XMLUtils.java:
+	  Added	convenient method to add attributes to nodes. Attributes have no
+	  prefix as default.
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/rest/ArtifactResource.java:
+	  Adapted xpath (added prefix) to find action and made the document which is
+	  created by this resource namespace aware.
+
+2009-12-17	Sascha L. Teichmann	<sascha.teichmann@intevation.de>
+
+	RELEASE 0.3
+
+	* Changes, NEWS, ChangeLog: summarized activities.
+
+2009-12-16	Sascha L. Teichmann	<sascha.teichmann@intevation.de>
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/XMLUtils.java:
+	  Added static method parseDocument(File) to load document from
+	  file.
+
+2009-12-15  Ingo Weinzierl <ingo.weinzierl@intevation.de>
+
+	  Issue106
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/Config.java:
+	  Removed path to chart template which doesn't belong here.
+
+2009-12-11	Sascha L. Teichmann	<sascha.teichmann@intevation.de>
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/ProxyArtifact.java:
+	Removed needless import.
+
+2009-11-23  Ingo Weinzierl <ingo.weinzierl@intevation.de>
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/Config.java:
+	  Added path to chart template file and a new method to retrieve the
+	  configuration.
+
+2009-11-23	Sascha L. Teichmann	<sascha.teichmann@intevation.de>
+
+	* artifacts/src/main/java/de/intevation/artifacts/CallContext.java:
+	Added a context dictionary accessible through putContextValue(key, value)
+	and getContextValue(key). Purpose is make artifact calls stackable and
+	transfer information through the call level transparently.
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/ArtifactDatabaseImpl.java:
+	Adjusted default implementation of CallContext.
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/ProxyArtifact.java:
+	New. A general proxy class for artifacts in artifact databases. This class uses 
+	the extended call context semantics.
+
+	The artifact calls (feed, describe, out, ...) are passed to a proxied artifact.
+	If the proxied artifact decides to be replaced by some other artifact it has to
+	to store a reference to the replacement artifact in the call context with
+	putContextValue(ProxyArtifact.REPLACE_PROXY, my_new_artifact). After the call
+	is finished the proxied object will change. This indirect callback mechanism is
+	used to minimize side effects.
+
+	The identifier() call is not forwarded to the proxied artifact to have a stable id.
+
+	Limitations: This mechanism does not let you build real matroska (multi level)
+	like artifact structures. This would only be possible if a kind of call context
+	stack is introduced.
+
+2009-11-13  Hans Plum <hans@intevation.de>
+
+	RELEASE 0.2
+
+	* Changes, NEWS summarized
+
+2009-11-11  Ingo Weinzierl <ingo.weinzierl@intevation.de>
+
+	* HOWTO: Added HOWTO describing the setup of the environment (apache, 
+	  tomcat, gnv).
+
+2009-11-04	Sascha L. Teichmann	<sascha.teichmann@intevation.de>
+
+	* artifacts/src/main/java/de/intevation/artifacts/Artifact.java: describe() now may
+	given an input XML document (which can be null to indicate that no input is given).
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/DefaultArtifact.java:
+	Adjusted to implemented the Artifact interface.
+
+	* artifacts/src/main/java/de/intevation/artifacts/ArtifactDatabase.java: Pass through
+	the optional XML input document to describe().
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/ArtifactDatabaseImpl.java:
+	Implements the adjusted ArtifactDatabase interface.
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/rest/ArtifactResource.java:
+	Now its also possible to send describe() as a POST request. The request body is handled as
+	XML.
+
+2009-10-21  Tim Englich  <tim.englich@intevation.de>
+
+	Issue 59: Make paths in configuration relativ
+
+	* src/main/java/de/intevation/artifactdatabase/Config.java (replaceConfigDir): 
+	Applied patch from slt to set the Configuration Folder into the AbsoluteFileName issue59
+
+2009-10-07	Sascha L. Teichmann	<sascha.teichmann@intevation.de>
+
+	RELEASE 0.1
+
+	* Changes, NEWS: Summaried changes.
+
+2009-10-06	Sascha L. Teichmann	<sascha.teichmann@intevation.de>
+
+	* Changelog -> ChangeLog: Renamed to make eclipse happy.
+
+2009-10-02	Sascha L. Teichmann	<sascha.teichmann@intevation.de>
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/DefaultCallMeta.java:
+	Initial instance variable with given languages in constructor.
+
+2009-10-02	Sascha L. Teichmann	<sascha.teichmann@intevation.de>
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/DefaultCallMeta.java:
+	Better implementation for fetching the preferred locale.
+
+2009-10-02	Sascha L. Teichmann	<sascha.teichmann@intevation.de>
+
+	* artifacts/src/main/java/de/intevation/artifacts/CallMeta.java:
+	Added method to fetch preferred locale.
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/DefaultCallMeta.java:
+	Trivial (and incorrect!) implementation.
+
+2009-10-01	Sascha L. Teichmann	<sascha.teichmann@intevation.de>
+
+	Add i18n support via "Accept-Language" HTTP headers.
+
+	* artifact-database/pom.xml: Using restlet 2.0 snapshot. 
+	M3 does not implement the required API, M4 is not in maven repo yet.
+	TODO: Bring to M4 as soon it is released in maven repository.
+
+	* contrib/run.sh: Adjusted to use the snapshot.
+
+	* artifacts/src/main/java/de/intevation/artifacts/CallMeta.java:
+	New. Meta information of a call, languages, e.g.
+
+	* artifacts/src/main/java/de/intevation/artifacts/PreferredLocale.java:
+	New. Model preferred languages.
+
+	* artifacts/src/main/java/de/intevation/artifacts/CallContext.java:
+	Has now a reference to the meta information.
+
+	* artifacts/src/main/java/de/intevation/artifacts/ArtifactDatabase.java:
+	describe, feed, advance and out call contexts are now enriched with 
+	external meta data.
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/DatabaseCleaner.java:
+	Additional debug output how long the cleaner slept between cleanups.
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/DefaultPreferredLocale.java:
+	New. Default implementation of PreferredLocale.
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/DefaultCallMeta.java:
+	New. Default implementation of CallMeta.
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/ArtifactDatabaseImpl.java:
+	Adjusted to take the additional meta information.
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/rest/BaseResource.java:
+	Added a method to create a CallMeta object from web client information.
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/rest/ArtifactResource.java,
+	artifact-database/src/main/java/de/intevation/artifactdatabase/rest/CreateResource.java,
+	artifact-database/src/main/java/de/intevation/artifactdatabase/rest/ArtifactOutResource.java:
+	Call the artifact database with the meta data from there base class BaseResoure.
+
+2009-10-01	Sascha L. Teichmann	<sascha.teichmann@intevation.de>
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/SQL.java,
+	artifact-database/src/main/java/de/intevation/artifactdatabase/DefaultArtifact.java,
+	artifact-database/src/main/java/de/intevation/artifactdatabase/ArtifactDatabaseImpl.java,
+	artifact-database/src/main/java/de/intevation/artifactdatabase/XMLUtils.java,
+	artifact-database/src/main/java/de/intevation/artifactdatabase/Backend.java,
+	artifact-database/src/main/java/de/intevation/artifactdatabase/rest/BaseResource.java,
+	artifact-database/src/main/java/de/intevation/artifactdatabase/rest/FactoriesResource.java,
+	artifact-database/src/main/java/de/intevation/artifactdatabase/rest/Standalone.java,
+	artifact-database/src/main/java/de/intevation/artifactdatabase/DatabaseCleaner.java,
+	artifacts/src/main/java/de/intevation/artifacts/ArtifactNamespaceContext.java,
+	artifacts/src/main/java/de/intevation/artifacts/Artifact.java:
+	Removed trailing whitespace.
+
+2009-10-01	Sascha L. Teichmann	<sascha.teichmann@intevation.de>
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/Backend.java:
+	Removed needless imports.
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/rest/Standalone.java:
+	Be more verbose on output on which host the REST server is bound.
+
+2009-09-30  Hans Plum <hans@intevation.de>
+
+	* artifact-database/doc/example-conf/conf.xml, README:
+	Fixed inconsistencies after changes in h2-configuraton.
+
+2009-09-29	Sascha L. Teichmann	<sascha.teichmann@intevation.de>
+
+	* pom.xml, artifacts/pom.xml, artifact-database/pom.xml: 
+	Set source encoding to UTF-8.
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/rest/Standalone.java:
+	If '/artifact-database/rest-server/listen/text()' is given in conf.xml
+	the value is used to bind REST server to that interface.
+
+	* artifact-database/doc/example-conf/conf.xml: Added 'listen' to
+	demo configuration.
+
+2009-09-24	Sascha L. Teichmann	<sascha.teichmann@intevation.de>
+
+	* artifact-database/src/main/resources/sql/org-h2-driver.properties:
+	Time delta calculation in SQL statement to figure out outdated artifacts
+	was broken.
+
+2009-09-24	Sascha L. Teichmann	<sascha.teichmann@intevation.de>
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/DefaultArtifact.java:
+	Added debug output to make tracing of artifact lifecyle easier.
+
+2009-09-23	Sascha L. Teichmann	<sascha.teichmann@intevation.de>
+
+	* artifact-database/doc/schema-pg.sql, artifact-database/doc/schema-h2.sql:
+	Added column 'factory' to artifacts table to store the name of the
+	creating factory.
+
+	!!!
+	!!! THIS BREAKS OLD ARTIFACT DATABASES!
+	!!!
+	!!! To update old databases issue at database prompt:
+	!!!    ALTER TABLE artifacts ADD COLUMN factory VARCHAR(256) NOT NULL;
+	!!!
+
+	* artifact-database/src/main/resources/sql/org-h2-driver.properties,
+	artifact-database/src/main/resources/sql/org-postgresql-driver.properties:
+	Fixed issue in SQL statements for touching artifacts. Fill factory name
+	into artifact relation.
+
+	* artifacts/src/main/java/de/intevation/artifacts/ArtifactSerializer.java:
+	To allow different serialization models each ArtifactFactory has 
+	serializer for the artifacts.
+
+	* artifacts/src/main/java/de/intevation/artifacts/ArtifactFactory.java:
+	Add method to return ArtifactSerializer.
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/DefaultArtifactSerializer.java:
+	Uses Java standard object serialisation. 
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/DefaultArtifactFactory.java:
+	Uses th DefaultArtifactSerializer as ArtifactSerializer
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/Backend.java:
+	The serialisation method is select via the 'factory' column of the 'artifacts'
+	table.
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/ArtifactDatabaseImpl.java,
+	artifact-database/src/main/java/de/intevation/artifactdatabase/App.java,
+	artifact-database/src/main/java/de/intevation/artifactdatabase/rest/FactoriesResource.java,
+	artifact-database/src/main/java/de/intevation/artifactdatabase/DatabaseCleaner.java:
+	Adjusted to fit the new serialisation model.
+
+2009-09-23	Sascha L. Teichmann	<sascha.teichmann@intevation.de>
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/rest/BaseResource.java:
+	New. Base class to log RuntimeExceptions to log4j error log.
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/rest/ArtifactResource.java,
+	artifact-database/src/main/java/de/intevation/artifactdatabase/rest/FactoriesResource.java,
+	artifact-database/src/main/java/de/intevation/artifactdatabase/rest/CreateResource.java,
+	artifact-database/src/main/java/de/intevation/artifactdatabase/rest/ArtifactOutResource.java:
+	Adjusted to extend from BaseResource.
+
+2009-09-21	Tim Englich	<tim.englich@intevation.de>
+
+	* Added some IDE-specific files to the Ignorelist.
+
+2009-09-18	Sascha L. Teichmann	<sascha.teichmann@intevation.de>
+
+	* artifact-database/doc/schema.sql: removed.
+	* artifact-database/doc/schema-h2.sql: re-added here. It is H2 specific.
+
+	* artifact-database/doc/schema-pg.sql: New. Schema for PostgreSQL 8.3 +
+
+	* artifact-database/src/main/resources/sql/org-postgresql-driver.properties: New.
+	SQL statements for PostgreSQL.
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/DBConnection.java:
+	XPath expressions to access config were wrong. Added some debug logging.
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/Backend.java:
+	Added some debug logging.
+
+	* artifact-database/pom.xml: Added dependency to postgresql JDBC driver
+
+	* contrib/run.sh: Added postgresql JDBC to CLASSPATH.
+
+2009-09-16  Tim Englich  <tim.englich@intevation.de>
+
+	* src/main/java/de/intevation/artifactdatabase/rest/ArtifactOutResource.java (represent) Edited: 
+	Switched from Get to Post communication.
+
+2009-09-16  Tim Englich  <tim.englich@intevation.de>
+
+	* src/main/java/de/intevation/artifactdatabase/ArtifactDatabaseImpl.java (feed) Edited:
+	Bug fixed: Now the method will call the feed Method of the used Artifact instead 
+	of the advance Method.
+
+2009-09-15	Sascha L. Teichmann	<sascha.teichmann@intevation.de>
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/rest/ArtifactResource.java:
+	More warning log output in POST case.
+
+2009-09-15	Tim Englich	<tim.englich@intevation.de>
+
+	* src/main/java/de/intevation/artifactdatabase/Backend.java: 
+	Bug Fixed: Comparation for outdated Artifacts was Wrong.
+
+	* src/main/java/de/intevation/artifactdatabase/rest/ArtifactResource.java (represent):
+	Warn-Logging Integrated for Exception analysys.
+
+2009-09-14	Tim Englich	<tim.englich@intevation.de>
+
+	* src/main/java/de/intevation/artifacts/ArtifactFactory.java Edited:
+	Make Objects Serializable 
+
+	* src/main/resources/sql/org-h2-driver.properties: 
+	Bug Fixed in SQL-Query
+
+2009-09-13	Sascha L. Teichmann	<sascha.teichmann@intevation.de>
+
+	Refactored the persistent handling of the artifacts in the 
+	artifact database. When an artifact is called (describe, feed,
+	advance, out) a new CallContext is given instead of the
+	old Object context. CallContext.globalContext() returns the
+	old Object context now. CallContext.afterCall() may be
+	called from inside describe, feed, advance and out to tell
+	the artifact database what to do after the processing of
+	the specific call.
+	
+	The accepted values are:
+		- NOTHING    for doing nothing
+		- TOUCH      for just update the last access time
+		- STORE      for persisting the artifact.
+		- BACKGROUND to signal that the artifact has started
+		             a background operation.
+
+	After the background operation the artifact has to call
+	CallContext.fromBackground() to signal the artifact 
+	database that the artifact needs to be touched or stored.
+
+	!!! Without this call the artifact database assumes there
+	!!! is still some background operation on this artifact
+	!!! which prevents reclaiming resources
+
+	* artifacts/src/main/java/de/intevation/artifacts/CallContext.java:
+	New. New API to cope with background processing.
+
+	* artifacts/src/main/java/de/intevation/artifacts/Artifact.java:
+	Replaced old Object context with CallContext context.
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/DefaultArtifact.java:
+	Adjusted.
+
+	* artifacts/src/main/java/de/intevation/artifacts/ArtifactDatabase.java:
+	For a better encapsulation of the persistence operations of the
+	artifacts the database does not return artifacts any more. It delegates
+	the describe, feed, advance and out call to internal structures.
+
+	* artifacts/src/main/java/de/intevation/artifacts/ArtifactDatabaseException.java:
+	New. Simplifies handling of error conditions inside of artifact database.
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/ArtifactDatabaseImpl.java:
+	Adjusted to new interface. Internally it handles the background API.
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/rest/ArtifactResource.java,
+	artifact-database/src/main/java/de/intevation/artifactdatabase/rest/FactoriesResource.java,
+	artifact-database/src/main/java/de/intevation/artifactdatabase/rest/OutRepresentation.java,
+	artifact-database/src/main/java/de/intevation/artifactdatabase/rest/CreateResource.java,
+	artifact-database/src/main/java/de/intevation/artifactdatabase/rest/ArtifactOutResource.java:
+	Adjusted to new artifact database interface (which greatly simplifies things)
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/DatabaseCleaner.java:
+	Artifacts in background are not removed from database any longer.
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/App.java: Little
+	re-wirering need for new cleanup.
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/Backend.java: 
+	Simplified to do the SQL stuff only. The most infrastructure stuff is now done
+	in ArtifactDatabaseImpl.
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/Id.java:
+	New. Helper base class to enable filtering of background artifacts by there
+	database id.
+
+	* artifact-database/src/main/resources/sql/org-h2-driver.properties:
+	Modified the INSERT statement to write the serialized artifact, too.
+
+2009-09-12	Sascha L. Teichmann	<sascha.teichmann@intevation.de>
+
+	* artifacts/src/main/java/de/intevation/artifacts/Artifact.java(out):
+	out() is now called with an java.io.Outputstream to place
+	the output.
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/DefaultArtifact.java,
+	artifact-database/src/main/java/de/intevation/artifactdatabase/Backend.java,
+	artifact-database/src/main/java/de/intevation/artifactdatabase/rest/OutRepresentation.java:
+	Adjusted.
+
+2009-09-11	Sascha L. Teichmann	<sascha.teichmann@intevation.de>
+
+	* artifact-database/doc/example-conf/conf.xml: Added
+	sleep time for cleanup thread.
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/App.java:
+	Start cleanup thread at startup.
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/Backend.java:
+	Make artifact restoring bit more robust, added ref to
+	cleanup thread to do an immediate cleanup when dead artifact
+	is found by lookup.
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/DatabaseCleaner.java:
+	New. The cleanup thread. It cleans up the artifact database
+	perodically and calls the endOfLife() methods of the dead
+	artifacts. Default cleanup interval is 5 minutes.
+
+	* artifact-database/src/main/resources/sql/org-h2-driver.properties:
+	Tuned SQL a bit to fetch only a 50 artifacts in search for
+	outdated artifacts to avoid too much memory consumption.
+
+	* contrib/run.sh: Little tweak to work with more than one
+	commons-pool version installed.
+
+	* TODO: Removed remarks about the now implemented killer 
+	thread and the moves XML stuff.
+
+	* README: Changed text how to create a H2 database from
+	command line only. XXX: This is still broken. The best
+	way to set up the database by now is to start the Console 
+	client, connect to the database, c&p the schema.sql 
+	into the SQL text area and execute it.
+
+2009-09-10	Sascha L. Teichmann	<sascha.teichmann@intevation.de>
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/rest/ArtifactOutResource.java:
+	New. Handler for 'out'. Reachable via HTTP GET '/artifact/{uuid}/{type}'.
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/rest/OutRepresentation.java:
+	New. Special representation for out. TODO: use streaming API.
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/rest/ArtifactResource.java:
+	Regrouped imports.
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/rest/RestApp.java: Added
+	handler for 'out' to routing table.
+
+2009-09-10	Sascha L. Teichmann	<sascha.teichmann@intevation.de>
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/rest/ArtifactResource.java:
+	Added handler for 'advance' and 'feed' to be called by HTTP POST '/artifact/{uuid}'.
+
+2009-09-10	Sascha L. Teichmann	<sascha.teichmann@intevation.de>
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/rest/ArtifactResource.java:
+	Added handler for 'describe' to be fetched by HTTP GET '/artifact/{uuid}'.
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/rest/RestApp.java:
+	Add route to new describe handler.
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/Backend.java: Fixed
+	problems with serialization of artifacts to backing database.
+
+2009-09-10	Sascha L. Teichmann	<sascha.teichmann@intevation.de>
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/XMLUtils.java:
+	Added method to get strings from XML documents via XPath.
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/DefaultArtifact.java:
+	Used XMLUtils to create new XML documents.
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/ArtifactDatabaseImpl.java:
+	Forgot to store backend in instance variable.
+
+	* artifacts/src/main/java/de/intevation/artifacts/ArtifactNamespaceContext.java:
+	Added static instance of this class.
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/rest/CreateResource.java:
+	Forward call to ArtifactDatabase, do some error handling.
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/Backend.java:
+	Treat problems with database errors more gracefully.
+
+	* contrib/run.sh: Added dependencies to common-pool and common-dbcp.
+
+	* artifact-database/doc/data/create-artifact.xml: New. example data set to
+	create an artifact. Usage
+
+	$ curl --data-binary @doc/data/create-artifact.xml -D - http://localhost:8181/create
+
+2009-09-10	Sascha L. Teichmann	<sascha.teichmann@intevation.de>
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/rest/FactoriesResource.java:
+	Removed needless import.
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/Config.java,
+	artifact-database/src/main/java/de/intevation/artifactdatabase/XMLUtils.java:
+	Moved some XPath stuff from Config into XMLUtils.
+
+2009-09-10	Sascha L. Teichmann	<sascha.teichmann@intevation.de>
+
+	* artifacts/src/main/java/de/intevation/artifacts/Artifact.java(setup): Added
+	callback parameter in form of the creating factory.
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/Backend.java,
+	artifact-database/src/main/java/de/intevation/artifactdatabase/DefaultArtifact.java:
+	Adjusted to match new Artifact interface.
+	
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/DefaultArtifactFactory.java:
+	Call artifact.setup() with this.
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/DefaultArtifact.java:
+	Removed namespace stuff.
+
+	* artifacts/src/main/java/de/intevation/artifacts/ArtifactNamespaceContext.java:
+	Created namespace stuff, need for XPath for e.g.
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/rest/FactoriesResource.java:
+	Use new namespace stuff.
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/rest/Standalone.java: 
+	Added author.
+
+2009-09-09	Sascha L. Teichmann	<sascha.teichmann@intevation.de>
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/XMLUtils.java:
+	Added method newXPath() to create XPaths with namespace binding.
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/Config.java:
+	Uses new method from XMLUtils.
+
+2009-09-09	Sascha L. Teichmann	<sascha.teichmann@intevation.de>
+
+	* trunk/artifact-database/src/main/java/de/intevation/artifactdatabase/rest/FactoriesResource.java,
+	trunk/artifact-database/src/main/java/de/intevation/artifactdatabase/rest/CreateResource.java:
+	Removed meta data from resources. They prevented serving the right results.
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/Backend.java:
+	Removed needless import.
+
+2009-09-09	Sascha L. Teichmann	<sascha.teichmann@intevation.de>
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/rest/CreateResource.java:
+	New. Resource to create an artifact. Not working on artifact database yet.
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/rest/RestApp.java:
+	Attached create to web server.
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/rest/FactoriesResource.java:
+	Added meta data to Get annotation.
+
+2009-09-09	Sascha L. Teichmann	<sascha.teichmann@intevation.de>
+
+	* artifact-database/pom.xml: Added dependency to restlet.ext.xml
+	for XML handling in representations.
+
+	* contrib/run.sh: Adjusted to fit new dependency.
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/XMLUtils.java:
+	New. Handle some boiler plate XML stuff. Move more stuff of this kind
+	into this file.
+
+	* TODO: Added remark to move more XML stuff into XMLUtils.
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/rest/Standalone.java:
+	Tell at startup on which port we are listing.
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/rest/FactoriesResource.java:
+	Representation to list the available factories.
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/rest/RestApp.java:
+	Attach new factory listing to web app.
+
+2009-09-09	Sascha L. Teichmann	<sascha.teichmann@intevation.de>
+
+	* artifact-database/doc/artifactdb-example-conf.xml: removed
+	* artifact-database/doc/example-conf/conf.xml: Re-added here.
+
+	The configuration is now found in a subdirectory set by the
+	system property 'artifact.database.dir'. If this property is
+	not set '~/.artitactdb' is used. This directory should contain
+	a file 'conf.xml' with the configuration details.
+	  If the artifact database is started as a standalone the config
+	directory is searched for 'log4j.properties' to configure the
+	logging.
+	  The H2 database is also search in this directory with the
+	name 'artifacts.db' if the connection url in config.xml is
+	not overwritten.
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/Config.java:
+	Refactored a bit to follow the new configuration policy.
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/DBConnection.java:
+	Build default connection url as described.
+
+	* artifact-database/doc/example-conf/log4j.properties: New.
+	example logging config
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/FactoryBootstrap.java:
+	Added some more logging infos.
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/App.java:
+	Load the log4j configuration at startup and starts a REST standalone web server.
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/rest: New.
+	Package for REST binding.
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/rest/Standalone.java:
+	Convenience wrapper to start a standalone REST web server.
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/rest/RestApp.java:
+	Concrete REST application. TODO: attach restlets to interact with artifact database.
+
+	* contrib/run.sh: Little start script to launch artifact database for test
+	purpose from classes without the need to build packages. 
+	Background: The maven exec:exec goal does not work consistently for me (slt). 
+	At home it does, at work it doe not. Anyway. Usage:
+
+	$ ./contrib/run.sh \
+	      -Dartifact.database.dir=artifact-database/doc/example-conf/ \
+	      de.intevation.artifactdatabase.App
+
+2009-09-08	Tim Englich	<tim.englich@intevation.de>
+
+	* src/main/java/de/intevation/artifactdatabase/DefaultArtifact.java : Edited
+	Constants for Namespace-URL and Namespace-Prefix added 
+
+2009-09-08	Sascha L. Teichmann	<sascha.teichmann@intevation.de>
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/SQL.java,
+	artifact-database/src/main/java/de/intevation/artifactdatabase/DefaultArtifact.java,
+	artifact-database/src/main/java/de/intevation/artifactdatabase/Config.java,
+	artifact-database/src/main/java/de/intevation/artifactdatabase/FactoryBootstrap.java,
+	artifact-database/src/main/java/de/intevation/artifactdatabase/Backend.java,
+	artifact-database/src/main/java/de/intevation/artifactdatabase/DefaultArtifactFactory.java:
+	Integrated log4j
+
+	* artifact-database/pom.xml: Added dependency to log4j
+
+	* TODO: Removed remark to integrate logging.
+
+2009-09-07  Tim Englich  <tim.englich@intevation.de>
+
+	* src/main/java/de/intevation/artifactdatabase/FactoryBootstrap.java: edited
+	Bug fixed in XPath Expression. Now the Nodes and not the Text of the Nodes will
+	be used instantiating the ArtifactFactory. 
+	
+2009-09-07	Sascha L. Teichmann	<sascha.teichmann@intevation.de>
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/Backend.java:
+	Implemented loading of artifacts from database. If the last access of an 
+	artifact is too long ago for its time to life, null is returned.
+
+	* TODO: Added remark to implement a "killer" thread which periodically cleans the
+	database from outdated artifacts and calls the endOfLife() method on those.
+
+2009-09-07	Sascha L. Teichmann	<sascha.teichmann@intevation.de>
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/SQL.java:
+	Properties wrapper for SQL statements. The properties are looked up
+	in resorces /sql/DRIVER.properties (DRIVER is the name of the db driver class,
+	lowercased and '.' replaced by '-'. 'org.h2.Driver' turns to
+	'org-h2-driver.properties', e.g.
+
+	* artifact-database/src/main/resources/sql/org-h2-driver.properties:
+	SQL statements for H2 database.
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/Backend.java:
+	Artifacts are proxies/wrapped by an special Artifact implementation
+	to bound db activities transparentely to the Artifact. XXX: It has
+	to be evaluated if a more direct concept like extending the Artifact API
+	to store itself would be more robust for future implementations.
+	TODO: Loading Artifact from db is not implemented yet.
+
+2009-09-06	Sascha L. Teichmann	<sascha.teichmann@intevation.de>
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/Backend.java:
+	New. Used to wrap database presentations of artifacts into artifacts.
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/ArtifactDatabaseImpl.java:
+	New. Implements a ArtifactDatabase backed by Backend.
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/Config.java:
+	Removed empty last line.
+	
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/App.java:
+	Wired together Backend, ArtifactDatabaseImpl and FactoryBootstrap.
+
+2009-09-06	Sascha L. Teichmann	<sascha.teichmann@intevation.de>
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/DBConnection.java:
+	Typo in XPath expression.
+
+2009-09-06	Sascha L. Teichmann	<sascha.teichmann@intevation.de>
+
+	* artifacts/src/main/java/de/intevation/artifacts/Artifact.java(setup):
+	Added the setup() method to have symmetric counter part to endOfLife().
+
+	* artifacts/src/main/java/de/intevation/artifacts/ArtifactFactory.java(timeToLiveUntouched):
+	Added this method to let the factory decide how long an artifact should live in ms.
+	This is not a part of the Artifact itself because this is only evaluated once when
+	the artifact is created.
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/DefaultArtifact.java:
+	New. Simple base class implementation of the Artifact interface.
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/DefaultArtifactFactory.java:
+	New. Simple base class implementation of the ArtifactFactory interface. When setup()
+	on instances of this class is called, it pull ttl, name, description and
+	the artifact class name from the node given. See artifactdb-example-conf.xml
+	for examples.
+
+	* artifact-database/pom.xml: Cleaned up XML. 
+	Introduced dependency to apache commons dbcp, used for pooling of the 
+	database connections to artifact db. 
+	Added parameters for the exec:exec goal to make the project
+	startable without building packages.
+
+	* artifact-database/doc/schema.sql: Removed AUTO_INCREMENT from primary key
+	to avoid compatibility issues with other non-H2 databases (PostgreSQL, Oracle, ...)
+	which have no or limited support for generated keys in the JDBC driver. Now
+	using an explicit sequence. TTL ist now big int to bring the resolution to ms.
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/Config.java:
+	Refactored a bit to make the XPath access function usable on arbitrary XML
+	documents and parts of.
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/DBConnection.java:
+	New. Exposes DataSource from a apache dbcp connection pool configured by the
+	global configuration file. See artifactdb-example-conf.xml for examples.
+	TODO: Write some documentation about this.
+
+	* artifact-database/doc/artifactdb-example-conf.xml: Adjusted to be a more realistic
+	example config file. Added references to DefaultArtifact/DefaultArtifactFactory and
+	demonstrate how to configure the connection pool.
+
+	* TODO: Add remark to document the connection file.
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/FactoryBootstrap.java:
+	Do not crash when config does not contain any factories.
+
+2009-09-04	Sascha L. Teichmann	<sascha.teichmann@intevation.de>
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/Config.java (getNodeXPath):
+	New method to get a single node from configuration.
+
+	* artifacts/src/main/java/de/intevation/artifacts/Artifact.java (endOfLife):
+	New method called when artifact is going to be removed from artifact data base.
+
+2009-09-04	Tim Englich	<tim.englich@intevation.de>
+
+	* src/main/java/de/intevation/artifactdatabase/FactoryBootstrap.java (loa,
+	* src/main/java/de/intevation/artifacts/ArtifactFactory.java (setup):
+	New Parameter for Setop to put the ArtifactFactoryNode into the setup routine.
+
+2009-09-04	Tim Englich	<tim.englich@intevation.de>
+
+	* pom.xml: Edited
+	Buildplugins for Maven-Compiler and Maven-Eclipse Plugin integrated.
+
+2009-09-04	Sascha L. Teichmann	<sascha.teichmann@intevation.de>
+
+	* artifact-database/doc/artifactdb-example-conf.xml: Example for artifact db
+	configuration.
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/DefaultArtifactContextFactory.java:
+	New. Default implementation of ArtifactContextFactory. Creates a DefaultArtifactContext.
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/DefaultArtifactContext.java:
+	New. Default implementation of ArtifactContext.
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/FactoryBootstrap.java:
+	New. Class to bootstrap the context and the artifact factories.
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/App.java: Bootstrap
+	factories.
+
+	* artifact-database/src/main/java/de/intevation/artifactdatabase/Config.java: New.
+	Loads configuration as XML from a file. The file is specified by the system
+	property "artifact.database.config" and defaults to "artifactdb-conf.xml".
+	The configuration can be searched via XPath.
+
+	* artifact-database/pom.xml: Made de.intevation.artifactdatabase.App the main
+	class for start up.
+
+	* TODO: Added remark to add logging to artifact database.
+
+2009-09-04	Sascha L. Teichmann	<sascha.teichmann@intevation.de>
+
+	* artifacts/src/main/java/de/intevation/artifacts/ArtifactContextFactory.java:
+	New. Factory for a global context in the artifact data base. Useful to
+	create shared ressources for artifacts like caches et al.
+
+	* artifacts/src/main/java/de/intevation/artifacts/ArtifactDatabase.java,
+	artifacts/src/main/java/de/intevation/artifacts/ArtifactFactory.java,
+	artifacts/src/main/java/de/intevation/artifacts/ArtifactContextFactory.java,
+	artifacts/src/main/java/de/intevation/artifacts/Artifact.java: Uses the
+	global context more consistent.
+
+	* artifact-database/doc/schema.sql: Using BINARY instead of BLOB to
+	avoid external files for each artifact blob. See H2 documentation
+	for details.
+
+2009-09-03	Sascha L. Teichmann	<sascha.teichmann@intevation.de>
+
+	* artifact-database/doc/schema.sql: Schema to store artifacts
+	in H2 databases.
+
+	* artifact-database/pom.xml: Added dependencies to H2 and
+	restlet.
+
+	* pom.xml: Added repository to fetch restlet.
+
+	* README: Describe how to create a H2 database to store artifacts.
+	TODO: Make it more general because description assumes usage of
+	a unixoid system.
+
+2009-09-03	Sascha L. Teichmann	<sascha.teichmann@intevation.de>
+
+	* artifact-database/**: created new sub project for the artefact 
+	database server.
+
+	* pom.xml: Registered new sub project and made artifacts a
+	sub project, too.
+
+	* artifacts/pom.xml: Adjusted to make a artifacts a sub project.
+
+2009-09-02	Sascha L. Teichmann	<sascha.teichmann@intevation.de>
+
+	* artifacts/src/main/java/de/intevation/artifacts/Artifact.java:
+	Interface of the central component of the system.
+
+	* artifacts/src/main/java/de/intevation/artifacts/ArtifactDatabase.java:
+	Central place to store artifacts in.
+
+	* artifacts/src/main/java/de/intevation/artifacts/ArtifactFactory.java:
+	Factory to build artifacts. Works together with ArtifactDatabase.
+
+	* artifacts/pom.xml: Simple maven file to compile the project.
+
+2009-09-01	Sascha L. Teichmann	<sascha.teichmann@intevation.de>
+
+	* README, Changelog, Changes, NEWS, TODO: New. Initial setup

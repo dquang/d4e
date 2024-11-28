@@ -1,0 +1,225 @@
+2012-09-30	Sascha L. Teichmann	<sascha.teichmann@intevation.de>
+
+	* .hgignore: First hgignore
+
+2012-09-17  Ingo Weinzierl <ingo@intevation.de>
+
+	Taggd RELEASE 2.9.1
+
+2012-09-10	Sascha L. Teichmann	<sascha.teichmann@intevation.de>
+
+	* pom.xml: Java 1.5 -> 1.6
+
+2012-09-07  Ingo Weinzierl <ingo@intevation.de>
+
+	Taggd RELEASE 2.9
+
+2012-08-24	Björn Ricks	<bjoern.ricks@intevation.de>
+
+	* src/main/java/de/intevation/artifacts/httpclient/http/HttpClientImpl.java,
+	  src/main/java/de/intevation/artifacts/httpclient/http/HttpClient.java:
+	  Added new method findUser. With the new method it is possible to get a
+	  user document by an account name.
+
+2012-07-27  Ingo Weinzierl <ingo@intevation.de>
+
+	Taggd RELEASE 2.8.1
+
+2012-07-16  Ingo Weinzierl <ingo@intevation.de>
+
+	Taggd RELEASE 2.8
+
+2012-07-13	Björn Ricks	<bjoern.ricks@intevation.de>
+
+	* src/main/java/de/intevation/artifacts/httpclient/http/HttpClientImpl.java
+	  src/main/java/de/intevation/artifacts/httpclient/http/HttpClient.java:
+	  Implemented a createUser method for HttpClient.
+	  With the new method its possible to create new users via the HttpClient.
+
+2012-04-16	Sascha L. Teichmann	<sascha.teichmann@intevation.de>
+
+	* src/main/java/de/intevation/artifacts/httpclient/http/response/StringResponseHandler.java,
+	  src/main/java/de/intevation/artifacts/httpclient/http/response/StreamResponseHandler.java,
+	  src/main/java/de/intevation/artifacts/httpclient/http/response/DocumentResponseHandler.java:
+	  Added Override annotations.
+
+2011-09-19  Ingo Weinzierl <ingo@intevation.de>
+
+	Tagged pre2.7-2012-03-16
+
+2011-09-19  Ingo Weinzierl <ingo@intevation.de>
+
+	Taggd RELEASE 0.5
+
+	* Changes: Prepared changes for the release.
+
+2011-08-23  Sascha L. Teichmann  <sascha.teichmann@intevation.de>
+
+	* src/main/java/de/intevation/artifacts/httpclient/utils/ArtifactProtocolUtils.java
+	  (createFeedDocument): Directly iterate over the entry set of the map. Do not
+	  use the more expensive 'for all key in keys: value = get(key)'
+	  
+2011-08-23  Sascha L. Teichmann  <sascha.teichmann@intevation.de>
+
+	* src/main/java/de/intevation/artifacts/httpclient/utils/ArtifactProtocolUtils.java:
+	  Replaced some XPath attribute extraction by simple DOM getAttributeNS() calls.
+
+2011-07-04  Ingo Weinzierl <ingo@intevation.de>
+
+	* src/main/java/de/intevation/artifacts/httpclient/http/HttpClientImpl.java,
+	  src/main/java/de/intevation/artifacts/httpclient/http/HttpClient.java:
+	  Added a method to call a service with a ResponseHandler. This allows us
+	  to access the InputStream directly.
+
+2011-06-28  Ingo Weinzierl <ingo@intevation.de>
+
+	Tagged RELEASE 0.4
+
+2011-06-27  Ingo Weinzierl <ingo@intevation.de>
+
+	* Changes: Prepared changes for the upcoming release.
+
+2011-06-26  Sascha L. Teichmann  <sascha.teichmann@intevation.de>
+
+	* src/main/java/de/intevation/artifacts/httpclient/utils/XMLUtils.java,
+	  src/main/java/de/intevation/artifacts/httpclient/ConsoleClient.java,
+	  src/main/java/de/intevation/artifacts/httpclient/objects/Artifact.java:
+	  Removed trailing whitespace.
+
+2011-06-01  Sascha L. Teichmann  <sascha.teichmann@intevation.de>
+
+	* src/main/java/de/intevation/artifacts/httpclient/http/HttpClientImpl.java:
+	  Use thread local instances of the HTTP clients to foster
+	  their re-use. Change some logging from INFO to DEBUG
+	  because they are not so important.
+
+	* pom.xml: Use the httpclient extension of Restlet to use the
+	  Apache HTTP client as the the underlaying transport agent.
+	  License Apache License, Version 2.0
+
+2011-05-19  Ingo Weinzierl <ingo@intevation.de>
+
+	RELEASE 0.3
+
+2011-05-19  Ingo Weinzierl <ingo@intevation.de>
+
+	* Changes: Prepared for release 0.3.
+
+2011-05-19  Sascha L. Teichmann  <sascha.teichmann@intevation.de>
+
+	* src/main/java/de/intevation/artifacts/httpclient/http/HttpClientImpl.java:
+	  Improved the stream handling.
+
+2011-05-18  Sascha L. Teichmann  <sascha.teichmann@intevation.de>
+
+	* pom.xml: Bumped restlet version to 2.0.7
+
+2011-05-13  Ingo Weinzierl <ingo@intevation.de>
+
+	* Changes, NEWS: For Release 0.2.
+
+2011-05-09  Sascha L. Teichmann  <sascha.teichmann@intevation.de>
+
+	* src/main/java/de/intevation/artifacts/httpclient/http/response/StringResponseHandler.java,
+	  src/main/java/de/intevation/artifacts/httpclient/utils/XMLUtils.java:
+	  Removed superfluous imports.
+
+2011-05-09  Ingo Weinzierl <ingo@intevation.de>
+
+	* src/main/java/de/intevation/artifacts/httpclient/http/HttpClientImpl.java,
+	  src/main/java/de/intevation/artifacts/httpclient/http/HttpClient.java:
+	  Added a new method that returns the InputStream of a Collection's OUT
+	  operation.
+
+2011-04-14  Ingo Weinzierl <ingo@intevation.de>
+
+	* src/main/java/de/intevation/artifacts/httpclient/http/HttpClientImpl.java:
+	  Bugfix: repaired a condition to leave the setLocale() method.
+
+2011-04-14  Ingo Weinzierl <ingo@intevation.de>
+
+	* src/main/java/de/intevation/artifacts/httpclient/http/HttpClientImpl.java:
+	  Added a new constructor and methods to set the locale of the requests
+	  manually. This is useful, if there is an application which language
+	  depends on site specific user settings. E.g. if the user has the option
+	  to choose the language in the browser window by button click - which
+	  differs from the browser settings.
+
+2011-04-07  Ingo Weinzierl <ingo@intevation.de>
+
+	* src/main/java/de/intevation/artifacts/httpclient/http/HttpClientImpl.java,
+	  src/main/java/de/intevation/artifacts/httpclient/http/HttpClient.java:
+	  Added a method that triggers the out() operation of a Collection and
+	  writes the result to an OutputStream.
+
+2011-03-30  Ingo Weinzierl <ingo@intevation.de>
+
+	Tagged RELEASE 0.1
+
+2011-03-30  Ingo Weinzierl <ingo@intevation.de>
+
+	* src/main/java/de/intevation/artifacts/httpclient/http/HttpClientImpl.java,
+	  src/main/java/de/intevation/artifacts/httpclient/http/HttpClient.java:
+	  Added a new method to list the collection of a specific user.
+
+2011-03-23  Ingo Weinzierl <ingo@intevation.de>
+
+	* src/main/java/de/intevation/artifacts/httpclient/http/HttpClientImpl.java,
+	  src/main/java/de/intevation/artifacts/httpclient/http/HttpClient.java:
+	  Added a method to trigger a collection specific action.
+
+2011-03-08  Ingo Weinzierl <ingo@intevation.de>
+
+	* src/main/java/de/intevation/artifacts/httpclient/http/HttpClientImpl.java,
+	  src/main/java/de/intevation/artifacts/httpclient/http/HttpClient.java:
+	  Enabled the HttpClient to call services registered at the artifact server
+	  by calling callService().
+
+2011-03-07  Ingo Weinzierl <ingo@intevation.de>
+
+	* src/main/java/de/intevation/artifacts/httpclient/http/HttpClientImpl.java,
+	  src/main/java/de/intevation/artifacts/httpclient/http/HttpClient.java:
+	  Added a method to list the existing users of the artifact server.
+
+2011-03-04  Ingo Weinzierl <ingo@intevation.de>
+
+	* src/main/java/de/intevation/artifacts/httpclient/http/HttpClientImpl.java,
+	  src/main/java/de/intevation/artifacts/httpclient/http/HttpClient.java:
+	  New method that creates a new artifact collection.
+
+	* src/main/java/de/intevation/artifacts/httpclient/exceptions/ConnectionException.java:
+	  New constructor added.
+
+2011-02-17  Ingo Weinzierl <ingo@intevation.de>
+
+	* src/main/java/de/intevation/artifacts/httpclient/utils/ArtifactCreator.java:
+	  New. An interface that describes a single method create(Document). It is
+	  used to create new instances of artifacts which implementation depend on
+	  the framework that includes this library.
+
+	* src/main/java/de/intevation/artifacts/httpclient/http/HttpClientImpl.java,
+	  src/main/java/de/intevation/artifacts/httpclient/http/HttpClient.java: The
+	  create() became a new parameter ArtifactCreator and returns artifact
+	  instances created by this class.
+
+	* src/main/java/de/intevation/artifacts/httpclient/ConsoleClient.java:
+	  Adapted the method call of HttpClient.create().
+
+2011-02-17  Ingo Weinzierl <ingo@intevation.de>
+
+	* src/main/java/de/intevation/artifacts/httpclient/http/GNVClientImpl.java,
+	  src/main/java/de/intevation/artifacts/httpclient/http/HttpClientImpl.java:
+	  Renamed the GNVClientImpl to HttpClientImpl.
+
+	* src/main/java/de/intevation/artifacts/httpclient/http/GNVClient.java,
+	  src/main/java/de/intevation/artifacts/httpclient/http/HttpClient.java:
+	  Renamed the GNVClient to HttpClient.
+
+	* src/main/java/de/intevation/artifacts/httpclient/ConsoleClient.java:
+	  Adjusted the imports and parameters of GNVClient and GNVClientImpl.
+
+2011-02-17  Ingo Weinzierl <ingo@intevation.de>
+
+	* *: Initial checkin. This package has been copied from 'console-client'.
+	  The package structure has been modified and the maven project has been
+	  adapted.
